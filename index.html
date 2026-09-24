@@ -1,502 +1,243 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Pixel Verse Studios — 16-Bit Worlds, 32-Bit Hearts</title><meta content="Pixel Verse Studios crafts narrative pixel adventures following the Pixar-inspired Hero's Journey arc — nostalgic scanlines meet high-stakes character evolution, forgotten sea trenches, and neon cosmic horizons." name="description"/><meta content="#0f131c" name="theme-color"/><link href="assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}.scanline-overlay{background:linear-gradient(rgba(18,16,16,0) 50%,rgba(0,0,0,0.25) 50%);background-size:100% 4px;pointer-events:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary":"#003824","outline-variant":"#494454","on-primary":"#3c0091","surface-container-lowest":"#0a0e17","inverse-on-surface":"#2c303a","secondary-fixed-dim":"#4cd7f6","on-error-container":"#ffdad6","surface-container-high":"#262a34","on-tertiary-fixed-variant":"#005236","on-background":"#dfe2ef","primary-fixed-dim":"#d0bcff","on-primary-fixed-variant":"#5516be","surface-dim":"#0f131c","inverse-surface":"#dfe2ef","on-secondary-fixed":"#001f26","on-primary-container":"#340080","surface-bright":"#353943","surface-container-low":"#181b25","inverse-primary":"#6d3bd7","background":"#0f131c","secondary":"#4cd7f6","surface":"#0f131c","on-secondary-fixed-variant":"#004e5c","on-surface":"#dfe2ef","surface-variant":"#31353f","surface-container":"#1c1f29","primary-fixed":"#e9ddff","on-error":"#690005","primary-container":"#a078ff","tertiary-fixed-dim":"#4edea3","error":"#ffb4ab","surface-container-highest":"#31353f","error-container":"#93000a","on-tertiary-fixed":"#002113","on-primary-fixed":"#23005c","tertiary-fixed":"#6ffbbe","on-secondary":"#003640","secondary-fixed":"#acedff","primary":"#d0bcff","on-tertiary-container":"#00311f","surface-tint":"#d0bcff","on-secondary-container":"#00424e","tertiary":"#4edea3","tertiary-container":"#00a572","on-surface-variant":"#cbc3d7","outline":"#958ea0","secondary-container":"#03b5d3"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"space-md":"1rem",gutter:"1.5rem","space-sm":"0.5rem","space-lg":"1.5rem","margin-mobile":"1rem",margin:"2rem","gutter-mobile":"1rem","space-xs":"0.25rem","space-xl":"2.5rem"},fontFamily:{"body-lg":["Inter"],"headline-lg":["Space Grotesk"],"body-md":["Inter"],"headline-xl":["Space Grotesk"],"headline-md":["Space Grotesk"],"headline-sm":["Space Grotesk"],"label-code":["Space Grotesk"],"display-hero":["Space Grotesk"],"label-badge":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"],"display-hero-mobile":["Space Grotesk"],"body-sm":["Inter"]},fontSize:{"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"headline-lg":["32px",{lineHeight:"40px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"label-code":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"500"}],"display-hero":["56px",{lineHeight:"64px",letterSpacing:"-0.03em",fontWeight:"700"}],"label-badge":["13px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"700"}],"headline-xl-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"display-hero-mobile":["36px",{lineHeight:"44px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary selection:text-on-secondary-fixed min-h-screen flex flex-col relative"><div class="scanline-overlay fixed inset-0 z-40 opacity-30"></div><header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_0_0_#000000]"><div class="h-20 w-full px-space-md lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm sm:gap-space-md"><img alt="Pixel Verse Studios Logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg"/><a class="flex flex-col text-left group" data-path="home" href="index.html"><span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface group-hover:text-primary transition-colors">PIXEL VERSE</span><span class="font-label-code text-label-code tracking-widest text-secondary uppercase">STUDIOS // 16-BIT</span></a></div><nav class="hidden xl:flex items-center gap-space-xs p-space-xs bg-surface-container-low rounded-DEFAULT" data-active-classes="text-secondary bg-surface-container-high shadow-[2px_2px_0_0_#4cd7f6]"><a aria-current="page" class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider transition-all text-secondary bg-surface-container-high shadow-[2px_2px_0_0_#4cd7f6]" data-path="home" href="index.html">Home</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="games" href="games.html">Games</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="studio-lore" href="studio-lore.html">Studio & Lore</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="community" href="#newsletter">Community</a></nav><div class="flex items-center gap-space-sm sm:gap-space-md"><button aria-label="Toggle Retro Audio" class="hidden sm:flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container text-tertiary shadow-[2px_2px_0_0_#000000] hover:bg-surface-container-high hover:text-on-surface active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" type="button"><span class="material-symbols-outlined text-[18px]">volume_up</span><span class="font-label-code text-label-code uppercase tracking-wider hidden md:inline">8-BIT ON</span></button><a class="relative inline-flex items-center justify-center px-space-md py-space-xs bg-primary-container text-on-primary-container font-headline-sm text-label-badge uppercase tracking-wider shadow-[4px_4px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" data-path="play-demo" href="games.html"><span class="material-symbols-outlined mr-space-xs text-[18px]">sports_esports</span><span>Play Demo</span></a><div class="flex items-center gap-space-xs pl-space-xs border-l-2 border-outline-variant/30"><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_8px_rgba(76,215,246,0.5)]" src="assets/img/profile-avatar.jpg"/></div><button aria-controls="mobile-nav" aria-expanded="false" aria-label="Open menu" class="xl:hidden inline-flex items-center justify-center p-space-xs bg-surface-container text-on-surface shadow-[2px_2px_0_0_#000000] hover:bg-surface-container-high hover:text-secondary transition-all" id="mobile-menu-btn" type="button"><span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span></button></div></div><nav aria-label="Mobile navigation" class="hidden xl:hidden w-full flex flex-col gap-space-xs px-space-md py-space-md bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_6px_0_0_#000000]" id="mobile-nav"><a aria-current="page" class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider transition-all text-secondary bg-surface-container-high shadow-[2px_2px_0_0_#4cd7f6]" data-path="home" href="index.html">Home</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high bg-surface-container shadow-[2px_2px_0_0_#000000] transition-all" data-path="games" href="games.html">Games</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high bg-surface-container shadow-[2px_2px_0_0_#000000] transition-all" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high bg-surface-container shadow-[2px_2px_0_0_#000000] transition-all" data-path="studio-lore" href="studio-lore.html">Studio & Lore</a><a class="px-space-md py-space-xs font-label-badge text-label-badge uppercase tracking-wider text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high bg-surface-container shadow-[2px_2px_0_0_#000000] transition-all" data-path="community" href="#newsletter">Community</a></nav></header><main class="w-full pt-20 bg-background flex-1 relative z-10"><div class="flex flex-col w-full">
-<!-- Immersive Hero Section bleeding upward under translucent shell -->
-<section class="relative w-full -mt-20 pt-28 pb-space-xl px-space-md lg:px-margin overflow-hidden bg-surface-container-lowest">
-<!-- Ambient Cyber Glow Sprites -->
-<div class="absolute top-12 left-1/4 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
-<div class="absolute top-40 right-10 w-80 h-80 bg-secondary/15 rounded-full blur-3xl pointer-events-none -z-10"></div>
-<!-- Retro Blueprint Gridlines -->
-<div class="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#4cd7f6_1px,transparent_1px)] [background-size:24px_24px]"></div>
-<div class="max-w-7xl mx-auto flex flex-col gap-space-lg relative z-10">
-<!-- Terminal Status Pill & Badges Row -->
-<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm pt-space-md">
-<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container text-tertiary font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">
-<span class="material-symbols-outlined text-[14px]">terminal</span>
-          PVS // SYS.READY
-        </span>
-<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-high text-secondary font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">
-<span class="material-symbols-outlined text-[14px]">videogame_asset</span>
-          Independent Game Studio
-        </span>
-<span class="inline-flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-high text-primary font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">
-<span class="material-symbols-outlined text-[14px]">auto_stories</span>
-          Story-Driven Adventures
-        </span>
-<span class="hidden md:inline-flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-high text-tertiary-fixed-dim font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">
-<span class="material-symbols-outlined text-[14px]">draw</span>
-          Hand-Crafted Pixel Art
-        </span>
-</div>
-<!-- Main Asymmetrical Hero Grid -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center pt-space-xs">
-<div class="lg:col-span-7 flex flex-col gap-space-md">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-code text-label-code text-secondary tracking-widest uppercase flex items-center gap-space-xs">
-<span class="w-2 h-2 bg-secondary inline-block animate-pulse"></span>
-              CARTRIDGE EMULATION ONLINE // PROTOCOL 1994
-            </span>
-<h1 class="font-display-hero text-display-hero text-on-surface uppercase tracking-tight">
-              16-BIT WORLDS.<br/>
-<span class="text-primary tracking-normal drop-shadow-[0_0_18px_rgba(208,188,255,0.4)]">32-BIT HEARTS.</span>
-</h1>
-</div>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-            Crafting narrative pixel adventures following the Pixar-inspired Hero's Journey arc. Where nostalgic scanlines meet high-stakes character evolution, forgotten sea trenches, and neon cosmic horizons.
-          </p>
-<!-- Arcade Chunky Controls -->
-<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
-<a class="inline-flex items-center justify-center gap-space-xs px-space-xl py-space-md bg-primary text-on-primary font-headline-sm text-headline-sm uppercase tracking-wider shadow-[4px_4px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" href="#showcase">
-<span>Explore Our Games</span>
-<span class="material-symbols-outlined text-[24px]">sports_esports</span>
-</a>
-<button class="inline-flex items-center justify-center gap-space-xs px-space-lg py-space-md bg-surface-container-high text-secondary font-headline-sm text-headline-sm uppercase tracking-wider shadow-[4px_4px_0_0_#000000] hover:bg-surface-bright hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-1 active:translate-y-1 active:shadow-none transition-all" id="open-reel-btn" type="button">
-<span class="material-symbols-outlined text-[24px]">play_circle</span>
-<span>Watch Studio Reel</span>
-</button>
-</div>
-<!-- Mini Terminal Ticker -->
-<div class="flex items-center gap-space-sm pt-space-sm text-on-surface-variant font-label-code text-label-code">
-<span class="text-tertiary">[LATEST PATCH]</span>
-<span class="truncate">Crab Quest Demo v0.9.4 deployed to Steamworks • 60 FPS Native</span>
-</div>
-</div>
-<!-- Hero Graphic Showcase Module -->
-<div class="lg:col-span-5 relative">
-<div class="relative bg-surface-container-low p-space-sm shadow-[6px_6px_0_0_#000000] group">
-<!-- Retro CRT Header Bar -->
-<div class="flex items-center justify-between px-space-sm py-space-xs bg-surface-container-highest mb-space-xs text-on-surface">
-<div class="flex items-center gap-space-xs">
-<span class="w-2.5 h-2.5 bg-error inline-block"></span>
-<span class="w-2.5 h-2.5 bg-tertiary-container inline-block"></span>
-<span class="w-2.5 h-2.5 bg-secondary inline-block"></span>
-<span class="font-label-code text-label-code pl-space-xs uppercase text-on-surface-variant">CRT_MONITOR_CH1</span>
-</div>
-<span class="font-label-code text-label-code text-tertiary animate-pulse">REC ●</span>
-</div>
-<!-- Visual Pixel Art Hero Composition -->
-<div class="relative w-full h-[360px] overflow-hidden bg-surface-dim">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A lush cinematic 16-bit pixel art scene showcasing a brave little hermit crab gazing out at an epic glowing bioluminescent coral reef ruin under deep ocean waters. Saturated cyan, neon purple, deep marine blues, handcrafted retro aesthetic with rich lighting reflections and pixel shading." src="assets/img/home-hero-coral-reef.jpg"/>
-<!-- CRT scanline highlight plate -->
-<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
-<!-- Floating In-Game HUD overlay -->
-<div class="absolute bottom-3 left-3 right-3 flex items-center justify-between bg-surface-container/90 backdrop-blur-sm p-space-xs shadow-[2px_2px_0_0_#000000]">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[20px]">favorite</span>
-<div class="flex gap-0.5">
-<span class="w-3 h-3 bg-secondary"></span>
-<span class="w-3 h-3 bg-secondary"></span>
-<span class="w-3 h-3 bg-secondary"></span>
-<span class="w-3 h-3 bg-surface-container-highest"></span>
-</div>
-</div>
-<div class="flex items-center gap-space-xs font-label-code text-label-code text-primary">
-<span>QUEST:</span>
-<span class="text-on-surface font-headline-sm text-label-code">SAVE CORAL CORE</span>
-</div>
-</div>
-</div>
-<!-- Pixel Corner Accent Blocks -->
-<div class="absolute -top-1 -right-1 w-3 h-3 bg-secondary pointer-events-none"></div>
-<div class="absolute -bottom-1 -left-1 w-3 h-3 bg-primary pointer-events-none"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- High-Contrast Stats Banner -->
-<section class="w-full bg-primary-container text-on-primary-container shadow-[0_4px_0_0_#000000] relative z-20">
-<div class="max-w-7xl mx-auto px-space-md lg:px-margin py-space-lg">
-<div class="grid grid-cols-2 md:grid-cols-4 gap-space-lg">
-<div class="flex flex-col gap-space-xs">
-<div class="font-headline-xl text-headline-xl uppercase font-bold text-on-primary-container tracking-tight">2 HITS</div>
-<div class="font-label-code text-label-code uppercase tracking-wider text-on-primary-container/80 flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">verified</span>
-            Released Titles
-          </div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="font-headline-xl text-headline-xl uppercase font-bold text-on-primary-container tracking-tight">4.9 / 5</div>
-<div class="font-label-code text-label-code uppercase tracking-wider text-on-primary-container/80 flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">star</span>
-            Player Approval Rating
-          </div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="font-headline-xl text-headline-xl uppercase font-bold text-on-primary-container tracking-tight">500K+</div>
-<div class="font-label-code text-label-code uppercase tracking-wider text-on-primary-container/80 flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">bookmark_add</span>
-            Steam Wishlists
-          </div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<div class="font-headline-xl text-headline-xl uppercase font-bold text-on-primary-container tracking-tight">100%</div>
-<div class="font-label-code text-label-code uppercase tracking-wider text-on-primary-container/80 flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">palette</span>
-            Handcrafted Sprites
-          </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Games Showcase Section -->
-<section class="w-full py-space-xl px-space-md lg:px-margin bg-background relative" id="showcase">
-<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
-<!-- Section Header with Neo-Brutalist Tag -->
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-code text-label-code text-secondary tracking-widest uppercase flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">stadia_controller</span>
-            DEPLOYED CARTRIDGES // READY TO LAUNCH
-          </span>
-<h2 class="font-headline-xl text-headline-xl text-on-surface uppercase">Featured Game Showpiece</h2>
-</div>
-<div class="flex items-center gap-space-sm">
-<span class="font-label-code text-label-code text-on-surface-variant uppercase">FILTER BY GENRE:</span>
-<span class="px-space-sm py-space-xs bg-surface-container-high text-secondary font-label-badge text-label-badge shadow-[2px_2px_0_0_#000000]">ALL (2)</span>
-</div>
-</div>
-<!-- Game 1: Crab Quest -->
-<div class="w-full bg-surface-container-low shadow-[6px_6px_0_0_#000000] p-space-md lg:p-space-lg flex flex-col lg:flex-row gap-space-lg items-center relative overflow-hidden group">
-<!-- Accent Side Bar Indicator -->
-<div class="absolute left-0 top-0 bottom-0 w-2 bg-secondary"></div>
-<!-- Media Visual Slot -->
-<div class="w-full lg:w-1/2 relative">
-<div class="relative w-full h-72 sm:h-80 lg:h-96 overflow-hidden bg-surface-dim shadow-[4px_4px_0_0_#000000]">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Intricate 2D pixel art screenshot from Crab Quest: Claw of Destiny. A courageous tiny red hermit crab with an ancient nautilus shell shield confronting a towering electric eel boss inside a glowing turquoise tidepool cave with bubbles, glowing algae, and floating ancient artifacts." src="assets/img/crab-quest-eel-boss.jpg"/>
-<div class="absolute top-3 left-3 flex gap-space-xs">
-<span class="px-space-sm py-space-xs bg-surface-container-lowest/90 text-secondary font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">2D PIXEL ADVENTURE RPG</span>
-<span class="px-space-sm py-space-xs bg-tertiary-container text-on-tertiary-container font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">DEMO OUT NOW</span>
-</div>
-<!-- In-game Stat Gauge SVG Overlay -->
-<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 p-space-xs shadow-[2px_2px_0_0_#000000] flex items-center gap-space-xs text-tertiary font-label-code text-label-code">
-<svg class="w-4 h-4" fill="none" viewbox="0 0 24 24">
-<circle cx="12" cy="12" r="10" stroke="currentColor" stroke-dasharray="60" stroke-dashoffset="15" stroke-width="3"></circle>
-</svg>
-<span>SHELL INTEGRITY: 92%</span>
-</div>
-</div>
-</div>
-<!-- Narrative Information -->
-<div class="w-full lg:w-1/2 flex flex-col gap-space-md pl-space-xs">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-code text-label-code text-tertiary uppercase tracking-wider">PROJECT CODEREF // PVS-CQ-01</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">CRAB QUEST: Claw of Destiny</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              A fragile tidepool outcast receives an impossible calling: journey beyond the safe shallows to rescue the ancestral Great Coral Reef from an encroaching petroleum blight.
-            </p>
-</div>
-<!-- Pixar Arc Highlights HUD list -->
-<div class="bg-surface-container p-space-md flex flex-col gap-space-xs shadow-[inset_2px_2px_0_0_#000000]">
-<span class="font-label-code text-label-code text-primary uppercase">Hero's Journey Pillars:</span>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[18px]">water_drop</span>
-<span class="font-body-sm text-body-sm text-on-surface">Emotional Pixar-style story arc</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-tertiary text-[18px]">brush</span>
-<span class="font-body-sm text-body-sm text-on-surface">Hand-drawn underwater vistas</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[18px]">group</span>
-<span class="font-body-sm text-body-sm text-on-surface">Quirky marine party companions</span>
-</div>
-</div>
-</div>
-<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
-<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-secondary text-on-secondary-fixed font-headline-sm text-label-badge uppercase tracking-wider shadow-[4px_4px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
-<span>View Quest Logs & Demo</span>
-<span class="material-symbols-outlined text-[18px]">open_in_new</span>
-</a>
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-code text-label-code">
-<span class="material-symbols-outlined text-[18px] text-tertiary">check_circle</span>
-              STEAM DECK VERIFIED
-            </div>
-</div>
-</div>
-</div>
-<!-- Game 2: Space X Beyond the Nebula -->
-<div class="w-full bg-surface-container-low shadow-[6px_6px_0_0_#000000] p-space-md lg:p-space-lg flex flex-col lg:flex-row-reverse gap-space-lg items-center relative overflow-hidden group">
-<!-- Accent Side Bar Indicator -->
-<div class="absolute right-0 top-0 bottom-0 w-2 bg-primary-container"></div>
-<!-- Media Visual Slot -->
-<div class="w-full lg:w-1/2 relative">
-<div class="relative w-full h-72 sm:h-80 lg:h-96 overflow-hidden bg-surface-dim shadow-[4px_4px_0_0_#000000]">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Retro 16-bit futuristic sci-fi platformer video game screenshot. An astronaut salvager in a glowing white and violet pressure suit jetpacking across shattered neon asteroid ruins in front of an immense swirling magenta nebula. Retro CRT scanlines, pixel art space station wreckage, and laser dust." src="assets/img/space-x-nebula.jpg"/>
-<div class="absolute top-3 right-3 flex gap-space-xs">
-<span class="px-space-sm py-space-xs bg-surface-container-lowest/90 text-primary font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">SCI-FI PIXEL PLATFORMER</span>
-<span class="px-space-sm py-space-xs bg-surface-container text-tertiary font-label-badge text-label-badge uppercase shadow-[2px_2px_0_0_#000000]">WISHLIST Q3</span>
-</div>
-<!-- In-game Sparkline SVG Overlay -->
-<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 p-space-xs shadow-[2px_2px_0_0_#000000] flex items-center gap-space-sm text-primary font-label-code text-label-code">
-<span>WARP DRIVE:</span>
-<svg class="w-20 h-4 text-primary" fill="none" viewbox="0 0 80 16">
-<path d="M0 12L15 8L30 14L45 2L60 9L80 3" stroke="currentColor" stroke-linejoin="round" stroke-width="2"></path>
-</svg>
-</div>
-</div>
-</div>
-<!-- Narrative Information -->
-<div class="w-full lg:w-1/2 flex flex-col gap-space-md pr-space-xs">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-code text-label-code text-primary uppercase tracking-wider">PROJECT CODEREF // PVS-SX-02</span>
-<h3 class="font-headline-lg text-headline-lg text-on-surface uppercase tracking-tight">SPACE X: Beyond the Nebula</h3>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              A lone astro-salvager ventures across uncharted neon star clusters, scavenging derelict freighters while unearthing cryptic black-box recordings that resurrect forgotten personal guilt.
-            </p>
-</div>
-<!-- Pixar Arc Highlights HUD list -->
-<div class="bg-surface-container p-space-md flex flex-col gap-space-xs shadow-[inset_2px_2px_0_0_#000000]">
-<span class="font-label-code text-label-code text-secondary uppercase">Hero's Journey Pillars:</span>
-<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm pt-space-xs">
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-primary text-[18px]">graphic_eq</span>
-<span class="font-body-sm text-body-sm text-on-surface">Cosmic synthwave OST</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-[18px]">alt_route</span>
-<span class="font-body-sm text-body-sm text-on-surface">Moral branching dilemmas</span>
-</div>
-<div class="flex items-start gap-space-xs">
-<span class="material-symbols-outlined text-tertiary text-[18px]">psychology</span>
-<span class="font-body-sm text-body-sm text-on-surface">Full hero redemption arc</span>
-</div>
-</div>
-</div>
-<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
-<a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary-container text-on-primary-container font-headline-sm text-label-badge uppercase tracking-wider shadow-[4px_4px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="#">
-<span>Wishlist on Steam</span>
-<span class="material-symbols-outlined text-[18px]">bookmark_add</span>
-</a>
-<div class="flex items-center gap-space-xs text-on-surface-variant font-label-code text-label-code">
-<span class="material-symbols-outlined text-[18px] text-primary">headphones</span>
-              ORIGINAL CHIPTUNE VINYL PLANNED
-            </div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- The Studio Philosophy: 3 Bento Pillar Cards -->
-<section class="w-full py-space-xl px-space-md lg:px-margin bg-surface-container-lowest relative">
-<div class="max-w-7xl mx-auto flex flex-col gap-space-xl">
-<!-- Section Title -->
-<div class="flex flex-col gap-space-xs max-w-2xl">
-<span class="font-label-code text-label-code text-tertiary uppercase tracking-widest flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">code_blocks</span>
-          CORE DESIGN METHODOLOGY
-        </span>
-<h2 class="font-headline-xl text-headline-xl text-on-surface uppercase">The Studio Philosophy</h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-          We reject cynical microtransactions and endless procedurally generated voids. We believe in curated, crafted adventures that stay with you long after the power switch clicks off.
-        </p>
-</div>
-<!-- 3 Pillar Bento Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-<!-- Pillar 1 -->
-<div class="bg-surface-container p-space-lg shadow-[5px_5px_0_0_#000000] flex flex-col gap-space-md relative hover:-translate-y-1 transition-transform">
-<div class="flex items-center justify-between">
-<span class="w-10 h-10 bg-secondary/20 text-secondary flex items-center justify-center font-headline-md text-headline-md font-bold shadow-[2px_2px_0_0_#000000]">01</span>
-<span class="material-symbols-outlined text-secondary text-[28px]">grid_4x4</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Handcrafted Pixel Mastery</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-              Every single sprite, background tile, and splash frame is drawn by human illustrators frame-by-frame. No AI shortcuts, no generic asset store clutter. Pure, breathing artisanal 16-bit artistry.
-            </p>
-</div>
-<div class="mt-auto pt-space-md border-t-0 bg-surface-container-low p-space-sm font-label-code text-label-code text-secondary flex items-center justify-between">
-<span>ANIMATION RATE</span>
-<span class="font-bold">24-60 FPS BY HAND</span>
-</div>
-</div>
-<!-- Pillar 2 -->
-<div class="bg-surface-container p-space-lg shadow-[5px_5px_0_0_#000000] flex flex-col gap-space-md relative hover:-translate-y-1 transition-transform">
-<div class="flex items-center justify-between">
-<span class="w-10 h-10 bg-primary/20 text-primary flex items-center justify-center font-headline-md text-headline-md font-bold shadow-[2px_2px_0_0_#000000]">02</span>
-<span class="material-symbols-outlined text-primary text-[28px]">flare</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<h3 class="font-headline-md text-headline-md text-on-surface uppercase">The Hero's Heart</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-              We structure every campaign around the Joseph Campbell monomyth through the lens of Pixar character vulnerability. Our protagonists fail, learn, transform, and return with wisdom.
-            </p>
-</div>
-<div class="mt-auto pt-space-md border-t-0 bg-surface-container-low p-space-sm font-label-code text-label-code text-primary flex items-center justify-between">
-<span>NARRATIVE ARC</span>
-<span class="font-bold">CALL TO ELIXIR</span>
-</div>
-</div>
-<!-- Pillar 3 -->
-<div class="bg-surface-container p-space-lg shadow-[5px_5px_0_0_#000000] flex flex-col gap-space-md relative hover:-translate-y-1 transition-transform">
-<div class="flex items-center justify-between">
-<span class="w-10 h-10 bg-tertiary/20 text-tertiary flex items-center justify-center font-headline-md text-headline-md font-bold shadow-[2px_2px_0_0_#000000]">03</span>
-<span class="material-symbols-outlined text-tertiary text-[28px]">diversity_3</span>
-</div>
-<div class="flex flex-col gap-space-xs">
-<h3 class="font-headline-md text-headline-md text-on-surface uppercase">Community-First Craft</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-              We don't build in hermetic isolation. Through iterative alpha builds, Discord design jams, and live speedrun feedback, our players sculpt boss mechanics and pacing alongside us.
-            </p>
-</div>
-<div class="mt-auto pt-space-md border-t-0 bg-surface-container-low p-space-sm font-label-code text-label-code text-tertiary flex items-center justify-between">
-<span>PUBLIC PLAYTESTS</span>
-<span class="font-bold">MONTHLY BUILDS</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Call to Action Box Section -->
-<section class="w-full py-space-xl px-space-md lg:px-margin bg-background relative">
-<div class="max-w-7xl mx-auto">
-<div class="bg-surface-container-high p-space-lg lg:p-space-xl shadow-[8px_8px_0_0_#000000] relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-space-xl">
-<!-- CRT Corner Tag -->
-<div class="absolute top-0 right-0 px-space-sm py-space-xs bg-tertiary text-on-tertiary font-label-code text-label-code uppercase tracking-wider">
-          BROADCAST ACTIVE
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pixel Verse Studios — 16-Bit Worlds, 32-Bit Hearts</title>
+    <meta
+      content="Pixel Verse Studios makes story-driven pixel-art games that teach while you play — Crab Quest, a crab's journey home through a polluted ocean, and Space X, an asteroid run across the solar system."
+      name="description"
+    />
+    <meta content="#0f131c" name="theme-color" />
+    <link href="assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/tailwind.config.js"></script>
+    <link rel="stylesheet" href="assets/css/site.css" />
+  </head>
+  <body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col">
+    <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_0_0_#000000]">
+      <div class="h-20 w-full px-space-md lg:px-margin xl:px-16 flex items-center justify-between gap-space-md">
+        <div class="flex items-center gap-space-sm sm:gap-space-md">
+          <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
+          <a class="flex flex-col text-left group" data-path="home" href="index.html">
+            <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface group-hover:text-primary transition-colors">PIXEL VERSE</span>
+            <span class="font-label-badge text-label-badge tracking-widest text-secondary uppercase">STUDIOS</span>
+          </a>
         </div>
-<!-- Content LHS -->
-<div class="flex flex-col gap-space-sm max-w-xl">
-<span class="font-label-code text-label-code text-secondary uppercase tracking-widest flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-[16px]">campaign</span>
-            GUILD RECRUITMENT CALL
-          </span>
-<h2 class="font-headline-xl text-headline-xl text-on-surface uppercase">
-            Ready to embark on an unforgettable quest?
-          </h2>
-<p class="font-body-md text-body-md text-on-surface-variant">
-            Connect directly with our programmers, download unreleased concept playable builds, and cast your vote on game lore choices.
-          </p>
-<div class="flex flex-wrap items-center gap-space-md pt-space-sm">
-<a class="inline-flex items-center gap-space-xs px-space-lg py-space-md bg-tertiary text-on-tertiary font-headline-sm text-label-badge uppercase tracking-wider shadow-[4px_4px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all" href="https://discord.com" rel="noopener noreferrer" target="_blank">
-<span class="material-symbols-outlined text-[20px]">forum</span>
-<span>Join Discord Server</span>
-</a>
-<div class="flex items-center gap-space-xs font-label-code text-label-code text-on-surface-variant">
-<span class="w-2 h-2 rounded-full bg-tertiary animate-ping"></span>
-<span>1,420 Adventurers Online</span>
-</div>
-</div>
-</div>
-<!-- Newsletter Subscription Terminal Box -->
-<div class="w-full lg:w-96 bg-surface-container-lowest p-space-md shadow-[4px_4px_0_0_#000000] flex flex-col gap-space-sm">
-<div class="flex items-center justify-between pb-space-xs bg-surface-container px-space-xs py-1">
-<span class="font-label-code text-label-code text-secondary uppercase">TRANSMISSION_STATION</span>
-<span class="font-label-code text-label-code text-outline">ENC: 256-BIT</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">
-            Subscribe for immediate closed-beta keys and cartridge collector announcements.
-          </p>
-<form class="flex flex-col gap-space-xs" id="quest-signup-form">
-<div class="relative">
-<input class="w-full h-11 px-space-md bg-surface-container text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary shadow-[inset_2px_2px_0_0_#000000]" id="quest-email" placeholder="adventurer@guild.net" required="" type="email"/>
-</div>
-<button class="w-full h-11 bg-primary text-on-primary font-headline-sm text-label-badge uppercase tracking-wider shadow-[3px_3px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-space-xs" type="submit">
-<span>Sign Up For Beta Access</span>
-<span class="material-symbols-outlined text-[18px]">send</span>
-</button>
-</form>
-<div class="hidden font-label-code text-label-code text-tertiary text-center pt-space-xs" id="signup-confirmation">
-            QUEST DISPATCH CONFIRMED. CHECK YOUR INBOX.
+        <nav class="hidden xl:flex items-center gap-space-xs p-space-xs bg-surface-container-low">
+          <a aria-current="page" class="nav-link" data-path="home" href="index.html">Home</a>
+          <a class="nav-link" data-path="games" href="games.html">Games</a>
+          <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
+          <a class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
+          <a class="nav-link" data-path="community" href="#newsletter">Community</a>
+        </nav>
+        <div class="flex items-center gap-space-sm sm:gap-space-md">
+          <a class="btn btn-primary btn-sm" data-path="play-demo" href="games.html">Our Games</a>
+          <button
+            aria-controls="mobile-nav"
+            aria-expanded="false"
+            aria-label="Open menu"
+            class="xl:hidden inline-flex items-center justify-center p-space-xs bg-surface-container text-on-surface shadow-[2px_2px_0_0_#000000] hover:bg-surface-container-high hover:text-secondary transition-all"
+            id="mobile-menu-btn"
+            type="button"
+          >
+            <span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span>
+          </button>
+        </div>
+      </div>
+      <nav
+        aria-label="Mobile navigation"
+        class="hidden xl:hidden w-full flex flex-col gap-space-xs px-space-md py-space-md bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_6px_0_0_#000000]"
+        id="mobile-nav"
+      >
+        <a aria-current="page" class="nav-link" data-path="home" href="index.html">Home</a>
+        <a class="nav-link" data-path="games" href="games.html">Games</a>
+        <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
+        <a class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
+        <a class="nav-link" data-path="community" href="#newsletter">Community</a>
+      </nav>
+    </header>
+
+    <main class="w-full pt-20 bg-background flex-1">
+      <section class="relative w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+          <div class="lg:col-span-7 flex flex-col gap-space-md">
+            <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface uppercase tracking-tight">
+              16-BIT WORLDS.<br />
+              <span class="text-primary">32-BIT HEARTS.</span>
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+              We make story-driven pixel-art games that teach while you play: a crab's journey home through a polluted ocean, and an asteroid run across the solar system.
+            </p>
+            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+              <a class="btn btn-primary" href="games.html">Explore Our Games</a>
+              <a class="btn btn-secondary" href="heros-journey.html">The Hero's Journey</a>
+            </div>
           </div>
-</div>
-</div>
-</div>
-</section>
-<!-- Video Reel Modal Overlay (Hidden by Default) -->
-<div class="fixed inset-0 z-50 hidden items-center justify-center bg-surface-container-lowest/80 backdrop-blur-md p-space-md" id="reel-modal">
-<div class="bg-surface-container-low max-w-3xl w-full p-space-md shadow-[8px_8px_0_0_#000000] relative flex flex-col gap-space-md">
-<div class="flex items-center justify-between pb-space-xs">
-<span class="font-headline-sm text-headline-sm text-secondary uppercase flex items-center gap-space-xs">
-<span class="material-symbols-outlined">smart_display</span>
-          Studio Reel // 2024 Showcase
-        </span>
-<button class="p-1 bg-surface-container hover:bg-surface-bright text-on-surface" id="close-reel-btn">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<!-- Video Player Mockup -->
-<div class="relative aspect-video w-full bg-surface-container-lowest overflow-hidden shadow-[inset_2px_2px_0_0_#000000] flex items-center justify-center">
-<img class="w-full h-full object-cover" data-alt="High-resolution collage of video game trailer sequences featuring 16-bit animations, pixel combat effects, character dialogue portraits, and dramatic retro typography from Pixel Verse Studios gameplay." src="assets/img/studio-reel-collage.jpg"/>
-<div class="absolute inset-0 bg-background/50 flex flex-col items-center justify-center gap-space-sm p-space-md text-center">
-<div class="w-16 h-16 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-[4px_4px_0_0_#000000]">
-<span class="material-symbols-outlined text-[36px]">play_arrow</span>
-</div>
-<span class="font-headline-md text-headline-md text-on-surface uppercase">CLICK TO INITIALIZE REEL</span>
-<span class="font-label-code text-label-code text-secondary">FORMAT: 4K REMASTERED RETRO 60FPS</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<script>
-  // Simple micro-interactions for modal and forms
-  const openReelBtn = document.getElementById('open-reel-btn');
-  const closeReelBtn = document.getElementById('close-reel-btn');
-  const reelModal = document.getElementById('reel-modal');
+          <div class="lg:col-span-5">
+            <div class="card p-space-sm">
+              <button aria-label="Enlarge the Home Sweet Home screenshot" class="block w-full text-left" type="button">
+                <img
+                  alt="Crab Quest screenshot of chapter 6: Home Sweet Home, the protected coral sanctuary."
+                  class="w-full h-72 lg:h-96 object-cover"
+                  data-lightbox="Crab Quest screenshot of chapter 6: Home Sweet Home, the protected coral sanctuary."
+                  src="assets/img/crab-quest/screens/chapter-6.jpg"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  if (openReelBtn && reelModal && closeReelBtn) {
-    openReelBtn.addEventListener('click', () => {
-      reelModal.classList.remove('hidden');
-      reelModal.classList.add('flex');
-    });
+      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background">
+        <div class="flex flex-col gap-space-lg">
+          <div class="flex flex-col gap-space-xs max-w-2xl">
+            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase">OUR GAMES</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Two educational pixel-art games, built in Python with Pygame Zero: one about our ocean, one about our solar system.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
+            <div class="card p-space-md lg:p-space-lg flex flex-col gap-space-md">
+              <button aria-label="Enlarge the Crab Quest start screen" class="block w-full text-left" type="button">
+                <img alt="Crab Quest start screen with the chapter select." class="w-full h-56 object-cover" data-lightbox="Crab Quest start screen with the chapter select." src="assets/img/crab-quest/screens/start.jpg" />
+              </button>
+              <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">Crab Quest</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                An ocean-themed educational adventure for ages 8–14. Play a crab escaping a kitchen counter, dodging seabirds and plastic trash, and coming home to a protected coral sanctuary.
+              </p>
+              <div class="flex flex-wrap gap-space-xs">
+                <span class="badge">Adventure</span>
+                <span class="badge">Ages 8–14</span>
+                <span class="badge">6 chapters</span>
+              </div>
+              <a class="btn btn-secondary mt-auto self-start" href="games.html#crab-quest">Explore Crab Quest</a>
+            </div>
+            <div class="card p-space-md lg:p-space-lg flex flex-col gap-space-md">
+              <button aria-label="Enlarge the Space X gameplay screenshot" class="block w-full text-left" type="button">
+                <img alt="Space X gameplay screenshot: the ship dodging asteroids." class="w-full h-56 object-cover" data-lightbox="Space X gameplay screenshot: the ship dodging asteroids." src="assets/img/space-x/screens/gameplay.jpg" />
+              </button>
+              <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">Space X</h3>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                An educational space shooter for ages 6–15. Steer and fire through asteroid waves across the solar system, and learn a fact about a planet every time you lose.
+              </p>
+              <div class="flex flex-wrap gap-space-xs">
+                <span class="badge">Shooter</span>
+                <span class="badge">Ages 6–15</span>
+                <span class="badge">9 planets</span>
+              </div>
+              <a class="btn btn-secondary mt-auto self-start" href="games.html#space-x">Explore Space X</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    closeReelBtn.addEventListener('click', () => {
-      reelModal.classList.add('hidden');
-      reelModal.classList.remove('flex');
-    });
+      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest">
+        <div class="flex flex-col gap-space-lg">
+          <div class="flex flex-col gap-space-xs max-w-2xl">
+            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase">THE STUDIO PHILOSOPHY</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              We make curated, crafted adventures that feel like a quest and play like a lesson — pixel art drawn by hand, gameplay tested on real controllers, stories that stay with you.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+            <div class="card p-space-lg flex flex-col gap-space-md">
+              <span class="font-headline-md text-headline-md text-secondary">01</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">HANDCRAFTED PIXEL ART</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                Every sprite, background, and splash frame is drawn by hand. No AI shortcuts, no generic asset packs — pure pixel craft.
+              </p>
+            </div>
+            <div class="card p-space-lg flex flex-col gap-space-md">
+              <span class="font-headline-md text-headline-md text-primary">02</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">THE HERO'S HEART</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                We build each game around the classic hero's journey. Our protagonists fail, learn, transform, and come home with something to share.
+              </p>
+            </div>
+            <div class="card p-space-lg flex flex-col gap-space-md">
+              <span class="font-headline-md text-headline-md text-tertiary">03</span>
+              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">COMMUNITY-FIRST CRAFT</h3>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                We build in the open. Iterative playtest builds and player feedback shape the chapters, pacing, and difficulty as we go.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    reelModal.addEventListener('click', (e) => {
-      if (e.target === reelModal) {
-        reelModal.classList.add('hidden');
-        reelModal.classList.remove('flex');
-      }
-    });
-  }
+    <footer class="w-full bg-surface-container-lowest shadow-[0_-4px_0_0_#000000] relative z-20 mt-auto">
+      <div class="w-full px-space-md lg:px-margin xl:px-16 py-space-xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-xl">
+          <div class="lg:col-span-4 flex flex-col gap-space-md">
+            <div class="flex items-center gap-space-sm">
+              <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
+              <span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">PIXEL VERSE</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+              Story-driven pixel-art games that teach while you play — a crab's journey home through a polluted ocean, and an asteroid run across the solar system.
+            </p>
+          </div>
+          <div class="lg:col-span-5 flex flex-col gap-space-sm" id="newsletter">
+            <div class="flex items-center gap-space-xs text-secondary">
+              <span class="material-symbols-outlined text-[20px]">mail</span>
+              <span class="font-headline-sm text-label-badge uppercase tracking-wider">Join the Guild</span>
+            </div>
+            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">News about new chapters, planet facts, and upcoming games — straight to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-space-sm pt-space-xs" id="newsletter-form">
+              <div class="relative flex-1">
+                <input
+                  aria-label="Email address"
+                  class="w-full h-10 px-space-md bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-[inset_2px_2px_0_0_#000000]"
+                  name="email"
+                  placeholder="you@example.com"
+                  required=""
+                  type="email"
+                />
+              </div>
+              <button class="btn btn-secondary btn-sm h-10" type="submit">Enlist</button>
+            </form>
+            <div class="hidden font-body-sm text-body-sm uppercase text-tertiary pt-space-xs" id="newsletter-confirmation" role="status">
+              Thanks for joining — you're enlisted.
+            </div>
+          </div>
+          <div class="lg:col-span-3 flex flex-col gap-space-sm">
+            <span class="font-headline-sm text-label-badge uppercase text-primary tracking-wider">Transmissions</span>
+            <div class="grid grid-cols-2 gap-space-sm">
+              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
+                <span class="material-symbols-outlined text-[18px]">gamepad</span>
+                <span class="font-label-badge text-label-badge uppercase">itch.io</span>
+              </a>
+              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
+                <span class="material-symbols-outlined text-[18px]">forum</span>
+                <span class="font-label-badge text-label-badge uppercase">Discord</span>
+              </a>
+              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
+                <span class="material-symbols-outlined text-[18px]">play_circle</span>
+                <span class="font-label-badge text-label-badge uppercase">YouTube</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+          <div class="font-body-sm text-body-sm text-outline">© 2024 Pixel Verse Studios. All rights reserved.</div>
+          <div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
+            <a class="hover:text-primary transition-colors" href="#">Terms</a>
+            <a class="hover:text-primary transition-colors" href="#">Privacy</a>
+            <a class="hover:text-primary transition-colors" href="studio-lore.html#press-inquiries">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-  const signupForm = document.getElementById('quest-signup-form');
-  const confirmationMsg = document.getElementById('signup-confirmation');
-
-  if (signupForm && confirmationMsg) {
-    signupForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      signupForm.classList.add('hidden');
-      confirmationMsg.classList.remove('hidden');
-    });
-  }
-</script></main><footer class="w-full bg-surface-container-lowest shadow-[0_-4px_0_0_#000000] relative z-20 mt-auto"><div class="w-full px-space-md lg:px-margin py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-xl"><div class="lg:col-span-4 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img alt="Pixel Verse Studios Logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg"/><span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">PIXEL VERSE</span></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">Engineering heartfelt 16-bit narrative epics and arcade cabinet adrenaline. Crafted with soul for adventurous gamers and digital cartridge collectors.</p><div class="flex items-center gap-space-sm pt-space-xs"><span class="inline-flex items-center gap-space-xs font-label-code text-label-code text-tertiary bg-surface-container px-space-sm py-space-xs rounded-DEFAULT shadow-[2px_2px_0_0_#000000]"><span class="material-symbols-outlined text-[14px]">wifi_tethering</span>SERVER: ONLINE</span><span class="font-label-code text-label-code text-secondary bg-surface-container px-space-sm py-space-xs rounded-DEFAULT shadow-[2px_2px_0_0_#000000]">V.2.4.0-PROD</span></div></div><div class="lg:col-span-5 flex flex-col gap-space-sm" id="newsletter"><div class="flex items-center gap-space-xs text-secondary"><span class="material-symbols-outlined text-[20px]">mail</span><span class="font-headline-sm text-label-badge uppercase tracking-wider">Join the Guild // Dispatch</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Receive secret drop codes, internal devlogs, playtest keys, and retro soundtrack releases directly to your inbox.</p><form id="newsletter-form" class="flex flex-col sm:flex-row gap-space-sm pt-space-xs"><div class="relative flex-1"><input class="w-full h-10 px-space-md bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-[inset_2px_2px_0_0_#000000]" name="email" placeholder="hero@pixelverse.realm" required="" aria-label="Email address" type="email"/></div><button class="h-10 px-space-md bg-secondary text-on-secondary-fixed font-headline-sm text-label-badge uppercase tracking-wider shadow-[3px_3px_0_0_#000000] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_#000000] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-space-xs" type="submit"><span>Enlist</span><span class="material-symbols-outlined text-[16px]">bolt</span></button></form><div class="hidden font-label-code text-label-code uppercase text-tertiary pt-space-xs" id="newsletter-confirmation" role="status">>> ENLISTED. CHECK YOUR INBOX FOR DISPATCH #001.</div></div><div class="lg:col-span-3 flex flex-col gap-space-sm"><span class="font-headline-sm text-label-badge uppercase text-primary tracking-wider">Transmissions</span><div class="grid grid-cols-2 gap-space-sm"><a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#"><span class="material-symbols-outlined text-[18px]">stadia_controller</span><span class="font-label-code text-label-code uppercase">Steam</span></a><a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#"><span class="material-symbols-outlined text-[18px]">joystick</span><span class="font-label-code text-label-code uppercase">itch.io</span></a><a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#"><span class="material-symbols-outlined text-[18px]">forum</span><span class="font-label-code text-label-code uppercase">Discord</span></a><a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#"><span class="material-symbols-outlined text-[18px]">play_circle</span><span class="font-label-code text-label-code uppercase">YouTube</span></a></div></div></div><div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="font-label-code text-label-code text-outline">© 2024 Pixel Verse Studios. Built for the Arcade Vanguard. All rights reserved.</div><div class="flex items-center gap-space-md font-label-code text-label-code text-on-surface-variant"><a class="hover:text-primary transition-colors" href="#">TERMS_OF_SERVICE</a><a class="hover:text-primary transition-colors" href="#">PRIVACY_POLICY</a><a class="hover:text-primary transition-colors" href="studio-lore.html#press-inquiries">PRESS_KIT</a></div></div></div></footer><script>
-  // Shared site script — mobile menu toggle + footer newsletter. Identical on all four pages.
-  (function () {
-    var menuBtn = document.getElementById('mobile-menu-btn');
-    var menuIcon = document.getElementById('mobile-menu-icon');
-    var mobileNav = document.getElementById('mobile-nav');
-    if (!menuBtn || !menuIcon || !mobileNav) return;
-    function setMenu(open) {
-      mobileNav.classList.toggle('hidden', !open);
-      menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      menuIcon.textContent = open ? 'close' : 'menu';
-    }
-    menuBtn.addEventListener('click', function () {
-      setMenu(mobileNav.classList.contains('hidden'));
-    });
-    mobileNav.addEventListener('click', function (e) {
-      if (e.target.closest('a')) setMenu(false);
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') setMenu(false);
-    });
-  })();
-  (function () {
-    var form = document.getElementById('newsletter-form');
-    var confirmation = document.getElementById('newsletter-confirmation');
-    if (!form || !confirmation) return;
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      form.classList.add('hidden');
-      confirmation.classList.remove('hidden');
-    });
-  })();
-</script>
-</body></html>
+    <script defer src="assets/js/site.js"></script>
+  </body>
+</html>

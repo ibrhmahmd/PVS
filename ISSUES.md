@@ -35,3 +35,65 @@
 - [x] Stitch sources archived under `design/` (Neo-Arcade DESIGN.md, Bauhaus DESIGN.md marked unused, `screen.png` references, logo/avatar renders)
 - [x] Every page renders the same as its `screen.png` (no visual regressions)
 - [x] CLAUDE.md updated for the new layout
+
+## #2 — Simplify the site: cut clutter, full width, real game content, shared assets `[refactor]`
+
+**Status:** done
+
+**Goal:** A calmer, full-width site whose game content matches the two real games (`~/Desktop/AswanProjects/Crab-game`, `~/Desktop/AswanProjects/space-game`), with shared code in one place.
+
+**Decisions (user, 2026-09-24):**
+- Cut every audit candidate (A1–A12, B1–B10) **except** the per-game hero's journey (kept and rewritten from source) and the arc chart (kept, relabelled).
+- Remove **all** decorative monospace "terminal" labels.
+- Content spans the full width (no `max-w-7xl` cap); paragraphs keep a readable measure.
+- Real facts only for games; real game art replaces AI game images.
+- Titles: **Crab Quest** (matches the in-game logo) and **Space X**.
+- Space X hero's journey = its real gameplay loop (the code has no story).
+- Studio & Lore: remove invented stats and Project Dawn; team + origin story stay as editable placeholders.
+- Single delegation pass covering content, layout and code cleanup (shared config/CSS/JS files, reusable component classes).
+- Real media added by the user: Crab Quest + Space X screenshots and team portraits (Mariam, Salah, Sleem — names only). Originals archived in `design/source-media/`.
+- Hero's Journey page redesign: Pixar **Story Spine** beats (Once upon a time / One day / Because of that / Until finally / And ever since then) mapped to real chapters; both games stacked (no switch); arc chart removed.
+- Screenshots displayed large site-wide, click to open full-size overlay.
+
+**Acceptance criteria:**
+- [x] `python3 scripts/check_site.py` passes (extended for this issue)
+- [x] Crab Quest: 6 chapters mapped to journey stages, real mechanics/win conditions, real level art
+- [x] Space X: 6-stage gameplay-loop journey, real controls/mechanics, 9 planet facts, real art
+- [x] No invented claims (Steam/Switch releases, playtimes, ratings, fictional characters in game copy)
+- [x] Shared Tailwind config / CSS / JS live in `assets/`; no inline copies
+- [x] Pages render correctly at 1920px and 390px; no JS errors
+- [x] CLAUDE.md updated
+
+## #3 — Compile Tailwind instead of the Play CDN `[performance]`
+
+**Status:** open — plan to be agreed before delegation
+
+`cdn.tailwindcss.com` compiles CSS in every visitor's browser (console warning "should not be used in production", render delay). Replace it with a one-time build that outputs a static `assets/css/tailwind.css` from `assets/js/tailwind.config.js`, keeping the site deployable as plain files.
+
+**Decision (user, 2026-09-24):** Tailwind **standalone CLI** binary — no Node/npm in the repo.
+
+**Acceptance:** no `cdn.tailwindcss.com` reference; pages render identically at 1920px/390px; build command documented in CLAUDE.md; `check_site.py` passes.
+
+## #4 — Footer links point nowhere `[bug]`
+
+**Status:** open — needs real URLs from the user
+
+itch.io, Discord, YouTube, Terms and Privacy links are `href="#"` on all four pages. Replace with real URLs; remove any the studio doesn't have (Terms/Privacy likely removed unless pages are written).
+
+**Needs from user:** itch.io, Discord, YouTube URLs — user will paste them; any not provided get removed.
+
+## #5 — Downloadable builds + "Play" buttons for both games `[feature]`
+
+**Status:** open — needs decisions from the user
+
+Both games are Pygame Zero desktop apps with no download anywhere. Package them (e.g. itch.io pages, or zipped builds), then add "Play / Download" buttons on Home and Games.
+
+**Decisions (user, 2026-09-24):** host on **itch.io** (one page per game; user-side account steps via `$wizard`); package **both** a PyInstaller Windows .exe and a source zip. Packaging work happens in the game repos (`~/Desktop/AswanProjects/`), tracked there.
+
+## #6 — Real studio content on Studio & Lore `[docs]`
+
+**Status:** open — needs facts from the user
+
+Placeholder copy remains: the origin story, the AI-generated studio photo (`assets/img/studio-workshop.jpg`), empty team roles for Mariam/Salah/Sleem, and "© 2024" in the footer.
+
+**Needs from user:** the studio's real story (who, when, why), team roles, a real photo or keep the art, and the correct year.
