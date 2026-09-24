@@ -66,7 +66,7 @@
 
 ## #3 — Compile Tailwind instead of the Play CDN `[performance]`
 
-**Status:** open — plan to be agreed before delegation
+**Status:** done
 
 `cdn.tailwindcss.com` compiles CSS in every visitor's browser (console warning "should not be used in production", render delay). Replace it with a one-time build that outputs a static `assets/css/tailwind.css` from `assets/js/tailwind.config.js`, keeping the site deployable as plain files.
 

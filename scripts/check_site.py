@@ -19,14 +19,14 @@ EXPECTED_HREF = {
     "community": "#newsletter",
     "play-demo": "games.html",
 }
-SHARED_ASSETS = ["assets/css/site.css", "assets/js/tailwind.config.js", "assets/js/site.js"]
+SHARED_ASSETS = ["assets/css/tailwind.css", "assets/css/site.css", "assets/js/site.js"]
 # Invented claims / removed components that must not come back (case-insensitive).
 FORBIDDEN = [
     "barnaby", "jax thalas", "project dawn", "beyond the nebula", "claw of destiny", "steamworks",
     "steam deck", "wishlist", "nintendo", "4.9 / 5", "500k", "420k", "98.4", "8-bit on", "scanline",
     "reel-modal", "elena rostova", "sys.ready", "crab game", "comparison-container", "quest-signup-form",
     "elena vance", "kai chen", "mira soren", "leo marchetti", "both are free", "four people",
-    "max-w-7xl", "tailwind-config",
+    "max-w-7xl", "tailwind-config", "cdn.tailwindcss.com", "assets/js/tailwind.config.js",
 ]
 CRAB_CHAPTERS = ["Kitchen Escape", "Beach Run", "Sea Floor Dodging", "Shrimp Help", "Predator Chase", "Home Sweet Home"]
 
@@ -219,6 +219,12 @@ for root, _, files in os.walk("assets/img"):
         path = os.path.join(root, f)
         if path not in corpus:
             errors.append(f"unreferenced image {path} (delete it)")
+
+# compiled Tailwind CSS present (issue #3)
+if not os.path.isfile("assets/css/tailwind.css") or os.path.getsize("assets/css/tailwind.css") < 5000:
+    errors.append("assets/css/tailwind.css missing or suspiciously small (run scripts/build-css.sh)")
+if os.path.exists("assets/js/tailwind.config.js"):
+    errors.append("assets/js/tailwind.config.js should be replaced by the root tailwind.config.js")
 
 # no leftover stitch dirs at root
 for d in os.listdir("."):
