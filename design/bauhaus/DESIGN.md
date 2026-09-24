@@ -1,3 +1,5 @@
+> **Unused.** Alternate light-theme direction from the Stitch session; no page implements it.
+
 # Bauhaus — Neo-Brutalist
 
 ## North Star: "Form Follows Function"
