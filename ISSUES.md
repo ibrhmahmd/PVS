@@ -84,7 +84,7 @@ itch.io, Discord, YouTube, Terms and Privacy links are `href="#"` on all four pa
 
 ## #5 — Downloadable builds + "Play" buttons for both games `[feature]`
 
-**Status:** open — needs decisions from the user
+**Status:** blocked — game builds happen on the user's Windows 11 laptop. Game-side work is tracked in each game repo: `~/Desktop/AswanProjects/Crab-game/ISSUES.md` #1 and `~/Desktop/AswanProjects/space-game/ISSUES.md` #1–#2. This site's part (Play/Download buttons linking to the itch.io pages) starts once those pages exist.
 
 Both games are Pygame Zero desktop apps with no download anywhere. Package them (e.g. itch.io pages, or zipped builds), then add "Play / Download" buttons on Home and Games.
 
