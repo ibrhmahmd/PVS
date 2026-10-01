@@ -25,8 +25,8 @@ Layout:
 
 Crab Quest and Space X are real, playable games (the sources live outside this repo). The site describes them accurately:
 
-- **Crab Quest** (ages 8–14): 6 chapters — Kitchen Escape, Beach Run, Sea Floor Dodging, Shrimp Help, Predator Chase, Home Sweet Home. Controls: ←/→ or A/D move, SPACE jump, R restart, ENTER back to level select.
-- **Space X** (ages 6–15): an educational space shooter. 3 hearts, +1 point per asteroid, level = 1 + score/30, spawn interval 60→20 frames; a fact about one of 9 solar-system bodies appears at game over. Controls: ←/→ steer, SPACE start/fire, P pause, R restart, F fullscreen.
+- **Crab Quest** (Ages 5-99): 6 chapters — Kitchen Escape, Beach Run, Sea Floor Dodging, Shrimp Help, Predator Chase, Home Sweet Home. Controls: ←/→ or A/D move, SPACE jump, R restart, ENTER back to level select.
+- **Space X** (Ages 5-99): an educational space shooter. 3 hearts, +1 point per asteroid, level = 1 + score/30, spawn interval 60→20 frames; a fact about one of 9 solar-system bodies appears at game over. Controls: ←/→ steer, SPACE start/fire, P pause, R restart, F fullscreen.
 
 Never replace this with invented features, fake stats/steam wishlists, or stage names like "Claw of Destiny". The game titles are exactly "Crab Quest" and "Space X".
 
