@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Pixel Verse Studios — 16-Bit Worlds, 32-Bit Hearts</title>
-    <meta
-      content="Pixel Verse Studios makes story-driven pixel-art games that teach while you play — Crab Quest, a crab's journey home through a polluted ocean, and Space X, an asteroid run across the solar system."
-      name="description"
-    />
+    <meta content="Pixel Verse Studios makes story-driven pixel-art games that teach while you play — Crab Quest, a crab's journey home through a polluted ocean, and Space X, an asteroid run across the solar system." name="description" />
     <meta content="#0f131c" name="theme-color" />
     <link href="assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
     <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -17,154 +14,127 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col">
-    <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_0_0_#000000]">
-      <div class="h-20 w-full px-space-md lg:px-margin xl:px-16 flex items-center justify-between gap-space-md">
-        <div class="flex items-center gap-space-sm sm:gap-space-md">
-          <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
-          <a class="flex flex-col text-left group" data-path="home" href="index.html">
-            <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface group-hover:text-primary transition-colors">PIXEL VERSE</span>
-            <span class="font-label-badge text-label-badge tracking-widest text-secondary uppercase">STUDIOS</span>
-          </a>
-        </div>
-        <nav class="hidden xl:flex items-center gap-space-xs p-space-xs bg-surface-container-low">
-          <a aria-current="page" class="nav-link" data-path="home" href="index.html">Home</a>
+  <body>
+    <header class="header">
+      <div class="header-row">
+        <a class="brand" data-path="home" href="index.html">
+          <img alt="Pixel Verse Studios logo" class="site-logo" src="assets/img/logo.jpg" />
+          <span class="brand-name">
+            <span class="brand-title">PIXEL VERSE</span>
+            <span class="brand-subtitle">STUDIOS</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Main">
+          <a class="nav-link" aria-current="page" data-path="home" href="index.html">Home</a>
           <a class="nav-link" data-path="games" href="games.html">Games</a>
           <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
           <a class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
-          <a class="nav-link" data-path="community" href="#newsletter">Community</a>
         </nav>
-        <div class="flex items-center gap-space-sm sm:gap-space-md">
-          <a class="btn btn-primary btn-sm" data-path="play-demo" href="games.html">Our Games</a>
-          <button
-            aria-controls="mobile-nav"
-            aria-expanded="false"
-            aria-label="Open menu"
-            class="xl:hidden inline-flex items-center justify-center p-space-xs bg-surface-container text-on-surface shadow-[2px_2px_0_0_#000000] hover:bg-surface-container-high hover:text-secondary transition-all"
-            id="mobile-menu-btn"
-            type="button"
-          >
-            <span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span>
-          </button>
-        </div>
+        <a class="btn btn-primary btn-small" data-path="play-demo" href="games.html">Our Games</a>
       </div>
-      <nav
-        aria-label="Mobile navigation"
-        class="hidden xl:hidden w-full flex flex-col gap-space-xs px-space-md py-space-md bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_6px_0_0_#000000]"
-        id="mobile-nav"
-      >
-        <a aria-current="page" class="nav-link" data-path="home" href="index.html">Home</a>
-        <a class="nav-link" data-path="games" href="games.html">Games</a>
-        <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
-        <a class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
-        <a class="nav-link" data-path="community" href="#newsletter">Community</a>
-      </nav>
     </header>
 
-    <main class="w-full pt-20 bg-background flex-1">
-      <section class="relative w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-          <div class="lg:col-span-7 flex flex-col gap-space-md">
-            <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface uppercase tracking-tight">
+    <main>
+      <section class="section section-dark">
+        <div class="split split-7-5 split-hero">
+          <div class="stack">
+            <h1 class="title-hero">
               16-BIT WORLDS.<br />
-              <span class="text-primary">32-BIT HEARTS.</span>
+              <span class="accent">32-BIT HEARTS.</span>
             </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+            <p class="text-lead text-narrow">
               We make story-driven pixel-art games that teach while you play: a crab's journey home through a polluted ocean, and an asteroid run across the solar system.
             </p>
-            <div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+            <div class="row">
               <a class="btn btn-primary" href="games.html">Explore Our Games</a>
               <a class="btn btn-secondary" href="heros-journey.html">The Hero's Journey</a>
             </div>
           </div>
-          <div class="lg:col-span-5">
-            <div class="card p-space-sm">
-              <button aria-label="Enlarge the Home Sweet Home screenshot" class="block w-full text-left" type="button">
-                <img
-                  alt="Crab Quest screenshot of chapter 6: Home Sweet Home, the protected coral sanctuary."
-                  class="w-full h-72 lg:h-96 object-cover"
-                  data-lightbox="Crab Quest screenshot of chapter 6: Home Sweet Home, the protected coral sanctuary."
-                  src="assets/img/crab-quest/screens/chapter-6.jpg"
-                />
-              </button>
-            </div>
+          <div class="card pad-small">
+            <button aria-label="Enlarge the Home Sweet Home screenshot" class="shot-button" type="button">
+              <img
+                alt="Crab Quest screenshot of chapter 6: Home Sweet Home, the protected coral sanctuary."
+                class="shot shot-cover-tall"
+                data-lightbox="Crab Quest screenshot of chapter 6: Home Sweet Home, the protected coral sanctuary."
+                src="assets/img/crab-quest/screens/chapter-6.jpg"
+              />
+            </button>
           </div>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background">
-        <div class="flex flex-col gap-space-lg">
-          <div class="flex flex-col gap-space-xs max-w-2xl">
-            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase">OUR GAMES</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
+      <section class="section">
+        <div class="stack-wide">
+          <div class="stack-tight text-narrow">
+            <h2 class="title-xl">OUR GAMES</h2>
+            <p class="text">
               Two educational pixel-art games, built in Python with Pygame Zero: one about our ocean, one about our solar system.
             </p>
           </div>
-          <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
-            <div class="card p-space-md lg:p-space-lg flex flex-col gap-space-md">
-              <button aria-label="Enlarge the Crab Quest start screen" class="block w-full text-left" type="button">
-                <img alt="Crab Quest start screen with the chapter select." class="w-full h-56 object-cover" data-lightbox="Crab Quest start screen with the chapter select." src="assets/img/crab-quest/screens/start.jpg" />
+          <div class="grid-2">
+            <div class="card pad-medium pad-medium-large stack">
+              <button aria-label="Enlarge the Crab Quest start screen" class="shot-button" type="button">
+                <img alt="Crab Quest start screen with the chapter select." class="shot shot-cover" data-lightbox="Crab Quest start screen with the chapter select." src="assets/img/crab-quest/screens/start.jpg" />
               </button>
-              <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">Crab Quest</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
+              <h3 class="title-lg">Crab Quest</h3>
+              <p class="text">
                 An ocean-themed educational adventure for Ages 5-99. Play a crab escaping a kitchen counter, dodging seabirds and plastic trash, and coming home to a protected coral sanctuary.
               </p>
-              <div class="flex flex-wrap gap-space-xs">
+              <div class="row-tight">
                 <span class="badge">Adventure</span>
                 <span class="badge">Ages 5-99</span>
                 <span class="badge">6 chapters</span>
               </div>
-              <a class="btn btn-secondary mt-auto self-start" href="games.html#crab-quest">Explore Crab Quest</a>
+              <a class="btn btn-secondary push-down" href="games.html#crab-quest">Explore Crab Quest</a>
             </div>
-            <div class="card p-space-md lg:p-space-lg flex flex-col gap-space-md">
-              <button aria-label="Enlarge the Space X gameplay screenshot" class="block w-full text-left" type="button">
-                <img alt="Space X gameplay screenshot: the ship dodging asteroids." class="w-full h-56 object-cover" data-lightbox="Space X gameplay screenshot: the ship dodging asteroids." src="assets/img/space-x/screens/gameplay.jpg" />
+            <div class="card pad-medium pad-medium-large stack">
+              <button aria-label="Enlarge the Space X gameplay screenshot" class="shot-button" type="button">
+                <img alt="Space X gameplay screenshot: the ship dodging asteroids." class="shot shot-cover" data-lightbox="Space X gameplay screenshot: the ship dodging asteroids." src="assets/img/space-x/screens/gameplay.jpg" />
               </button>
-              <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">Space X</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">
+              <h3 class="title-lg">Space X</h3>
+              <p class="text">
                 An educational space shooter for Ages 5-99. Steer and fire through asteroid waves across the solar system, and learn a fact about a planet every time you lose.
               </p>
-              <div class="flex flex-wrap gap-space-xs">
+              <div class="row-tight">
                 <span class="badge">Shooter</span>
                 <span class="badge">Ages 5-99</span>
                 <span class="badge">9 planets</span>
               </div>
-              <a class="btn btn-secondary mt-auto self-start" href="games.html#space-x">Explore Space X</a>
+              <a class="btn btn-secondary push-down" href="games.html#space-x">Explore Space X</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest">
-        <div class="flex flex-col gap-space-lg">
-          <div class="flex flex-col gap-space-xs max-w-2xl">
-            <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase">THE STUDIO PHILOSOPHY</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
+      <section class="section section-dark">
+        <div class="stack-wide">
+          <div class="stack-tight text-narrow">
+            <h2 class="title-xl">THE STUDIO PHILOSOPHY</h2>
+            <p class="text">
               We make curated, crafted adventures that feel like a quest and play like a lesson — pixel art drawn by hand, gameplay tested on real controllers, stories that stay with you.
             </p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-            <div class="card p-space-lg flex flex-col gap-space-md">
-              <span class="font-headline-md text-headline-md text-secondary">01</span>
-              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">HANDCRAFTED PIXEL ART</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
+          <div class="grid-3">
+            <div class="card pad-large stack">
+              <span class="title-md number-blue">01</span>
+              <h3 class="title-md">HANDCRAFTED PIXEL ART</h3>
+              <p class="text-small">
                 Every sprite, background, and splash frame is drawn by hand. No AI shortcuts, no generic asset packs — pure pixel craft.
               </p>
             </div>
-            <div class="card p-space-lg flex flex-col gap-space-md">
-              <span class="font-headline-md text-headline-md text-primary">02</span>
-              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">THE HERO'S HEART</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
+            <div class="card pad-large stack">
+              <span class="title-md number-purple">02</span>
+              <h3 class="title-md">THE HERO'S HEART</h3>
+              <p class="text-small">
                 We build each game around the classic hero's journey. Our protagonists fail, learn, transform, and come home with something to share.
               </p>
             </div>
-            <div class="card p-space-lg flex flex-col gap-space-md">
-              <span class="font-headline-md text-headline-md text-tertiary">03</span>
-              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">COMMUNITY-FIRST CRAFT</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
+            <div class="card pad-large stack">
+              <span class="title-md number-green">03</span>
+              <h3 class="title-md">COMMUNITY-FIRST CRAFT</h3>
+              <p class="text-small">
                 We build in the open. Iterative playtest builds and player feedback shape the chapters, pacing, and difficulty as we go.
               </p>
             </div>
@@ -173,65 +143,42 @@
       </section>
     </main>
 
-    <footer class="w-full bg-surface-container-lowest shadow-[0_-4px_0_0_#000000] relative z-20 mt-auto">
-      <div class="w-full px-space-md lg:px-margin xl:px-16 py-space-xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-xl">
-          <div class="lg:col-span-4 flex flex-col gap-space-md">
-            <div class="flex items-center gap-space-sm">
-              <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
-              <span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">PIXEL VERSE</span>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="stack">
+            <div class="brand">
+              <img alt="Pixel Verse Studios logo" class="site-logo" src="assets/img/logo.jpg" />
+              <span class="brand-title">PIXEL VERSE</span>
             </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            <p class="footer-note">
               Story-driven pixel-art games that teach while you play — a crab's journey home through a polluted ocean, and an asteroid run across the solar system.
             </p>
           </div>
-          <div class="lg:col-span-5 flex flex-col gap-space-sm" id="newsletter">
-            <div class="flex items-center gap-space-xs text-secondary">
-              <span class="material-symbols-outlined text-[20px]">mail</span>
-              <span class="font-headline-sm text-label-badge uppercase tracking-wider">Join the Guild</span>
-            </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">News about new chapters, planet facts, and upcoming games — straight to your inbox.</p>
-            <form class="flex flex-col sm:flex-row gap-space-sm pt-space-xs" id="newsletter-form">
-              <div class="relative flex-1">
-                <input
-                  aria-label="Email address"
-                  class="w-full h-10 px-space-md bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-[inset_2px_2px_0_0_#000000]"
-                  name="email"
-                  placeholder="you@example.com"
-                  required=""
-                  type="email"
-                />
-              </div>
-              <button class="btn btn-secondary btn-sm h-10" type="submit">Enlist</button>
-            </form>
-            <div class="hidden font-body-sm text-body-sm uppercase text-tertiary pt-space-xs" id="newsletter-confirmation" role="status">
-              Thanks for joining — you're enlisted.
-            </div>
-          </div>
-          <div class="lg:col-span-3 flex flex-col gap-space-sm">
-            <span class="font-headline-sm text-label-badge uppercase text-primary tracking-wider">Transmissions</span>
-            <div class="grid grid-cols-2 gap-space-sm">
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">gamepad</span>
-                <span class="font-label-badge text-label-badge uppercase">itch.io</span>
+          <div class="stack">
+            <span class="label accent">Find us</span>
+            <div class="social-links">
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">gamepad</span>
+                <span class="label label-soft">itch.io</span>
               </a>
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">forum</span>
-                <span class="font-label-badge text-label-badge uppercase">Discord</span>
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">forum</span>
+                <span class="label label-soft">Discord</span>
               </a>
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">play_circle</span>
-                <span class="font-label-badge text-label-badge uppercase">YouTube</span>
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">play_circle</span>
+                <span class="label label-soft">YouTube</span>
               </a>
             </div>
           </div>
         </div>
-        <div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
-          <div class="font-body-sm text-body-sm text-outline">© 2024 Pixel Verse Studios. All rights reserved.</div>
-          <div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-            <a class="hover:text-primary transition-colors" href="#">Terms</a>
-            <a class="hover:text-primary transition-colors" href="#">Privacy</a>
-            <a class="hover:text-primary transition-colors" href="studio-lore.html#press-inquiries">Contact</a>
+        <div class="footer-bottom">
+          <div class="copyright">© 2024 Pixel Verse Studios. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="studio-lore.html#press-inquiries">Contact</a>
           </div>
         </div>
       </div>

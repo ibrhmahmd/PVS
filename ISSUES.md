@@ -97,3 +97,24 @@ Both games are Pygame Zero desktop apps with no download anywhere. Package them 
 Placeholder copy remains: the origin story, the AI-generated studio photo (`assets/img/studio-workshop.jpg`), empty team roles for Mariam/Salah/Sleem, and "© 2024" in the footer.
 
 **Needs from user:** the studio's real story (who, when, why), team roles, a real photo or keep the art, and the correct year.
+
+## #7 — Make the site kid-simple `[refactor]`
+
+**Status:** done — awaiting user review and commit
+
+Goal: code a curious 12-year-old could read top to bottom.
+
+**Decisions (user, 2026-10-08):**
+- Drop the newsletter form, the contact form and the mobile menu button (listed under Limits in the README).
+- Replace compiled Tailwind with one hand-written `assets/css/styles.css` using purpose names.
+- Merge the scripts into one plain-function `site.js` (lightbox only); delete `studio-lore.js`.
+- Trim `scripts/check_site.py` to plain loops.
+
+**Done:**
+- [x] `styles.css` replaces `tailwind.css`, `site.css`, `tailwind.input.css`, `tailwind.config.js`, `scripts/build-css.sh` and `bin/`
+- [x] All four pages rewritten with purpose class names; forms and mobile menu removed; the `Community` nav link removed
+- [x] README with a Limits section; `CLAUDE.md` and `AGENTS.md` rewritten
+- [x] `check_site.py` passes
+- [x] Restored `assets/img/space-x/asteroid.png` and `ship.png`, which the "markting updates" commit deleted by mistake (broken images on games and journey pages)
+
+**Note:** issues #1 and #3 describe the old Play CDN / Tailwind setup and the removed mobile menu and newsletter; they are history.

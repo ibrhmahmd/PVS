@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Studio &amp; Lore — Pixel Verse Studios</title>
-    <meta
-      content="Inside Pixel Verse Studios: how Crab Quest and Space X were made, the six-stage arc they follow, the three people behind them, and how to get in touch."
-      name="description"
-    />
+    <meta content="Inside Pixel Verse Studios: how Crab Quest and Space X were made, the team behind them, and how to get in touch." name="description" />
     <meta content="#0f131c" name="theme-color" />
     <link href="assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
     <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -17,299 +14,176 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col">
-    <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_0_0_#000000]">
-      <div class="h-20 w-full px-space-md lg:px-margin xl:px-16 flex items-center justify-between gap-space-md">
-        <div class="flex items-center gap-space-sm sm:gap-space-md">
-          <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
-          <a class="flex flex-col text-left group" data-path="home" href="index.html">
-            <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface group-hover:text-primary transition-colors">PIXEL VERSE</span>
-            <span class="font-label-badge text-label-badge tracking-widest text-secondary uppercase">STUDIOS</span>
-          </a>
-        </div>
-        <nav class="hidden xl:flex items-center gap-space-xs p-space-xs bg-surface-container-low">
+  <body>
+    <header class="header">
+      <div class="header-row">
+        <a class="brand" data-path="home" href="index.html">
+          <img alt="Pixel Verse Studios logo" class="site-logo" src="assets/img/logo.jpg" />
+          <span class="brand-name">
+            <span class="brand-title">PIXEL VERSE</span>
+            <span class="brand-subtitle">STUDIOS</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Main">
           <a class="nav-link" data-path="home" href="index.html">Home</a>
           <a class="nav-link" data-path="games" href="games.html">Games</a>
           <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
-          <a aria-current="page" class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
-          <a class="nav-link" data-path="community" href="#newsletter">Community</a>
+          <a class="nav-link" aria-current="page" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
         </nav>
-        <div class="flex items-center gap-space-sm sm:gap-space-md">
-          <a class="btn btn-primary btn-sm" data-path="play-demo" href="games.html">Our Games</a>
-          <button
-            aria-controls="mobile-nav"
-            aria-expanded="false"
-            aria-label="Open menu"
-            class="xl:hidden inline-flex items-center justify-center p-space-xs bg-surface-container text-on-surface shadow-[2px_2px_0_0_#000000] hover:bg-surface-container-high hover:text-secondary transition-all"
-            id="mobile-menu-btn"
-            type="button"
-          >
-            <span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span>
-          </button>
-        </div>
+        <a class="btn btn-primary btn-small" data-path="play-demo" href="games.html">Our Games</a>
       </div>
-      <nav
-        aria-label="Mobile navigation"
-        class="hidden xl:hidden w-full flex flex-col gap-space-xs px-space-md py-space-md bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_6px_0_0_#000000]"
-        id="mobile-nav"
-      >
-        <a class="nav-link" data-path="home" href="index.html">Home</a>
-        <a class="nav-link" data-path="games" href="games.html">Games</a>
-        <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
-        <a aria-current="page" class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
-        <a class="nav-link" data-path="community" href="#newsletter">Community</a>
-      </nav>
     </header>
 
-    <main class="w-full pt-20 bg-background flex-1">
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background">
-        <div class="flex flex-col gap-space-xs max-w-3xl">
-          <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface uppercase tracking-tight">MEET THE PIXEL SMITHS</h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant">
+    <main>
+      <section class="section">
+        <div class="stack-tight page-intro">
+          <h1 class="title-hero">MEET THE PIXEL SMITHS</h1>
+          <p class="text-lead">
             A small studio that makes small games about big things — the ocean and the solar system — one pixel at a time.
           </p>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg items-center">
-          <div class="flex flex-col gap-space-md">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">OUR STORY</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
+      <section class="section section-dark">
+        <div class="split split-1-1">
+          <div class="stack">
+            <h2 class="title-lg">OUR STORY</h2>
+            <p class="text">
               We build honest, educational pixel-art games with an old-school spirit: a crab learning about ocean conservation, a ship learning about the solar system. No micro-transactions, no gacha, no fleecing the parents. Just games that teach while you play.
             </p>
-            <p class="font-body-md text-body-md text-on-surface-variant">
+            <p class="text">
               Everything is handcrafted in Python with Pygame Zero, from the sprites to the sound. We believe small games can carry big ideas.
             </p>
           </div>
-          <div class="card p-space-sm">
-            <img
-              alt="The Pixel Verse Studios workshop: a desk with sketches and pixel art."
-              class="w-full h-64 sm:h-80 object-cover"
-              src="assets/img/studio-workshop.jpg"
-            />
+          <div class="card pad-small">
+            <img alt="The Pixel Verse Studios workshop: a desk with sketches and pixel art." class="workshop" src="assets/img/studio-workshop.jpg" />
           </div>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background">
-        <div class="flex flex-col gap-space-lg">
-          <div class="flex flex-col gap-space-xs">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">THE TEAM</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">Three people, one arc.</p>
+      <section class="section">
+        <div class="stack-wide">
+          <div class="stack-tight">
+            <h2 class="title-lg">THE TEAM</h2>
+            <p class="text">The people behind the pixels.</p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-lg">
-            <article class="card p-space-md flex flex-col gap-space-sm">
-              <img
-                alt="Portrait of Mariam."
-                class="w-full h-48 object-cover"
-                src="assets/img/team/mariam.jpg"
-              />
-              <div class="flex flex-col gap-space-xs px-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">MARIAM</h3>
-              </div>
+          <div class="grid-team">
+            <article class="card pad-medium stack">
+              <img alt="Portrait of Mariam." class="portrait" src="assets/img/team/mariam.jpg" />
+              <h3 class="title-sm">MARIAM</h3>
             </article>
-            <article class="card p-space-md flex flex-col gap-space-sm">
-              <img
-                alt="Portrait of mohamed."
-                class="w-full h-48 object-cover"
-                src="assets/img/team/mohamed.png"
-              />
-              <div class="flex flex-col gap-space-xs px-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">MOHAMED</h3>
-              </div>
-            </article> <article class="card p-space-md flex flex-col gap-space-sm">
-              <img
-                alt="Portrait of medhat."
-                class="w-full h-48 object-cover"
-                src="assets/img/team/medhat.png"
-              />
-              <div class="flex flex-col gap-space-xs px-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">MEDHAT</h3>
-              </div>
+            <article class="card pad-medium stack">
+              <img alt="Portrait of mohamed." class="portrait" src="assets/img/team/mohamed.png" />
+              <h3 class="title-sm">MOHAMED</h3>
             </article>
-            <article class="card p-space-md flex flex-col gap-space-sm">
-              <img
-                alt="Portrait of Salah."
-                class="w-full h-48 object-cover"
-                src="assets/img/team/salah.jpg"
-              />
-              <div class="flex flex-col gap-space-xs px-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">SALAH</h3>
-              </div>
+            <article class="card pad-medium stack">
+              <img alt="Portrait of medhat." class="portrait" src="assets/img/team/medhat.png" />
+              <h3 class="title-sm">MEDHAT</h3>
             </article>
-            <article class="card p-space-md flex flex-col gap-space-sm">
-              <img
-                alt="Portrait of Sleem."
-                class="w-full h-48 object-cover"
-                src="assets/img/team/sleem.jpg"
-              />
-              <div class="flex flex-col gap-space-xs px-space-xs">
-                <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">SLEEM</h3>
-              </div>
+            <article class="card pad-medium stack">
+              <img alt="Portrait of Salah." class="portrait" src="assets/img/team/salah.jpg" />
+              <h3 class="title-sm">SALAH</h3>
+            </article>
+            <article class="card pad-medium stack">
+              <img alt="Portrait of Sleem." class="portrait" src="assets/img/team/sleem.jpg" />
+              <h3 class="title-sm">SLEEM</h3>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest">
-        <div class="flex flex-col gap-space-lg">
-          <div class="flex flex-col gap-space-xs max-w-2xl">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">FROM SKETCH TO PIXEL</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">Our pipeline in four steps.</p>
+      <section class="section section-dark">
+        <div class="stack-wide">
+          <div class="stack-tight text-narrow">
+            <h2 class="title-lg">FROM SKETCH TO PIXEL</h2>
+            <p class="text">Our pipeline in four steps.</p>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-lg">
-            <div class="card p-space-lg flex flex-col gap-space-sm">
+          <div class="grid-4">
+            <div class="card pad-large stack">
               <span class="badge">Step 1</span>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">CONCEPT &amp; SKETCHES</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">The idea, the six-stage arc, and the education goal on paper.</p>
+              <h3 class="title-sm">CONCEPT &amp; SKETCHES</h3>
+              <p class="text-small">The idea, the six-stage arc, and the education goal on paper.</p>
             </div>
-            <div class="card p-space-lg flex flex-col gap-space-sm">
+            <div class="card pad-large stack">
               <span class="badge">Step 2</span>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">PIXEL ART</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">Sprites and backgrounds painted one pixel at a time.</p>
+              <h3 class="title-sm">PIXEL ART</h3>
+              <p class="text-small">Sprites and backgrounds painted one pixel at a time.</p>
             </div>
-            <div class="card p-space-lg flex flex-col gap-space-sm">
+            <div class="card pad-large stack">
               <span class="badge">Step 3</span>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">CODE</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">The game is built in Python with Pygame Zero for the desktop.</p>
+              <h3 class="title-sm">CODE</h3>
+              <p class="text-small">The game is built in Python with Pygame Zero for the desktop.</p>
             </div>
-            <div class="card p-space-lg flex flex-col gap-space-sm">
+            <div class="card pad-large stack">
               <span class="badge">Step 4</span>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">MUSIC &amp; SOUND</h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">Chiptune cues for every jump, every hit, every planet fact.</p>
+              <h3 class="title-sm">MUSIC &amp; SOUND</h3>
+              <p class="text-small">Chiptune cues for every jump, every hit, every planet fact.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background" id="press-inquiries">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
-          <div class="lg:col-span-5 flex flex-col gap-space-md">
-            <h2 class="font-headline-lg text-headline-lg text-on-surface uppercase">GET IN TOUCH</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              Press inquiries, partnerships, or just want to say the turtle was your favorite character — write to us.
+      <section class="section" id="press-inquiries">
+        <div class="split split-1-1 split-top">
+          <div class="stack">
+            <h2 class="title-lg">GET IN TOUCH</h2>
+            <p class="text">
+              Press inquiries, partnerships, or just want to say the turtle was your favorite character — we would love to hear from you.
             </p>
-            <div class="card p-space-md flex flex-col gap-space-sm">
-              <span class="font-label-badge text-label-badge text-secondary uppercase">About our games</span>
-              <p class="font-body-sm text-body-sm text-on-surface-variant">
-                Crab Quest is an ocean-themed educational adventure for Ages 5-99. Space X is an educational space shooter for Ages 5-99. Both are built in Python with Pygame Zero.
-              </p>
-            </div>
           </div>
-          <div class="lg:col-span-7">
-            <form class="card p-space-lg flex flex-col gap-space-md" id="transmission-form">
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                <div class="flex flex-col">
-                  <label class="field-label" for="contact-name">Name</label>
-                  <input class="field" id="contact-name" name="name" required="" type="text" />
-                </div>
-                <div class="flex flex-col">
-                  <label class="field-label" for="contact-email">Email</label>
-                  <input class="field" id="contact-email" name="email" required="" type="email" />
-                </div>
-              </div>
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md">
-                <div class="flex flex-col">
-                  <label class="field-label" for="contact-type">Inquiry type</label>
-                  <select class="field" id="contact-type" name="inquiry_type">
-                    <option value="press">Press</option>
-                    <option value="partnership">Partnership</option>
-                    <option value="feedback">Feedback</option>
-                    <option value="other">Something else</option>
-                  </select>
-                </div>
-                <div class="flex flex-col">
-                  <label class="field-label" for="contact-organization">Organization</label>
-                  <input class="field" id="contact-organization" name="organization" type="text" />
-                </div>
-              </div>
-              <div class="flex flex-col">
-                <label class="field-label" for="contact-message">Message</label>
-                <textarea class="field" id="contact-message" name="message" required="" rows="5"></textarea>
-              </div>
-              <label class="flex items-start gap-space-sm cursor-pointer font-body-sm text-body-sm text-on-surface-variant">
-                <input class="mt-1 accent-[#4cd7f6]" name="consent" required="" type="checkbox" />
-                I agree that Pixel Verse Studios may reply to me at the email I provided. No newsletters, no spam.
-              </label>
-              <div class="hidden font-body-sm text-body-sm uppercase text-tertiary" id="form-feedback" role="status"></div>
-              <div>
-                <button class="btn btn-primary btn-sm" type="submit">Send Message</button>
-              </div>
-            </form>
+          <div class="card pad-medium stack">
+            <span class="label">About our games</span>
+            <p class="text-small">
+              Crab Quest is an ocean-themed educational adventure for Ages 5-99. Space X is an educational space shooter for Ages 5-99. Both are built in Python with Pygame Zero.
+            </p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="w-full bg-surface-container-lowest shadow-[0_-4px_0_0_#000000] relative z-20 mt-auto">
-      <div class="w-full px-space-md lg:px-margin xl:px-16 py-space-xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-xl">
-          <div class="lg:col-span-4 flex flex-col gap-space-md">
-            <div class="flex items-center gap-space-sm">
-              <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
-              <span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">PIXEL VERSE</span>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="stack">
+            <div class="brand">
+              <img alt="Pixel Verse Studios logo" class="site-logo" src="assets/img/logo.jpg" />
+              <span class="brand-title">PIXEL VERSE</span>
             </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            <p class="footer-note">
               Story-driven pixel-art games that teach while you play — a crab's journey home through a polluted ocean, and an asteroid run across the solar system.
             </p>
           </div>
-          <div class="lg:col-span-5 flex flex-col gap-space-sm" id="newsletter">
-            <div class="flex items-center gap-space-xs text-secondary">
-              <span class="material-symbols-outlined text-[20px]">mail</span>
-              <span class="font-headline-sm text-label-badge uppercase tracking-wider">Join the Guild</span>
-            </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">News about new chapters, planet facts, and upcoming games — straight to your inbox.</p>
-            <form class="flex flex-col sm:flex-row gap-space-sm pt-space-xs" id="newsletter-form">
-              <div class="relative flex-1">
-                <input
-                  aria-label="Email address"
-                  class="w-full h-10 px-space-md bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-[inset_2px_2px_0_0_#000000]"
-                  name="email"
-                  placeholder="you@example.com"
-                  required=""
-                  type="email"
-                />
-              </div>
-              <button class="btn btn-secondary btn-sm h-10" type="submit">Enlist</button>
-            </form>
-            <div class="hidden font-body-sm text-body-sm uppercase text-tertiary pt-space-xs" id="newsletter-confirmation" role="status">
-              Thanks for joining — you're enlisted.
-            </div>
-          </div>
-          <div class="lg:col-span-3 flex flex-col gap-space-sm">
-            <span class="font-headline-sm text-label-badge uppercase text-primary tracking-wider">Transmissions</span>
-            <div class="grid grid-cols-2 gap-space-sm">
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">gamepad</span>
-                <span class="font-label-badge text-label-badge uppercase">itch.io</span>
+          <div class="stack">
+            <span class="label accent">Find us</span>
+            <div class="social-links">
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">gamepad</span>
+                <span class="label label-soft">itch.io</span>
               </a>
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">forum</span>
-                <span class="font-label-badge text-label-badge uppercase">Discord</span>
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">forum</span>
+                <span class="label label-soft">Discord</span>
               </a>
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">play_circle</span>
-                <span class="font-label-badge text-label-badge uppercase">YouTube</span>
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">play_circle</span>
+                <span class="label label-soft">YouTube</span>
               </a>
             </div>
           </div>
         </div>
-        <div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
-          <div class="font-body-sm text-body-sm text-outline">© 2024 Pixel Verse Studios. All rights reserved.</div>
-          <div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-            <a class="hover:text-primary transition-colors" href="#">Terms</a>
-            <a class="hover:text-primary transition-colors" href="#">Privacy</a>
-            <a class="hover:text-primary transition-colors" href="studio-lore.html#press-inquiries">Contact</a>
+        <div class="footer-bottom">
+          <div class="copyright">© 2024 Pixel Verse Studios. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="studio-lore.html#press-inquiries">Contact</a>
           </div>
         </div>
       </div>
     </footer>
 
     <script defer src="assets/js/site.js"></script>
-    <script defer src="assets/js/studio-lore.js"></script>
   </body>
 </html>

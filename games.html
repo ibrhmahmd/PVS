@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html class="dark" lang="en">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Our Games — Pixel Verse Studios</title>
-    <meta
-      content="Crab Quest: a six-chapter ocean adventure for ages 5-99. Space X: an educational space shooter for Ages 5-99. Real games, real pixel art, built in Python with Pygame Zero."
-      name="description"
-    />
+    <meta content="Crab Quest: a six-chapter ocean adventure for ages 5-99. Space X: an educational space shooter for Ages 5-99. Real games, real pixel art, built in Python with Pygame Zero." name="description" />
     <meta content="#0f131c" name="theme-color" />
     <link href="assets/favicon-32.png" rel="icon" sizes="32x32" type="image/png" />
     <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
@@ -17,205 +14,174 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="assets/css/tailwind.css" />
-    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
   </head>
-  <body class="bg-background font-body-md text-on-surface antialiased min-h-screen flex flex-col">
-    <header class="fixed top-0 left-0 w-full z-50 bg-surface-container-lowest/90 backdrop-blur-md shadow-[0_4px_0_0_#000000]">
-      <div class="h-20 w-full px-space-md lg:px-margin xl:px-16 flex items-center justify-between gap-space-md">
-        <div class="flex items-center gap-space-sm sm:gap-space-md">
-          <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
-          <a class="flex flex-col text-left group" data-path="home" href="index.html">
-            <span class="font-headline-sm text-headline-sm tracking-wider uppercase text-on-surface group-hover:text-primary transition-colors">PIXEL VERSE</span>
-            <span class="font-label-badge text-label-badge tracking-widest text-secondary uppercase">STUDIOS</span>
-          </a>
-        </div>
-        <nav class="hidden xl:flex items-center gap-space-xs p-space-xs bg-surface-container-low">
+  <body>
+    <header class="header">
+      <div class="header-row">
+        <a class="brand" data-path="home" href="index.html">
+          <img alt="Pixel Verse Studios logo" class="site-logo" src="assets/img/logo.jpg" />
+          <span class="brand-name">
+            <span class="brand-title">PIXEL VERSE</span>
+            <span class="brand-subtitle">STUDIOS</span>
+          </span>
+        </a>
+        <nav class="nav" aria-label="Main">
           <a class="nav-link" data-path="home" href="index.html">Home</a>
-          <a aria-current="page" class="nav-link" data-path="games" href="games.html">Games</a>
+          <a class="nav-link" aria-current="page" data-path="games" href="games.html">Games</a>
           <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
           <a class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
-          <a class="nav-link" data-path="community" href="#newsletter">Community</a>
         </nav>
-        <div class="flex items-center gap-space-sm sm:gap-space-md">
-          <a class="btn btn-primary btn-sm" data-path="play-demo" href="games.html">Our Games</a>
-          <button
-            aria-controls="mobile-nav"
-            aria-expanded="false"
-            aria-label="Open menu"
-            class="xl:hidden inline-flex items-center justify-center p-space-xs bg-surface-container text-on-surface shadow-[2px_2px_0_0_#000000] hover:bg-surface-container-high hover:text-secondary transition-all"
-            id="mobile-menu-btn"
-            type="button"
-          >
-            <span class="material-symbols-outlined text-[24px]" id="mobile-menu-icon">menu</span>
-          </button>
-        </div>
+        <a class="btn btn-primary btn-small" data-path="play-demo" href="games.html">Our Games</a>
       </div>
-      <nav
-        aria-label="Mobile navigation"
-        class="hidden xl:hidden w-full flex flex-col gap-space-xs px-space-md py-space-md bg-surface-container-lowest border-t border-outline-variant/30 shadow-[0_6px_0_0_#000000]"
-        id="mobile-nav"
-      >
-        <a class="nav-link" data-path="home" href="index.html">Home</a>
-        <a aria-current="page" class="nav-link" data-path="games" href="games.html">Games</a>
-        <a class="nav-link" data-path="heros-journey" href="heros-journey.html">Hero's Journey</a>
-        <a class="nav-link" data-path="studio-lore" href="studio-lore.html">Studio &amp; Lore</a>
-        <a class="nav-link" data-path="community" href="#newsletter">Community</a>
-      </nav>
     </header>
 
-    <main class="w-full pt-20 bg-background flex-1">
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background">
-        <div class="flex flex-col gap-space-xs max-w-3xl">
-          <h1 class="font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface uppercase tracking-tight">OUR GAMES</h1>
-          <p class="font-body-lg text-body-lg text-on-surface-variant">
+    <main>
+      <section class="section">
+        <div class="stack-tight page-intro">
+          <h1 class="title-hero">OUR GAMES</h1>
+          <p class="text-lead">
             Two educational pixel-art games, built in Python with Pygame Zero for the desktop: one about our ocean, one about our solar system.
           </p>
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-surface-container-lowest" id="crab-quest">
-        <div class="flex flex-col gap-space-xl">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
-            <div class="lg:col-span-4 flex flex-col gap-space-md">
-              <div class="card p-space-md flex justify-center">
-                <img
-                  alt="Crab Quest logo."
-                  class="pixelated w-56 h-auto object-contain"
-                  src="assets/img/crab-quest/logo.png"
-                />
+      <section class="section section-dark" id="crab-quest">
+        <div class="stack-huge">
+          <div class="split split-4-8 split-top">
+            <div class="stack">
+              <div class="card pad-medium row-center">
+                <img alt="Crab Quest logo." class="logo-large pixelated" src="assets/img/crab-quest/logo.png" />
               </div>
-              <div class="flex flex-col gap-space-xs">
-                <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase">CRAB QUEST</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant">
+              <div class="stack-tight">
+                <h2 class="title-xl">CRAB QUEST</h2>
+                <p class="text">
                   An ocean-themed educational adventure for ages 5-99. Six chapters, each with its own gameplay style, follow a crab's journey home — from a kitchen counter to a protected coral sanctuary — while raising awareness about marine life and ocean conservation.
                 </p>
               </div>
-              <div class="flex flex-wrap gap-space-xs">
+              <div class="row-tight">
                 <span class="badge">Adventure</span>
                 <span class="badge">Ages 5-99</span>
                 <span class="badge">Python + Pygame Zero</span>
               </div>
             </div>
-            <div class="lg:col-span-8 flex flex-col gap-space-lg">
-              <div class="card p-space-sm">
-                <button aria-label="Enlarge the crab quest start screen" class="block w-full text-left" type="button">
-                  <img
-                    alt="Crab Quest start screen with the chapter select."
-                    class="w-full h-64 sm:h-96 object-contain"
-                    data-lightbox="Crab Quest start screen with the chapter select."
-                    src="assets/img/crab-quest/screens/start.jpg"
-                  />
-                </button>
-              </div>
+            <div class="card pad-small">
+              <button aria-label="Enlarge the Crab Quest start screen" class="shot-button" type="button">
+                <img
+                  alt="Crab Quest start screen with the chapter select."
+                  class="shot shot-contain"
+                  data-lightbox="Crab Quest start screen with the chapter select."
+                  src="assets/img/crab-quest/screens/start.jpg"
+                />
+              </button>
             </div>
           </div>
 
-          <div class="flex flex-col gap-space-lg">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-space-md">
-              <div class="flex flex-col gap-space-xs max-w-2xl">
-                <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">THE HERO'S JOURNEY</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">
+          <div class="stack-wide">
+            <div class="heading-row">
+              <div class="stack-tight text-narrow">
+                <h3 class="title-lg">THE HERO'S JOURNEY</h3>
+                <p class="text">
                   The six chapters, told with the Story Spine — from "Once upon a time…" on a kitchen counter to "And ever since then…" in a protected coral sanctuary.
                 </p>
               </div>
-              <a class="btn btn-primary btn-sm self-start md:self-auto" href="heros-journey.html#crab-quest">Explore the full journey</a>
+              <a class="btn btn-primary btn-small" href="heros-journey.html#crab-quest">Explore the full journey</a>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Kitchen Escape screenshot" class="block w-full text-left" type="button">
-                  <img alt="Crab Quest screenshot of chapter 1: Kitchen Escape." class="w-full aspect-[2/1] object-contain bg-background" data-lightbox="Crab Quest screenshot of chapter 1: Kitchen Escape." src="assets/img/crab-quest/screens/chapter-1.jpg" />
+            <div class="grid-2">
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Kitchen Escape screenshot" class="shot-button" type="button">
+                  <img alt="Crab Quest screenshot of chapter 1: Kitchen Escape." class="shot shot-wide" data-lightbox="Crab Quest screenshot of chapter 1: Kitchen Escape." src="assets/img/crab-quest/screens/chapter-1.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">One day…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">KITCHEN ESCAPE</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Jump across 7 platforms to reach the goal at the top right.</p>
+                <div class="card-badge"><span class="badge">One day…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">KITCHEN ESCAPE</h4>
+                  <p class="text-small">Jump across 7 platforms to reach the goal at the top right.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Beach Run screenshot" class="block w-full text-left" type="button">
-                  <img alt="Crab Quest screenshot of chapter 2: Beach Run." class="w-full aspect-[2/1] object-contain bg-background" data-lightbox="Crab Quest screenshot of chapter 2: Beach Run." src="assets/img/crab-quest/screens/chapter-2.jpg" />
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Beach Run screenshot" class="shot-button" type="button">
+                  <img alt="Crab Quest screenshot of chapter 2: Beach Run." class="shot shot-wide" data-lightbox="Crab Quest screenshot of chapter 2: Beach Run." src="assets/img/crab-quest/screens/chapter-2.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">Because of that…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">BEACH RUN</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Survive 30 seconds of diving birds, then reach the wave.</p>
+                <div class="card-badge"><span class="badge">Because of that…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">BEACH RUN</h4>
+                  <p class="text-small">Survive 30 seconds of diving birds, then reach the wave.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Sea Floor Dodging screenshot" class="block w-full text-left" type="button">
-                  <img alt="Crab Quest screenshot of chapter 3: Sea Floor Dodging." class="w-full aspect-[2/1] object-contain bg-background" data-lightbox="Crab Quest screenshot of chapter 3: Sea Floor Dodging." src="assets/img/crab-quest/screens/chapter-3.jpg" />
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Sea Floor Dodging screenshot" class="shot-button" type="button">
+                  <img alt="Crab Quest screenshot of chapter 3: Sea Floor Dodging." class="shot shot-wide" data-lightbox="Crab Quest screenshot of chapter 3: Sea Floor Dodging." src="assets/img/crab-quest/screens/chapter-3.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">Because of that…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">SEA FLOOR DODGING</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Dodge falling trash for 10 seconds, then follow the turtle.</p>
+                <div class="card-badge"><span class="badge">Because of that…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">SEA FLOOR DODGING</h4>
+                  <p class="text-small">Dodge falling trash for 10 seconds, then follow the turtle.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Shrimp Help screenshot" class="block w-full text-left" type="button">
-                  <img alt="Crab Quest screenshot of chapter 4: Shrimp Help." class="w-full aspect-[2/1] object-contain bg-background" data-lightbox="Crab Quest screenshot of chapter 4: Shrimp Help." src="assets/img/crab-quest/screens/chapter-4.jpg" />
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Shrimp Help screenshot" class="shot-button" type="button">
+                  <img alt="Crab Quest screenshot of chapter 4: Shrimp Help." class="shot shot-wide" data-lightbox="Crab Quest screenshot of chapter 4: Shrimp Help." src="assets/img/crab-quest/screens/chapter-4.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">Because of that…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">SHRIMP HELP</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Collect all 17 algae in 60 seconds.</p>
+                <div class="card-badge"><span class="badge">Because of that…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">SHRIMP HELP</h4>
+                  <p class="text-small">Collect all 17 algae in 60 seconds.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Predator Chase screenshot" class="block w-full text-left" type="button">
-                  <img alt="Crab Quest screenshot of chapter 5: Predator Chase." class="w-full aspect-[2/1] object-contain bg-background" data-lightbox="Crab Quest screenshot of chapter 5: Predator Chase." src="assets/img/crab-quest/screens/chapter-5.jpg" />
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Predator Chase screenshot" class="shot-button" type="button">
+                  <img alt="Crab Quest screenshot of chapter 5: Predator Chase." class="shot shot-wide" data-lightbox="Crab Quest screenshot of chapter 5: Predator Chase." src="assets/img/crab-quest/screens/chapter-5.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">Until finally…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">PREDATOR CHASE</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Survive the patrolling fish for 45 seconds.</p>
+                <div class="card-badge"><span class="badge">Until finally…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">PREDATOR CHASE</h4>
+                  <p class="text-small">Survive the patrolling fish for 45 seconds.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Home Sweet Home screenshot" class="block w-full text-left" type="button">
-                  <img alt="Crab Quest screenshot of chapter 6: Home Sweet Home." class="w-full aspect-[2/1] object-contain bg-background" data-lightbox="Crab Quest screenshot of chapter 6: Home Sweet Home." src="assets/img/crab-quest/screens/chapter-6.jpg" />
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Home Sweet Home screenshot" class="shot-button" type="button">
+                  <img alt="Crab Quest screenshot of chapter 6: Home Sweet Home." class="shot shot-wide" data-lightbox="Crab Quest screenshot of chapter 6: Home Sweet Home." src="assets/img/crab-quest/screens/chapter-6.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">And ever since then…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">HOME SWEET HOME</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Run to your family in the protected sanctuary.</p>
+                <div class="card-badge"><span class="badge">And ever since then…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">HOME SWEET HOME</h4>
+                  <p class="text-small">Run to your family in the protected sanctuary.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
-            <div class="lg:col-span-6 card p-space-lg flex flex-col gap-space-sm">
-              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">CONTROLS</h3>
-              <p class="font-body-md text-body-md text-on-surface-variant">Move with ←/→ or A/D, jump with SPACE, restart a chapter with R, and press ENTER to go back to the level select.</p>
+          <div class="grid-2">
+            <div class="card pad-large stack">
+              <h3 class="title-md">CONTROLS</h3>
+              <p class="text">Move with ←/→ or A/D, jump with SPACE, restart a chapter with R, and press ENTER to go back to the level select.</p>
             </div>
-            <div class="lg:col-span-6 card p-space-lg flex flex-col gap-space-md">
-              <h3 class="font-headline-md text-headline-md text-on-surface uppercase">WHO YOU MEET</h3>
-              <div class="grid grid-cols-3 sm:grid-cols-6 gap-space-md items-center">
-                <div class="flex flex-col items-center gap-space-xs">
-                  <img alt="The crab." class="pixelated h-14 w-auto object-contain" src="assets/img/crab-quest/crab-small.png" />
-                  <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">The crab</span>
+            <div class="card pad-large stack">
+              <h3 class="title-md">WHO YOU MEET</h3>
+              <div class="picture-row picture-row-6">
+                <div class="picture-item">
+                  <img alt="The crab." class="sprite pixelated" src="assets/img/crab-quest/crab-small.png" />
+                  <span class="label label-soft">The crab</span>
                 </div>
-                <div class="flex flex-col items-center gap-space-xs">
-                  <img alt="The shrimp." class="pixelated h-14 w-auto object-contain" src="assets/img/crab-quest/shrimp.png" />
-                  <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">The shrimp</span>
+                <div class="picture-item">
+                  <img alt="The shrimp." class="sprite pixelated" src="assets/img/crab-quest/shrimp.png" />
+                  <span class="label label-soft">The shrimp</span>
                 </div>
-                <div class="flex flex-col items-center gap-space-xs">
-                  <img alt="The turtle." class="pixelated h-14 w-auto object-contain" src="assets/img/crab-quest/turtle.png" />
-                  <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">The turtle</span>
+                <div class="picture-item">
+                  <img alt="The turtle." class="sprite pixelated" src="assets/img/crab-quest/turtle.png" />
+                  <span class="label label-soft">The turtle</span>
                 </div>
-                <div class="flex flex-col items-center gap-space-xs">
-                  <img alt="A seabird." class="pixelated h-14 w-auto object-contain" src="assets/img/crab-quest/bird.png" />
-                  <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Seabirds</span>
+                <div class="picture-item">
+                  <img alt="A seabird." class="sprite pixelated" src="assets/img/crab-quest/bird.png" />
+                  <span class="label label-soft">Seabirds</span>
                 </div>
-                <div class="flex flex-col items-center gap-space-xs">
-                  <img alt="The predator fish." class="pixelated h-14 w-auto object-contain" src="assets/img/crab-quest/evil-red-fish.png" />
-                  <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Predator fish</span>
+                <div class="picture-item">
+                  <img alt="The predator fish." class="sprite pixelated" src="assets/img/crab-quest/evil-red-fish.png" />
+                  <span class="label label-soft">Predator fish</span>
                 </div>
-                <div class="flex flex-col items-center gap-space-xs">
-                  <img alt="The crab's family." class="pixelated h-14 w-auto object-contain" src="assets/img/crab-quest/crab-medium.png" />
-                  <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">The family</span>
+                <div class="picture-item">
+                  <img alt="The crab's family." class="sprite pixelated" src="assets/img/crab-quest/crab-medium.png" />
+                  <span class="label label-soft">The family</span>
                 </div>
               </div>
             </div>
@@ -223,244 +189,217 @@
         </div>
       </section>
 
-      <section class="w-full py-space-xl px-space-md lg:px-margin xl:px-16 bg-background" id="space-x">
-        <div class="flex flex-col gap-space-xl">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
-            <div class="lg:col-span-4 flex flex-col gap-space-md">
-              <div class="card p-space-md flex justify-center">
-                <img
-                  alt="Space X logo."
-                  class="pixelated w-56 h-auto object-contain"
-                  src="assets/img/space-x/logo.png"
-                />
+      <section class="section" id="space-x">
+        <div class="stack-huge">
+          <div class="split split-4-8 split-top">
+            <div class="stack">
+              <div class="card pad-medium row-center">
+                <img alt="Space X logo." class="logo-large pixelated" src="assets/img/space-x/logo.png" />
               </div>
-              <div class="flex flex-col gap-space-xs">
-                <h2 class="font-headline-xl text-headline-xl-mobile md:text-headline-xl text-on-surface uppercase">SPACE X</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant">
+              <div class="stack-tight">
+                <h2 class="title-xl">SPACE X</h2>
+                <p class="text">
                   An educational space shooter for Ages 5-99. Steer your ship through an asteroid field, shoot what you can and every time you lose, you learn a fact about the solar system.
                 </p>
               </div>
-              <div class="flex flex-wrap gap-space-xs">
+              <div class="row-tight">
                 <span class="badge">Shooter</span>
                 <span class="badge">Ages 5-99</span>
                 <span class="badge">Python + Pygame Zero</span>
               </div>
             </div>
-            <div class="lg:col-span-8 flex flex-col gap-space-lg">
-              <div class="card p-space-sm">
-                <button aria-label="Enlarge the Space X gameplay screenshot" class="block w-full text-left" type="button">
+            <div class="stack-wide">
+              <div class="card pad-small">
+                <button aria-label="Enlarge the Space X gameplay screenshot" class="shot-button" type="button">
                   <img
                     alt="Space X gameplay screenshot: the ship dodging asteroids."
-                    class="w-full h-64 sm:h-96 object-contain"
+                    class="shot shot-contain"
                     data-lightbox="Space X gameplay screenshot: the ship dodging asteroids."
                     src="assets/img/space-x/screens/gameplay.jpg"
                   />
                 </button>
               </div>
-              <div class="flex flex-col gap-space-xs">
-                <span class="font-label-badge text-label-badge text-secondary uppercase">The solar system</span>
-                <div class="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-space-md items-center">
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="The Sun." class="w-full max-w-none rounded h-14 object-contain" src="assets/img/space-x/sun.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Sun</span>
+              <div class="stack-tight">
+                <span class="label">The solar system</span>
+                <div class="picture-row picture-row-9">
+                  <div class="picture-item">
+                    <img alt="The Sun." class="planet" src="assets/img/space-x/sun.png" />
+                    <span class="label label-soft">Sun</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Mercury." class="w-full rounded h-14 object-contain" src="assets/img/space-x/mercury.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Mercury</span>
+                  <div class="picture-item">
+                    <img alt="Mercury." class="planet" src="assets/img/space-x/mercury.png" />
+                    <span class="label label-soft">Mercury</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Venus." class="w-full rounded h-14 object-contain" src="assets/img/space-x/venus.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Venus</span>
+                  <div class="picture-item">
+                    <img alt="Venus." class="planet" src="assets/img/space-x/venus.png" />
+                    <span class="label label-soft">Venus</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Earth." class="w-full rounded h-14 object-contain" src="assets/img/space-x/earth.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Earth</span>
+                  <div class="picture-item">
+                    <img alt="Earth." class="planet" src="assets/img/space-x/earth.png" />
+                    <span class="label label-soft">Earth</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Mars." class="w-full rounded h-14 object-contain" src="assets/img/space-x/mars.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Mars</span>
+                  <div class="picture-item">
+                    <img alt="Mars." class="planet" src="assets/img/space-x/mars.png" />
+                    <span class="label label-soft">Mars</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Jupiter." class="w-full rounded h-14 object-contain" src="assets/img/space-x/jupiter.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Jupiter</span>
+                  <div class="picture-item">
+                    <img alt="Jupiter." class="planet" src="assets/img/space-x/jupiter.png" />
+                    <span class="label label-soft">Jupiter</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Saturn." class="w-full rounded h-14 object-contain" src="assets/img/space-x/saturn.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Saturn</span>
+                  <div class="picture-item">
+                    <img alt="Saturn." class="planet" src="assets/img/space-x/saturn.png" />
+                    <span class="label label-soft">Saturn</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Uranus." class="w-full rounded h-14 object-contain" src="assets/img/space-x/uranus.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Uranus</span>
+                  <div class="picture-item">
+                    <img alt="Uranus." class="planet" src="assets/img/space-x/uranus.png" />
+                    <span class="label label-soft">Uranus</span>
                   </div>
-                  <div class="flex flex-col items-center gap-space-xs">
-                    <img alt="Neptune." class="w-full rounded h-14 object-contain" src="assets/img/space-x/neptune.png" />
-                    <span class="font-label-badge text-label-badge uppercase text-on-surface-variant">Neptune</span>
+                  <div class="picture-item">
+                    <img alt="Neptune." class="planet" src="assets/img/space-x/neptune.png" />
+                    <span class="label label-soft">Neptune</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="flex flex-col gap-space-lg">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-space-md">
-              <div class="flex flex-col gap-space-xs max-w-2xl">
-                <h3 class="font-headline-lg text-headline-lg text-on-surface uppercase">THE HERO'S JOURNEY</h3>
-                <p class="font-body-md text-body-md text-on-surface-variant">
+          <div class="stack-wide">
+            <div class="heading-row">
+              <div class="stack-tight text-narrow">
+                <h3 class="title-lg">THE HERO'S JOURNEY</h3>
+                <p class="text">
                   Space X has no written story — the loop is the journey. Five beats of the Story Spine, from the ship waiting on the title screen to the fact you learn every time you lose.
                 </p>
               </div>
-              <a class="btn btn-primary btn-sm self-start md:self-auto" href="heros-journey.html#space-x">Explore the full journey</a>
+              <a class="btn btn-primary btn-small" href="heros-journey.html#space-x">Explore the full journey</a>
             </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-space-lg">
-              <div class="card flex flex-col gap-space-sm">
-                <div class="aspect-[4/3] bg-background flex items-center justify-center">
-                  <img alt="Space X logo." class="pixelated w-[45%] h-auto object-contain" src="assets/img/space-x/logo.png" />
+            <div class="grid-2">
+              <div class="card stack-small">
+                <div class="art-box">
+                  <img alt="Space X logo." class="art-box-logo pixelated" src="assets/img/space-x/logo.png" />
                 </div>
-                <div class="px-space-md"><span class="badge">Once upon a time…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">The Title Screen</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">A small ship waits at the edge of the solar system.</p>
+                <div class="card-badge"><span class="badge">Once upon a time…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">The Title Screen</h4>
+                  <p class="text-small">A small ship waits at the edge of the solar system.</p>
                 </div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <span class="font-label-badge text-label-badge text-secondary uppercase">Gameplay</span>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">"SpaceX is an educational game to learn about our solar system." Press SPACE to launch.</p>
+                <div class="card-text stack-tight">
+                  <span class="label">Gameplay</span>
+                  <p class="text-small">"SpaceX is an educational game to learn about our solar system." Press SPACE to launch.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Space X launch screenshot" class="block w-full text-left" type="button">
-                  <img alt="Space X screenshot: the ship dodging asteroids during launch." class="w-full aspect-[4/3] object-contain bg-background" data-lightbox="Space X screenshot: the ship dodging asteroids during launch." src="assets/img/space-x/screens/gameplay.jpg" />
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Space X launch screenshot" class="shot-button" type="button">
+                  <img alt="Space X screenshot: the ship dodging asteroids during launch." class="shot shot-box" data-lightbox="Space X screenshot: the ship dodging asteroids during launch." src="assets/img/space-x/screens/gameplay.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">One day…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">Launch</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">The pilot flies into the asteroid field with three hearts.</p>
+                <div class="card-badge"><span class="badge">One day…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">Launch</h4>
+                  <p class="text-small">The pilot flies into the asteroid field with three hearts.</p>
                 </div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <span class="font-label-badge text-label-badge text-secondary uppercase">Gameplay</span>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Steer with ←/→, fire with SPACE; every asteroid shot scores a point.</p>
-                </div>
-              </div>
-              <div class="card flex flex-col gap-space-sm">
-                <div class="aspect-[4/3] bg-background flex items-center justify-center gap-space-md">
-                  <img alt="Space X: an asteroid." class="pixelated h-24 sm:h-36 lg:h-48 max-w-[45%] w-auto object-contain" src="assets/img/space-x/asteroid.png" />
-                  <img alt="Space X: the player ship." class="pixelated h-24 sm:h-36 lg:h-48 max-w-[45%] w-auto object-contain" src="assets/img/space-x/ship.png" />
-                </div>
-                <div class="px-space-md"><span class="badge">Because of that…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">Rising Stakes</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">The more the pilot scores, the harder space fights back.</p>
-                </div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <span class="font-label-badge text-label-badge text-secondary uppercase">Gameplay</span>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">The level rises every 30 points; asteroids come faster and more often. Any asteroid that hits the ship or slips past costs a heart.</p>
+                <div class="card-text stack-tight">
+                  <span class="label">Gameplay</span>
+                  <p class="text-small">Steer with ←/→, fire with SPACE; every asteroid shot scores a point.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <button aria-label="Enlarge the Space X game over screenshot" class="block w-full text-left" type="button">
-                  <img alt="Space X screenshot: game over with a Mars fact." class="w-full aspect-[4/3] object-contain bg-background" data-lightbox="Space X screenshot: game over with a Mars fact." src="assets/img/space-x/screens/game-over-mars.jpg" />
+              <div class="card stack-small">
+                <div class="art-box">
+                  <img alt="Space X: an asteroid." class="art-box-sprite pixelated" src="assets/img/space-x/asteroid.png" />
+                  <img alt="Space X: the player ship." class="art-box-sprite pixelated" src="assets/img/space-x/ship.png" />
+                </div>
+                <div class="card-badge"><span class="badge">Because of that…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">Rising Stakes</h4>
+                  <p class="text-small">The more the pilot scores, the harder space fights back.</p>
+                </div>
+                <div class="card-text stack-tight">
+                  <span class="label">Gameplay</span>
+                  <p class="text-small">The level rises every 30 points; asteroids come faster and more often. Any asteroid that hits the ship or slips past costs a heart.</p>
+                </div>
+              </div>
+              <div class="card stack-small">
+                <button aria-label="Enlarge the Space X game over screenshot" class="shot-button" type="button">
+                  <img alt="Space X screenshot: game over with a Mars fact." class="shot shot-box" data-lightbox="Space X screenshot: game over with a Mars fact." src="assets/img/space-x/screens/game-over-mars.jpg" />
                 </button>
-                <div class="px-space-md"><span class="badge">Until finally…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">Game Over</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">The last heart is gone.</p>
+                <div class="card-badge"><span class="badge">Until finally…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">Game Over</h4>
+                  <p class="text-small">The last heart is gone.</p>
                 </div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <span class="font-label-badge text-label-badge text-secondary uppercase">Gameplay</span>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Your high score is kept for the next run.</p>
+                <div class="card-text stack-tight">
+                  <span class="label">Gameplay</span>
+                  <p class="text-small">Your high score is kept for the next run.</p>
                 </div>
               </div>
-              <div class="card flex flex-col gap-space-sm">
-                <div class="grid grid-cols-3 gap-space-sm">
-                  <button aria-label="Enlarge the game over Earth fact screenshot" class="block w-full text-left" type="button">
-                    <img alt="Space X game over screenshot showing an Earth fact." class="w-full aspect-[4/3] object-contain bg-background" data-lightbox="Space X game over screenshot showing an Earth fact." src="assets/img/space-x/screens/game-over-earth.jpg" />
+              <div class="card stack-small">
+                <div class="thumb-row pad-small">
+                  <button aria-label="Enlarge the game over Earth fact screenshot" class="shot-button" type="button">
+                    <img alt="Space X game over screenshot showing an Earth fact." class="shot shot-box" data-lightbox="Space X game over screenshot showing an Earth fact." src="assets/img/space-x/screens/game-over-earth.jpg" />
                   </button>
-                  <button aria-label="Enlarge the game over Uranus fact screenshot" class="block w-full text-left" type="button">
-                    <img alt="Space X game over screenshot showing a Uranus fact." class="w-full aspect-[4/3] object-contain bg-background" data-lightbox="Space X game over screenshot showing a Uranus fact." src="assets/img/space-x/screens/game-over-uranus.jpg" />
+                  <button aria-label="Enlarge the game over Uranus fact screenshot" class="shot-button" type="button">
+                    <img alt="Space X game over screenshot showing an Uranus fact." class="shot shot-box" data-lightbox="Space X game over screenshot showing an Uranus fact." src="assets/img/space-x/screens/game-over-uranus.jpg" />
                   </button>
-                  <button aria-label="Enlarge the game over Saturn fact screenshot" class="block w-full text-left" type="button">
-                    <img alt="Space X game over screenshot showing a Saturn fact." class="w-full aspect-[4/3] object-contain bg-background" data-lightbox="Space X game over screenshot showing a Saturn fact." src="assets/img/space-x/screens/game-over-saturn.jpg" />
+                  <button aria-label="Enlarge the game over Saturn fact screenshot" class="shot-button" type="button">
+                    <img alt="Space X game over screenshot showing a Saturn fact." class="shot shot-box" data-lightbox="Space X game over screenshot showing a Saturn fact." src="assets/img/space-x/screens/game-over-saturn.jpg" />
                   </button>
                 </div>
-                <div class="px-space-md"><span class="badge">And ever since then…</span></div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <h4 class="font-headline-sm text-headline-sm text-on-surface uppercase">A New Fact Every Run</h4>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Every crash teaches something: the game shows a fact about the Sun or one of the 8 planets, and the pilot relaunches a little wiser.</p>
+                <div class="card-badge"><span class="badge">And ever since then…</span></div>
+                <div class="card-text stack-tight">
+                  <h4 class="title-sm">A New Fact Every Run</h4>
+                  <p class="text-small">Every crash teaches something: the game shows a fact about the Sun or one of the 8 planets, and the pilot relaunches a little wiser.</p>
                 </div>
-                <div class="px-space-md pb-space-md flex flex-col gap-space-xs">
-                  <span class="font-label-badge text-label-badge text-secondary uppercase">Gameplay</span>
-                  <p class="font-body-sm text-body-sm text-on-surface-variant">Press R to relaunch.</p>
+                <div class="card-text stack-tight">
+                  <span class="label">Gameplay</span>
+                  <p class="text-small">Press R to relaunch.</p>
                 </div>
               </div>
             </div>
-            </div>
+          </div>
 
-          <div class="card p-space-lg flex flex-col gap-space-sm">
-            <h3 class="font-headline-md text-headline-md text-on-surface uppercase">CONTROLS</h3>
-            <p class="font-body-md text-body-md text-on-surface-variant">Steer with ←/→, press SPACE to start or fire, P to pause, R to restart after game over, and F for fullscreen.</p>
+          <div class="card pad-large stack-tight">
+            <h3 class="title-md">CONTROLS</h3>
+            <p class="text">Steer with ←/→, press SPACE to start or fire, P to pause, R to restart after game over, and F for fullscreen.</p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="w-full bg-surface-container-lowest shadow-[0_-4px_0_0_#000000] relative z-20 mt-auto">
-      <div class="w-full px-space-md lg:px-margin xl:px-16 py-space-xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-space-xl mb-space-xl">
-          <div class="lg:col-span-4 flex flex-col gap-space-md">
-            <div class="flex items-center gap-space-sm">
-              <img alt="Pixel Verse Studios logo" class="h-8 w-auto object-contain" src="assets/img/logo.jpg" />
-              <span class="font-headline-sm text-headline-sm uppercase text-on-surface tracking-wider">PIXEL VERSE</span>
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-top">
+          <div class="stack">
+            <div class="brand">
+              <img alt="Pixel Verse Studios logo" class="site-logo" src="assets/img/logo.jpg" />
+              <span class="brand-title">PIXEL VERSE</span>
             </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-sm">
+            <p class="footer-note">
               Story-driven pixel-art games that teach while you play — a crab's journey home through a polluted ocean, and an asteroid run across the solar system.
             </p>
           </div>
-          <div class="lg:col-span-5 flex flex-col gap-space-sm" id="newsletter">
-            <div class="flex items-center gap-space-xs text-secondary">
-              <span class="material-symbols-outlined text-[20px]">mail</span>
-              <span class="font-headline-sm text-label-badge uppercase tracking-wider">Join the Guild</span>
-            </div>
-            <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">News about new chapters, planet facts, and upcoming games — straight to your inbox.</p>
-            <form class="flex flex-col sm:flex-row gap-space-sm pt-space-xs" id="newsletter-form">
-              <div class="relative flex-1">
-                <input
-                  aria-label="Email address"
-                  class="w-full h-10 px-space-md bg-surface-container-low text-on-surface font-body-sm text-body-sm placeholder:text-outline focus:outline-none focus:ring-1 focus:ring-secondary shadow-[inset_2px_2px_0_0_#000000]"
-                  name="email"
-                  placeholder="you@example.com"
-                  required=""
-                  type="email"
-                />
-              </div>
-              <button class="btn btn-secondary btn-sm h-10" type="submit">Enlist</button>
-            </form>
-            <div class="hidden font-body-sm text-body-sm uppercase text-tertiary pt-space-xs" id="newsletter-confirmation" role="status">
-              Thanks for joining — you're enlisted.
-            </div>
-          </div>
-          <div class="lg:col-span-3 flex flex-col gap-space-sm">
-            <span class="font-headline-sm text-label-badge uppercase text-primary tracking-wider">Transmissions</span>
-            <div class="grid grid-cols-2 gap-space-sm">
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">gamepad</span>
-                <span class="font-label-badge text-label-badge uppercase">itch.io</span>
+          <div class="stack">
+            <span class="label accent">Find us</span>
+            <div class="social-links">
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">gamepad</span>
+                <span class="label label-soft">itch.io</span>
               </a>
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">forum</span>
-                <span class="font-label-badge text-label-badge uppercase">Discord</span>
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">forum</span>
+                <span class="label label-soft">Discord</span>
               </a>
-              <a class="flex items-center gap-space-xs p-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-secondary transition-all shadow-[2px_2px_0_0_#000000]" href="#">
-                <span class="material-symbols-outlined text-[18px]">play_circle</span>
-                <span class="font-label-badge text-label-badge uppercase">YouTube</span>
+              <a class="social-link" href="#">
+                <span class="material-symbols-outlined icon">play_circle</span>
+                <span class="label label-soft">YouTube</span>
               </a>
             </div>
           </div>
         </div>
-        <div class="pt-space-md border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
-          <div class="font-body-sm text-body-sm text-outline">© 2024 Pixel Verse Studios. All rights reserved.</div>
-          <div class="flex items-center gap-space-md font-body-sm text-body-sm text-on-surface-variant">
-            <a class="hover:text-primary transition-colors" href="#">Terms</a>
-            <a class="hover:text-primary transition-colors" href="#">Privacy</a>
-            <a class="hover:text-primary transition-colors" href="studio-lore.html#press-inquiries">Contact</a>
+        <div class="footer-bottom">
+          <div class="copyright">© 2024 Pixel Verse Studios. All rights reserved.</div>
+          <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="studio-lore.html#press-inquiries">Contact</a>
           </div>
         </div>
       </div>
