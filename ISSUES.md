@@ -22,3 +22,32 @@ The Pixel Verse Studios website (issue #5) links its "Play" buttons to the itch.
 **Status:** open
 
 `game_data.py` Jupiter text reads "Great Red Spot, a giant s-torm." — should be "storm".
+
+## #4 — Earth-to-Jupiter Journey redesign `[feature]`
+
+**Status:** open — design agreed, implementation plan next
+
+Replace the endless shooter with a Journey: Intro → Level 1 Earth → Level 2 Asteroid belt → Level 3 Europa → Jupiter win screen. Terms are defined in `CONTEXT.md`.
+
+- [ ] **Intro**: original space background, Hero boards the Ship, Space launches Level 1.
+- [ ] **Earth**: dodge space junk, Ship cannot shoot. **Belt**: shoot asteroids (only Level with asteroids). **Europa**: shoot ice chunks that take 2 hits (first hit swaps to a cracked sprite).
+- [ ] Each Level ends at a points target (one number per Level in `level_data.py`), then shows a Fact card.
+- [ ] Game over: random planet fact (existing `game_data.py`), R retries the same Level with 3 hearts. High score stays in memory.
+- [ ] Win screen on Jupiter background: Hero, Jupiter fact, score + high score, R flies again from Earth.
+- [ ] Controls: keyboard (arrows, Space, P, R, F) + clickable left/right/pause/continue buttons; Ship auto-fires in shooting Levels.
+- [ ] Kid-simple code: `Game.py` has only the Pygame Zero hooks and switches on `game_mode`; one file per screen/Level; no try/except; assets resolved from the game folder (also fixes #1).
+
+## #5 — Prepare new art for use `[feature]`
+
+**Status:** open
+
+- [ ] `characters/hero.png` and `asteroid.png`: remove white background, shrink (hero ~150px tall, asteroid ~120px), keep originals in `images/originals/`.
+- [ ] `buttons/*.jpeg` → PNG with transparent corners.
+- [ ] Crop/resize `backgrounds/uropa.png` (typo for "europa", rename) to 800×600.
+- [ ] Still to design (placeholders until then): Earth, belt and Jupiter backgrounds; space-junk and ice-chunk (and cracked) sprites; football bullet; pixel heart; ship matching the Hero style.
+
+## #6 — Hero art shows real-world logos `[bug]`
+
+**Status:** open — release blocker for #2
+
+`characters/hero.png` shows the Puma mark and the Egypt FA badge. Kept deliberately for now. Replace or remove before the public itch.io release.
