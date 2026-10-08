@@ -10,8 +10,8 @@ WIDTH = 800
 HEIGHT = 600
 FULLSCREEN = True
 
-background = Actor("space_background", (400, 300))
-ship = Actor("ship", (400, 550))
+background = Actor("backgrounds/space_background", (400, 300))
+ship = Actor("characters/ship", (400, 550))
 
 
 ship.scale = 0.5
