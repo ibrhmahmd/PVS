@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Workspace layout
 
-`PVS/` is **one git repo** (branch `main`, no remote yet) holding three projects for the fictional studio Pixel Verse Studios. Until 2026-10-08 they were separate repos. Their histories were imported under each folder, so `git log -- space-game/` shows only the import merge: use `git log <import-commit>^2` to see a project's older commits. The old `.git` folders are backed up in `../PVS-git-backups/`. The old GitHub repos (`ibrhmahmd/crab-quests`, `ibrhmahmd/pixel-verse-studios`) are no longer pushed to. Each project keeps its own `ISSUES.md`, `.gitignore` and `.gitattributes`; the root `.gitignore` covers `.venv/`, `__pycache__/` and `.claude/worktrees/` everywhere.
+`PVS/` is **one git repo** (branch `main`, remote `https://github.com/ibrhmahmd/PVS`) holding three projects for the fictional studio Pixel Verse Studios. Until 2026-10-08 they were separate repos. Their histories were imported under each folder, so `git log -- space-game/` shows only the import merge: use `git log <import-commit>^2` to see a project's older commits. The old `.git` folders are backed up in `../PVS-git-backups/`. The old GitHub repos (`ibrhmahmd/crab-quests`, `ibrhmahmd/pixel-verse-studios`) are no longer pushed to. Each project keeps its own `ISSUES.md`, `.gitignore` and `.gitattributes`; the root `.gitignore` covers `.venv/`, `__pycache__/` and `.claude/worktrees/` everywhere.
 
 | Dir | What | Stack |
 |---|---|---|
