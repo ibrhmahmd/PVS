@@ -123,8 +123,8 @@ Goal: code a curious 12-year-old could read top to bottom.
 
 **Status:** open — waiting for the real art (space-game `ISSUES.md` #5)
 
-Space X was redesigned (space-game commit `ddf794c`, issue #4). It is no longer an endless asteroid shooter. It is now a Journey: Intro → Earth (dodge space junk) → Asteroid belt (shoot asteroids) → Europa (ice chunks need two hits) → Jupiter win screen, with a Fact card after each Level.
+Space X was redesigned (space-game issues #4 and #7). It is no longer an endless asteroid shooter. It is now "Journey to Jupiter", a science Mission to find out if Europa's hidden ocean could hold life: Title screen → 1 Launch pad (walk the Hero, collect the 4-item Checklist before the 30 s Countdown, blast off) → 2 Earth orbit (dodge space junk) → 3 Asteroid belt (shoot asteroids) → 4 Europa (ice chunks need two hits, then the Ship scans for the ocean) → Jupiter win screen, with a Fact card after each Level.
 
 - [ ] Update the Space X text on `index.html`, `games.html`, `studio-lore.html` and `heros-journey.html` to describe the Journey.
-- [ ] Controls: Left/Right or the on-screen arrows to move, Space to start and shoot (auto-fire in the belt and on Europa), P or the pause button to pause, R to retry, F for fullscreen.
-- [ ] Replace screenshots once the final Earth, belt and Jupiter art lands.
+- [ ] Controls: Left/Right or the on-screen arrows to walk or fly, Space to start and shoot (auto-fire in the belt and on Europa), P or the pause button to pause, R to retry, F for fullscreen.
+- [ ] Replace screenshots once the final art lands (Launch pad, Ship and belt are still placeholders).

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Workspace layout
 
-`PVS/` is **not a git repo itself**. It is a parent folder holding three independent repos (each with its own `.git`, `ISSUES.md`, and `.gitattributes`) for the fictional studio Pixel Verse Studios. Run git commands from inside the sub-project.
+`PVS/` is **one git repo** (branch `main`, no remote yet) holding three projects for the fictional studio Pixel Verse Studios. Until 2026-10-08 they were separate repos. Their histories were imported under each folder, so `git log -- space-game/` shows only the import merge: use `git log <import-commit>^2` to see a project's older commits. The old `.git` folders are backed up in `../PVS-git-backups/`. The old GitHub repos (`ibrhmahmd/crab-quests`, `ibrhmahmd/pixel-verse-studios`) are no longer pushed to. Each project keeps its own `ISSUES.md`, `.gitignore` and `.gitattributes`; the root `.gitignore` covers `.venv/`, `__pycache__/` and `.claude/worktrees/` everywhere.
 
 | Dir | What | Stack |
 |---|---|---|
@@ -37,7 +37,7 @@ Crab-game loads assets with cwd-relative paths (`images/`, `music/`), so launch 
 - The mute button lives in `main.py` and is drawn over every screen.
 
 **space-game**: "Journey to Jupiter", a mode-dispatch state machine like Crab-game (details in `space-game/CLAUDE.md`).
-- `Game.py` holds only the Pygame Zero hooks and switches on `parts/game_states.mode`. Code lives in `screens/`, `levels/` (earth, belt, europa), `parts/` (ship, controls, hud, state) and `data/` (Level targets, facts).
+- `Game.py` holds only the Pygame Zero hooks and switches on `parts/game_states.mode`. Code lives in `screens/`, `levels/` (launch_pad, earth_orbit, belt, europa), `parts/` (ship, controls, hud, state) and `data/` (Level targets, facts).
 - Assets load from the game's own folder, so it runs from any directory.
 
 ## Conventions
