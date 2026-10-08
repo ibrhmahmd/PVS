@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-"Space X" is an educational space shooter built with Pygame Zero. It is one of three sibling repos under `PVS/` (see `../CLAUDE.md` for the workspace layout and the Delegate-Skills workflow). Work is tracked in the local `ISSUES.md`.
+"Space X" is an educational space shooter built with Pygame Zero. It is one of three projects in the `PVS/` repo (see `../CLAUDE.md` for the workspace layout and the Delegate-Skills workflow). Work is tracked in the local `ISSUES.md`.
 
 ## Commands
 
