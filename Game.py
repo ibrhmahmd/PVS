@@ -1,186 +1,131 @@
-import pgzrun
-from pgzero.actor import Actor
-import random
+# Space X: Journey to Jupiter.
+# This file only holds the three Pygame Zero hooks (draw, update, on_key_down) and the mouse hooks.
+# Each screen lives in its own file. game_mode in game_states.py says which one is showing.
+import os
+import sys
 import pygame
-from game_data import space_info_list
+import pgzrun
+from pgzero.keyboard import keys
+from pgzero.actor import Actor
+import game_states
+import controls
+import intro
+import fact_card
+import game_over
+import win
+import level_earth
+import level_belt
+import level_europa
+from level_data import LEVELS
 
-high_score = 0
-level = 1  
+# Always look for images/ and music/ next to this file, even when started from another folder
+# or from a PyInstaller build (which unpacks its files into sys._MEIPASS).
+GAME_FOLDER = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+os.chdir(GAME_FOLDER)
+
 WIDTH = 800
 HEIGHT = 600
-FULLSCREEN = True
 
-background = Actor("backgrounds/space_background", (400, 300))
-ship = Actor("characters/ship", (400, 550))
-
-
-ship.scale = 0.5
-bullets = []
-asteroids = []
-heart = Actor("health")
-heart.scale = 0.1
-
-logo = Actor("logogame")
-logo.scale = 0.5
-logo.pos = (400,250)
+# Level 1, 2 and 3 in the same order as LEVELS in level_data.py
+LEVEL_FILES = [level_earth, level_belt, level_europa]
 
 
-score = 0
-health = 3
-timer = 0
-game_started = False
-current_planet_info = None
-current_planet_image = None
-show_info_screen = False
-paused = False
+def start_level():
+    # Called when a Level begins (the first time, or after a Fact card).
+    game_states.mode = "PLAYING"
+    game_states.level_points = 0
+    game_states.level_start_score = game_states.score
+    game_states.health = 3
+    LEVEL_FILES[game_states.level_number].start()
+
+
+def current_level():
+    return LEVEL_FILES[game_states.level_number]
+
 
 def draw():
-    background.draw()
+    mode = game_states.mode
+    if mode == "INTRO":
+        intro.draw(screen)
+    elif mode == "PLAYING":
+        current_level().draw(screen)
+    elif mode == "FACT_CARD":
+        fact_card.draw(screen, current_level().background)
+    elif mode == "GAME_OVER":
+        game_over.draw(screen, current_level().background)
+    elif mode == "WIN":
+        win.draw(screen)
 
-    if not game_started:
-        logo.draw()
-        screen.draw.text("SpaceX is an educational game to learn about our solar system", center=(400, 500), fontsize=35, color="yellow")
-        screen.draw.text("Press Space to Start", center=(400, 550), fontsize=60, color="white")
-        return
 
-    ship.draw()
-    for bullet in bullets:
-        bullet.draw()
-    if health > 0:
-        for asteroid in asteroids:
-            asteroid.draw()
-    for i in range(max(0, health)):
-        heart.pos = (WIDTH - 40 - (i * 50), 40)
-        heart.draw()
-    screen.draw.text(f"Score: {score}", topleft=(20, 20), fontsize=50, color="yellow")
-    screen.draw.text(f"Level: {level}", bottomright=(WIDTH - 20, HEIGHT - 20), fontsize=40, color="cyan")
-    screen.draw.text(f"High Score: {high_score}", bottomleft=(20, HEIGHT - 20), fontsize=40, color="cyan")
-    
-    if paused:
-        screen.draw.text("PAUSED", center=(400, 300), fontsize=80, color="orange")
-        screen.draw.text("press P to continue", center=(400, 400), fontsize=40, color="white")
+def update(keyboard):
+    mode = game_states.mode
+
+    # Music plays only while we are really playing.
+    if mode == "PLAYING" and not game_states.paused:
+        if not music.is_playing("music.mp3"):
+            music.play("music.mp3")
+            music.set_volume(0.9)
+    elif music.is_playing("music.mp3"):
         music.stop()
 
-    if health <= 0:
-                
-        if show_info_screen and current_planet_info:
-            center_x = WIDTH // 2
-            center_y = HEIGHT // 2
-            
-            if current_planet_image:
-                img_rect = current_planet_image.get_rect()
-                img_rect.center = (center_x, center_y - 150)
-                screen.surface.blit(current_planet_image, img_rect)
-            
-            text_content = " ".join(current_planet_info["text"])
-            screen.draw.text(text_content, 
-                           midtop=(center_x, center_y - 20),
-                           width=700,
-                           fontsize=40,
-                           color="white",
-                           align="center",
-                           shadow=(1,1),
-                           scolor="black")
-        
-        screen.draw.text("GAME OVER", center=(400, 480), fontsize=120, color="red")        
-        screen.draw.text("Press R to Restart", center=(400, 550), fontsize=50, color="white")
+    if mode == "INTRO":
+        intro.update()
+    elif mode == "PLAYING" and not game_states.paused:
+        current_level().update(keyboard)
+        if game_states.health <= 0:
+            game_over.start()
+        elif game_states.level_points >= LEVELS[game_states.level_number]["target"]:
+            game_states.mode = "FACT_CARD"
 
-def update():
-    global score, health, timer, current_planet_info, show_info_screen, current_planet_image, high_score, level, game_started, paused
-    
-    if not game_started or paused:
-        return
-    
-    if health > 0 and not music.is_playing('music.mp3'):
-        music.play('music.mp3')
-        music.set_volume(0.9)
-
-    if health <= 0 and music.is_playing('music.mp3'):
-        music.stop()
-
-    if health <= 0:
-        if not show_info_screen:
-            if score > high_score:
-                high_score = score
-            current_planet_info = random.choice(space_info_list)
-            current_planet_image = pygame.image.load(current_planet_info["image"])
-            show_info_screen = True
-        return
-    level = 1 + score // 30
-    if keyboard.left and ship.x > 50:  
-        ship.x -= 9
-    if keyboard.right and ship.x < 750: 
-        ship.x += 9
-
-    # adding forward and backward movement Feature  
-
-    # if keyboard.up and ship.y > 50: 
-    #     ship.y -= 8
-    # if keyboard.down and ship.y < 550: 
-    #     ship.y += 8
-
-    for bullet in bullets[:]:
-        bullet.y -= 10
-        if bullet.y < -50:
-            bullets.remove(bullet)
-    timer += 1
-    spawn_time = max(20, 60 - int(score / 2))
-    if timer > spawn_time:
-        asteroid = Actor("asteroid")
-        asteroid.pos = (random.randint(50, 750), -50)
-        asteroid.scale = 0.4
-        asteroids.append(asteroid)
-        timer = 0
-    for asteroid in asteroids[:]:
-        speed = 3 + min(score / 10, 5)
-        asteroid.y += speed
-
-        if asteroid.colliderect(ship):
-            crash_sound = pygame.mixer.Sound('music/crash.mp3')
-            crash_sound.set_volume(0.4)
-            crash_sound.play()
-            health -= 1
-            asteroids.remove(asteroid)        
-        elif asteroid.y > 650:
-            health -= 1
-            asteroids.remove(asteroid)
+    # intro.py, fact_card.py and game_over.py ask for a new Level by setting these modes.
+    if game_states.mode == "NEXT_LEVEL":
+        if game_states.level_number >= len(LEVEL_FILES):
+            win.start()
         else:
-            for bullet in bullets[:]:
-                if asteroid.colliderect(bullet):
-                    score += 1
-                    if asteroid in asteroids:
-                        asteroids.remove(asteroid)
-                    if bullet in bullets:
-                        bullets.remove(bullet)
-                    break
+            start_level()
+    elif game_states.mode == "RETRY_LEVEL":
+        start_level()
+
+
+def go_to_next_screen():
+    # What Space (or a click) does on every screen that is not a Level.
+    mode = game_states.mode
+    if mode == "INTRO":
+        intro.go()
+    elif mode == "FACT_CARD":
+        fact_card.go()
+    elif mode == "GAME_OVER":
+        game_over.go()
+    elif mode == "WIN":
+        win.go()
+
 
 def on_key_down(key):
-    global score, health, asteroids, bullets, timer, show_info_screen, current_planet_info, level, game_started, paused
+    mode = game_states.mode
 
-    if key == keys.P and game_started and health > 0:
-        paused = not paused
-
-    if paused:
-        return
-
-    if key == keys.SPACE:
-        if not game_started:
-            game_started = True
-        else:
-            new_bullet = Actor("bullet")
-            new_bullet.scale = 0.3
-            new_bullet.pos = ship.x, ship.y
-            bullets.append(new_bullet)
-    if key == keys.R and health <= 0:
-        score = 0
-        health = 3
-        level = 1
-        asteroids = []
-        bullets = []
-        timer = 0
-        show_info_screen = False
-        current_planet_info = None
     if key == keys.F:
         pygame.display.toggle_fullscreen()
+
+    if mode == "PLAYING":
+        if key == keys.P:
+            game_states.paused = not game_states.paused
+        elif not game_states.paused:
+            current_level().on_key_down(key, keys)
+    elif mode in ("INTRO", "FACT_CARD") and key == keys.SPACE:
+        go_to_next_screen()
+    elif mode in ("GAME_OVER", "WIN") and key == keys.R:
+        go_to_next_screen()
+
+
+def on_mouse_down(pos):
+    if game_states.mode == "PLAYING":
+        controls.on_mouse_down(pos)
+    else:
+        go_to_next_screen()
+
+
+def on_mouse_up():
+    controls.on_mouse_up()
+
 
 pgzrun.go()

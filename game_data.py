@@ -57,7 +57,7 @@ space_info_list = [
             "Jupiter is the largest planet",
             "in our solar system.",
             "It's a gas giant with a famous",
-            "Great Red Spot, a giant s-torm.",
+            "Great Red Spot, a giant storm.",
             "Jupiter has at least 79 moons!"
         ]
     },

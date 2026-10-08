@@ -2,9 +2,9 @@
 
 ## #1 — Asset paths break when started from another folder `[bug]`
 
-**Status:** open — scheduled for the Windows 11 build session
+**Status:** fixed in the Journey redesign (`Game.py` changes into its own folder, or `sys._MEIPASS` when frozen); still to confirm in a PyInstaller build
 
-`Game.py` loads files with cwd-relative paths: `pygame.image.load(current_planet_info["image"])` (paths like `images/Sun.png` from `game_data.py`) and `pygame.mixer.Sound('music/crash.mp3')`. Running the game from any other directory — or from a PyInstaller build — fails to find them. Resolve paths against the game's own folder (and `sys._MEIPASS` when frozen).
+`Game.py` loaded files with cwd-relative paths: `pygame.image.load(current_planet_info["image"])` (paths like `images/Sun.png` from `game_data.py`) and `pygame.mixer.Sound('music/crash.mp3')`. Running the game from any other directory — or from a PyInstaller build — fails to find them. Resolve paths against the game's own folder (and `sys._MEIPASS` when frozen).
 
 ## #2 — Package Space X for players `[feature]`
 
@@ -19,13 +19,13 @@ The Pixel Verse Studios website (issue #5) links its "Play" buttons to the itch.
 
 ## #3 — Typo in the Jupiter fact `[bug]`
 
-**Status:** open
+**Status:** fixed
 
 `game_data.py` Jupiter text reads "Great Red Spot, a giant s-torm." — should be "storm".
 
 ## #4 — Earth-to-Jupiter Journey redesign `[feature]`
 
-**Status:** open — design agreed, implementation plan next
+**Status:** implemented, uncommitted, awaiting review/playtest (headless full-flow test passes)
 
 Replace the endless shooter with a Journey: Intro → Level 1 Earth → Level 2 Asteroid belt → Level 3 Europa → Jupiter win screen. Terms are defined in `CONTEXT.md`.
 
@@ -39,7 +39,7 @@ Replace the endless shooter with a Journey: Intro → Level 1 Earth → Level 2 
 
 ## #5 — Prepare new art for use `[feature]`
 
-**Status:** open
+**Status:** cutouts, PNG buttons, `europa.png` and placeholders done; real Earth/belt/Jupiter backgrounds and junk/ice/football/heart/ship art still to design
 
 - [ ] `characters/hero.png` and `asteroid.png`: remove white background, shrink (hero ~150px tall, asteroid ~120px), keep originals in `images/originals/`.
 - [ ] `buttons/*.jpeg` → PNG with transparent corners.
