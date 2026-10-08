@@ -15,7 +15,7 @@ WIDTH = 1200
 HEIGHT = 600
 TITLE = "Crab Game"
 
-
+ 
 mute_button = Actor("music_on")
 mute_button.pos = (WIDTH - 50, 50)
 
