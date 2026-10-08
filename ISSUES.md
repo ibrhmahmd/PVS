@@ -118,3 +118,13 @@ Goal: code a curious 12-year-old could read top to bottom.
 - [x] Restored `assets/img/space-x/asteroid.png` and `ship.png`, which the "markting updates" commit deleted by mistake (broken images on games and journey pages)
 
 **Note:** issues #1 and #3 describe the old Play CDN / Tailwind setup and the removed mobile menu and newsletter; they are history.
+
+## #8 — Describe Space X's new Journey to Jupiter `[docs]`
+
+**Status:** open — waiting for the real art (space-game `ISSUES.md` #5)
+
+Space X was redesigned (space-game commit `ddf794c`, issue #4). It is no longer an endless asteroid shooter. It is now a Journey: Intro → Earth (dodge space junk) → Asteroid belt (shoot asteroids) → Europa (ice chunks need two hits) → Jupiter win screen, with a Fact card after each Level.
+
+- [ ] Update the Space X text on `index.html`, `games.html`, `studio-lore.html` and `heros-journey.html` to describe the Journey.
+- [ ] Controls: Left/Right or the on-screen arrows to move, Space to start and shoot (auto-fire in the belt and on Europa), P or the pause button to pause, R to retry, F for fullscreen.
+- [ ] Replace screenshots once the final Earth, belt and Jupiter art lands.
