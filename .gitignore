@@ -1,0 +1,6 @@
+# Applies to every project in this repo (each project also has its own .gitignore).
+.venv/
+__pycache__/
+*.pyc
+.claude/worktrees/
+.claude/settings.local.json
