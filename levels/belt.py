@@ -1,9 +1,10 @@
-# Level 2: Asteroid belt. Shoot the asteroids. This is the only Level with asteroids.
+# Level 3: Asteroid belt. Shoot the asteroids. This is the only Level with asteroids.
 import random
 from pgzero.actor import Actor
 from parts import game_states
 from parts import ship
 from parts import hud
+from data.level_data import LEVELS
 
 BASE_SPEED = 3         # pixels per frame at the start of the Level
 SPAWN_EVERY = 60       # frames between asteroids at the start; it gets faster as you score
@@ -51,6 +52,9 @@ def update(keyboard):
                     asteroids.remove(asteroid)
                     ship.bullets.remove(bullet)
                     break
+
+    if game_states.level_points >= LEVELS[game_states.level_number]["target"]:
+        game_states.level_cleared = True
 
 
 def draw(screen):

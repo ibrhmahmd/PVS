@@ -1,9 +1,10 @@
-# Level 1: Earth. Dodge the space junk. The Ship cannot shoot here.
+# Level 2: Earth orbit. Dodge the space junk. The Ship cannot shoot here.
 import random
 from pgzero.actor import Actor
 from parts import game_states
 from parts import ship
 from parts import hud
+from data.level_data import LEVELS
 
 JUNK_SPEED = 4         # pixels per frame
 SPAWN_EVERY = 45       # frames between new pieces of junk (a bit under one a second)
@@ -42,6 +43,9 @@ def update(keyboard):
             game_states.score += 1
             game_states.level_points += 1
             junk_pieces.remove(junk)
+
+    if game_states.level_points >= LEVELS[game_states.level_number]["target"]:
+        game_states.level_cleared = True
 
 
 def draw(screen):

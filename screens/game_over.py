@@ -31,6 +31,6 @@ def draw(screen, background):
     screen.surface.blit(planet_image, image_rect)
     screen.draw.filled_rect(Rect(40, 270, 720, 320), (10, 10, 40))  # dark panel so the words are easy to read
     screen.draw.text(" ".join(planet_info["text"]), midtop=(400, 280), width=700, fontsize=40,
-                     color="white", align="center", shadow=(1, 1), scolor="black")
-    screen.draw.text("GAME OVER", center=(400, 480), fontsize=120, color="red")
-    screen.draw.text("Press R to try this Level again", center=(400, 550), fontsize=50, color="white")
+                     color="white", align="center", owidth=1.5, ocolor="black")
+    screen.draw.text("GAME OVER", center=(400, 480), fontsize=120, color="red", owidth=1.5, ocolor="black")
+    screen.draw.text("Press R to try this Level again", center=(400, 550), fontsize=50, color="white", owidth=1.5, ocolor="black")
