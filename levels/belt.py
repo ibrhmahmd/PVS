@@ -1,9 +1,9 @@
 # Level 2: Asteroid belt. Shoot the asteroids. This is the only Level with asteroids.
 import random
 from pgzero.actor import Actor
-import game_states
-import ship
-import hud
+from parts import game_states
+from parts import ship
+from parts import hud
 
 BASE_SPEED = 3         # pixels per frame at the start of the Level
 SPAWN_EVERY = 60       # frames between asteroids at the start; it gets faster as you score

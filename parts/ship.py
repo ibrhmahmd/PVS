@@ -1,12 +1,13 @@
 # The Ship and its footballs (bullets). Every Level uses the same Ship.
 from pgzero.actor import Actor
 import pygame
-import controls
+from parts import controls
 
 SHIP_Y = 470          # high enough that the buttons at the bottom never cover it
 SHIP_SPEED = 9        # pixels per frame
 BULLET_SPEED = 10
 AUTO_FIRE_EVERY = 30  # frames. The game runs at 60 frames a second, so this is every half second.
+SHOOT_VOLUME = 0.15   # quiet, because with auto-fire it plays twice a second
 
 ship = Actor("characters/ship", (400, SHIP_Y))
 bullets = []
@@ -31,6 +32,9 @@ def fire():
     bullet = Actor("football")
     bullet.pos = (ship.x, ship.y - 40)
     bullets.append(bullet)
+    shoot_sound = pygame.mixer.Sound("music/shoot.wav")
+    shoot_sound.set_volume(SHOOT_VOLUME)
+    shoot_sound.play()
 
 
 def update_bullets(auto_fire):

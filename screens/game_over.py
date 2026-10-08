@@ -2,8 +2,8 @@
 import random
 import pygame
 from pygame import Rect
-import game_states
-from game_data import space_info_list
+from parts import game_states
+from data.game_data import space_info_list
 
 planet_info = None
 planet_image = None

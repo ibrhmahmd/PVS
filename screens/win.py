@@ -1,7 +1,7 @@
 # The last screen: the Hero reached Jupiter!
 from pgzero.actor import Actor
-import game_states
-from level_data import WIN_FACT
+from parts import game_states
+from data.level_data import WIN_FACT
 
 background = Actor("backgrounds/jupiter", (400, 300))
 hero = Actor("characters/hero", (140, 330))

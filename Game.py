@@ -1,22 +1,22 @@
 # Space X: Journey to Jupiter.
 # This file only holds the three Pygame Zero hooks (draw, update, on_key_down) and the mouse hooks.
-# Each screen lives in its own file. game_mode in game_states.py says which one is showing.
+# Screens are in screens/, Levels in levels/, shared pieces in parts/, facts and numbers in data/.
+# game_states.mode (in parts/game_states.py) says which screen is showing.
 import os
 import sys
 import pygame
 import pgzrun
 from pgzero.keyboard import keys
-from pgzero.actor import Actor
-import game_states
-import controls
-import intro
-import fact_card
-import game_over
-import win
-import level_earth
-import level_belt
-import level_europa
-from level_data import LEVELS
+from parts import game_states
+from parts import controls
+from screens import intro
+from screens import fact_card
+from screens import game_over
+from screens import win
+from levels import earth
+from levels import belt
+from levels import europa
+from data.level_data import LEVELS
 
 # Always look for images/ and music/ next to this file, even when started from another folder
 # or from a PyInstaller build (which unpacks its files into sys._MEIPASS).
@@ -27,7 +27,7 @@ WIDTH = 800
 HEIGHT = 600
 
 # Level 1, 2 and 3 in the same order as LEVELS in level_data.py
-LEVEL_FILES = [level_earth, level_belt, level_europa]
+LEVEL_FILES = [earth, belt, europa]
 
 
 def start_level():
@@ -77,7 +77,7 @@ def update(keyboard):
         elif game_states.level_points >= LEVELS[game_states.level_number]["target"]:
             game_states.mode = "FACT_CARD"
 
-    # intro.py, fact_card.py and game_over.py ask for a new Level by setting these modes.
+    # screens/intro.py, fact_card.py and game_over.py ask for a new Level by setting these modes.
     if game_states.mode == "NEXT_LEVEL":
         if game_states.level_number >= len(LEVEL_FILES):
             win.start()

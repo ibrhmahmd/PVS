@@ -1,8 +1,8 @@
 # What is drawn on top of every Level: score, hearts, buttons and the pause screen.
 from pgzero.actor import Actor
-import game_states
-import controls
-from level_data import LEVELS
+from parts import game_states
+from parts import controls
+from data.level_data import LEVELS
 
 heart = Actor("health")
 

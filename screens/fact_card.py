@@ -1,8 +1,8 @@
 # Shown when a Level is cleared. It teaches one thing about the place we just passed.
 from pgzero.actor import Actor
 from pygame import Rect
-import game_states
-from level_data import LEVELS
+from parts import game_states
+from data.level_data import LEVELS
 
 hero = Actor("characters/hero", (140, 330))
 

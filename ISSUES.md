@@ -31,15 +31,15 @@ Replace the endless shooter with a Journey: Intro → Level 1 Earth → Level 2 
 
 - [ ] **Intro**: original space background, Hero boards the Ship, Space launches Level 1.
 - [ ] **Earth**: dodge space junk, Ship cannot shoot. **Belt**: shoot asteroids (only Level with asteroids). **Europa**: shoot ice chunks that take 2 hits (first hit swaps to a cracked sprite).
-- [ ] Each Level ends at a points target (one number per Level in `level_data.py`), then shows a Fact card.
-- [ ] Game over: random planet fact (existing `game_data.py`), R retries the same Level with 3 hearts. High score stays in memory.
+- [ ] Each Level ends at a points target (one number per Level in `data/level_data.py`), then shows a Fact card.
+- [ ] Game over: random planet fact (`data/game_data.py`), R retries the same Level with 3 hearts. High score stays in memory.
 - [ ] Win screen on Jupiter background: Hero, Jupiter fact, score + high score, R flies again from Earth.
 - [ ] Controls: keyboard (arrows, Space, P, R, F) + clickable left/right/pause/continue buttons; Ship auto-fires in shooting Levels.
-- [ ] Kid-simple code: `Game.py` has only the Pygame Zero hooks and switches on `game_mode`; one file per screen/Level; no try/except; assets resolved from the game folder (also fixes #1).
+- [ ] Kid-simple code: `Game.py` has only the Pygame Zero hooks and switches on `game_mode`; code organised into `screens/`, `levels/`, `parts/`, `data/`; no try/except; assets resolved from the game folder (also fixes #1).
 
 ## #5 — Prepare new art for use `[feature]`
 
-**Status:** cutouts, PNG buttons, `europa.png` and placeholders done; real Earth/belt/Jupiter backgrounds and junk/ice/football/heart/ship art still to design
+**Status:** cutouts, PNG buttons, `europa.png` and placeholders done; real Earth/belt/Jupiter backgrounds and junk/ice/football/heart/ship art still to design. Ready-to-paste prompts are in `docs/art-prompts.md`
 
 - [ ] `characters/hero.png` and `asteroid.png`: remove white background, shrink (hero ~150px tall, asteroid ~120px), keep originals in `images/originals/`.
 - [ ] `buttons/*.jpeg` → PNG with transparent corners.

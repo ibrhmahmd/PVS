@@ -1,6 +1,6 @@
 # The on-screen buttons (for mouse or touch). The keyboard works too.
 from pgzero.actor import Actor
-import game_states
+from parts import game_states
 
 left_button = Actor("buttons/left", (50, 550))
 right_button = Actor("buttons/right", (140, 550))

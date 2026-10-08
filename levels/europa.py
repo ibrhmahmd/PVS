@@ -1,9 +1,9 @@
 # Level 3: Europa. Shoot the ice chunks. Each chunk needs TWO hits: the first one cracks it.
 import random
 from pgzero.actor import Actor
-import game_states
-import ship
-import hud
+from parts import game_states
+from parts import ship
+from parts import hud
 
 CHUNK_SPEED = 2.5      # slower than asteroids, because chunks are tougher
 SPAWN_EVERY = 80       # frames between ice chunks

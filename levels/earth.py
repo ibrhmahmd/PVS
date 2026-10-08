@@ -1,9 +1,9 @@
 # Level 1: Earth. Dodge the space junk. The Ship cannot shoot here.
 import random
 from pgzero.actor import Actor
-import game_states
-import ship
-import hud
+from parts import game_states
+from parts import ship
+from parts import hud
 
 JUNK_SPEED = 4         # pixels per frame
 SPAWN_EVERY = 45       # frames between new pieces of junk (a bit under one a second)
