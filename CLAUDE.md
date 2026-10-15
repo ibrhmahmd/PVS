@@ -16,6 +16,10 @@ The website describes the two games, so changes to game content/controls/titles 
 
 `pixel-verse-studios/` has its own detailed `CLAUDE.md` / `AGENTS.md` (styling loop, per-page rules, design-system gotchas). Read it before touching the site; it is not repeated here.
 
+## Docs (competition deliverables)
+
+`docs/` holds the studio documentation, poster (1000×2000 mm) and presentation (PDF + PPTX) for the Afro-Asian Technology Competition 2026. Rebuild everything with `python3 docs/build.py [documentation|poster|slides|all]` (needs google-chrome, pdftoppm and `pip install markdown qrcode python-pptx pillow`). The poster QR code encodes `SITE_URL` at the top of `docs/build.py`. Space X screenshots in `docs/assets/space-x/` come from the real game, so recapture them if the look changes. Tracked in `ISSUES.md` #1.
+
 ## Commands
 
 **Website** (run from `pixel-verse-studios/`):
