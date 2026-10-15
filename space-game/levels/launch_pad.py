@@ -7,9 +7,9 @@ from parts import game_states
 from parts import controls
 from parts import hud
 
-COUNTDOWN_SECONDS = 30   # time to grab everything and climb in
+COUNTDOWN_SECONDS = 5   # time to grab everything and climb in
 WALK_SPEED = 5           # pixels per frame
-GROUND_Y = 500           # where the concrete starts in the background picture
+GROUND_Y = 465           # the hero stands just below the yellow-and-black stripe of the concrete
 BLAST_OFF_SPEED = 7      # pixels per frame while the Ship flies up
 HERO_START_X = 250
 NEXT_TO_SHIP_X = 545     # the Hero is standing next to the Ship's door from here on
@@ -18,7 +18,7 @@ FARTHEST_X = 560         # the Hero can't walk into the Ship
 # Each item lands somewhere inside its own zone (left x, right x), so the items are always spread out.
 # The first zone is behind where the Hero starts, so he has to turn back once.
 ZONES = [(60, 180), (320, 410), (430, 500), (515, 560)]
-ITEM_NAMES = ["item_helmet", "item_ammo", "item_football", "item_fuel"]
+ITEM_NAMES = ["items/helmet", "items/ammo", "items/football", "items/fuel"]
 
 background = Actor("backgrounds/launch_pad", (400, 300))
 hero = Actor("characters/hero_small", (HERO_START_X, GROUND_Y - 70))

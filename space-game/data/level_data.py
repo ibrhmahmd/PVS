@@ -42,7 +42,7 @@ LEVELS = [
     {
         "name": "Level 3: Asteroid belt",
         "background": "backgrounds/belt",
-        "target": 15,
+        "target": 30,
         "story": [
             "Through the belt! Europa's geysers are",
             "blasting ice into space. Break the ice",

@@ -82,19 +82,19 @@ Generate both views on **one image, side by side**, so they're obviously the sam
 
 Shown at: `ship.png` 100×100 (flying, top-down) and `ship_pad.png` 180×180 (standing on the Launch pad).
 
-### 7. Sheet: `item_helmet.png`, `item_ammo.png`, `item_football.png`, `item_fuel.png`, the Checklist
+### 7. Sheet: `items/helmet.png`, `items/ammo.png`, `items/football.png`, `items/fuel.png`, the Checklist
 
 > A sprite sheet of 4 separate game pickup items in one horizontal row on the magenta background, evenly spaced with clear gaps between them, all the same size, each one bold and simple enough to read at a tiny size: (1) a white astronaut space helmet seen from the front, with a dark-blue reflective visor, a small white shine on the visor and a thin red stripe around the rim, matching the attached astronaut's helmet; (2) a small wooden supply crate with darker wood planks and metal corner brackets, its lid open and leaning back, filled with three black-and-white footballs (soccer balls) poking out; (3) a single classic black-and-white football (soccer ball) with pentagon panels and a tiny gold star sticker on it, the astronaut's lucky ball; (4) a red metal fuel can (jerry can) with a black screw cap on top, a handle, and a yellow lightning-bolt stripe on the side.
 
 Shown at: 48×48 each, both on the ground and as icons in the checklist bar.
 
-### 8. `junk.png`: space junk (Earth orbit)
+### 8. `sprites/junk.png`: space junk (Earth orbit)
 
 > An old, broken, tumbling satellite drifting in space, seen from the side at a slight angle: a dented grey-silver box-shaped body with scratches, a few loose bolts and a small dish antenna, two rectangular dark-blue solar panel wings with a grid of cells, one wing bent and cracked, and a short snapped-off antenna rod. A couple of tiny metal fragments float near it. It should look old, abandoned and dangerous, but simple and readable.
 
 Shown at: about 100×60 (wide, not tall). Make it wider than it is tall.
 
-### 9. Sheet: `ice.png` + `ice_cracked.png`, the Europa ice chunk
+### 9. Sheet: `sprites/ice.png` + `sprites/ice_cracked.png`, the Europa ice chunk
 
 Generate both on **one image, side by side**, so the shape matches exactly.
 
@@ -102,13 +102,13 @@ Generate both on **one image, side by side**, so the shape matches exactly.
 
 Shown at: about 95×90 each.
 
-### 10. `football.png`: the Ship's bullet
+### 10. `sprites/football.png`: the Ship's bullet
 
 > A single classic football (soccer ball), perfectly round, white with black pentagon panels in the traditional pattern, a small bright white shine on the upper left, and a short faint white speed trail behind it pointing straight down (it is flying upwards). Very bold and simple: it must read clearly at a tiny size.
 
 Shown at: 32×32. Keep the trail short so the ball itself fills most of the frame.
 
-### 11. `health.png`: a heart (lives)
+### 11. `ui/health.png`: a heart (lives)
 
 > A single shiny, chunky, classic video-game heart for showing lives: bright red with a darker red shade on the lower right, a small white square shine on the upper left, and a bold dark outline.
 
@@ -136,17 +136,17 @@ Shown at: about 32×32, in a row of three at the top right.
 
 | # | File | Shown at | Generated as | Status |
 |---|---|---|---|---|
-| 1 | `backgrounds/launch_pad.png` | 800×600 | single | to do |
+| 1 | `backgrounds/launch_pad.png` | 800×600 | single | done (2026-10-15) |
 | 2 | `backgrounds/earth.png` | 800×600 | single | done |
-| 3 | `backgrounds/belt.png` | 800×600 | single | redo with the new prompt (dimmed for now) |
+| 3 | `backgrounds/belt.png` | 800×600 | single | done (kept as is) |
 | 4 | `backgrounds/jupiter.png` | 800×600 | single | done |
 | 5 | `backgrounds/space_background.png` (optional) | 800×600 | single | done |
-| 6 | `characters/ship.png` + `characters/ship_pad.png` | 100×100 + 180×180 | sheet of 2 | to do |
-| 7 | `item_helmet.png`, `item_ammo.png`, `item_football.png`, `item_fuel.png` | 48×48 each | sheet of 4 | to do |
-| 8 | `junk.png` | ~100×60 | single | done |
-| 9 | `ice.png` + `ice_cracked.png` | ~95×90 each | sheet of 2 | done |
-| 10 | `football.png` | 32×32 | single | to do |
-| 11 | `health.png` | ~32×32 | single | to do |
+| 6 | `characters/ship.png` + `characters/ship_pad.png` | 100×100 + 180×180 | sheet of 2 | done (current ship kept) |
+| 7 | `items/helmet.png`, `items/ammo.png`, `items/football.png`, `items/fuel.png` | 48×48 each | sheet of 4 | to do |
+| 8 | `sprites/junk.png` | ~100×60 | single | done |
+| 9 | `sprites/ice.png` + `sprites/ice_cracked.png` | ~95×90 each | sheet of 2 | done |
+| 10 | `sprites/football.png` | 32×32 | single | done (2026-10-15) |
+| 11 | `ui/health.png` | ~32×32 | single | done (kept as is) |
 | 12 | `fact_card_frame.png` (optional) | 720×480 | single | to do |
 | 13 | `characters/hero_clean.png` (optional, release) | 131×200 | single | to do |
 | 14 | `characters/hero_walk.png` (optional) | 92×140 | single | to do |

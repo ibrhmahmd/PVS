@@ -4,7 +4,7 @@ from parts import game_states
 from data.level_data import TITLE_STORY
 
 background = Actor("backgrounds/space_background", (400, 300))
-logo = Actor("logo", (400, 95))
+logo = Actor("ui/logo", (400, 95))
 hero = Actor("characters/hero", (400, 300))
 
 

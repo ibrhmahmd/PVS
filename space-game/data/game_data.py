@@ -2,7 +2,7 @@
 
 space_info_list = [
     {
-        "image": "images/Sun.png",
+        "image": "images/planets/sun.png",
         "text": [
             "A star is a hot, glowing ball of gas.",
             "When you look up in the night sky,",
@@ -13,7 +13,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Mercury.png",
+        "image": "images/planets/mercury.png",
         "text": [
             "Mercury is the smallest planet",
             "and closest to the Sun.",
@@ -23,7 +23,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Venus.png",
+        "image": "images/planets/venus.png",
         "text": [
             "Venus is the hottest planet",
             "in our solar system.",
@@ -33,7 +33,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Earth.png",
+        "image": "images/planets/earth.png",
         "text": [
             "Earth is our home planet.",
             "It's the only planet known to have life.",
@@ -42,7 +42,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Mars.png",
+        "image": "images/planets/mars.png",
         "text": [
             "Mars is called the Red Planet",
             "because of its rusty color.",
@@ -52,7 +52,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Jupiter.png",
+        "image": "images/planets/jupiter.png",
         "text": [
             "Jupiter is the largest planet",
             "in our solar system.",
@@ -62,7 +62,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Saturn.png",
+        "image": "images/planets/saturn.png",
         "text": [
             "Saturn is famous for its",
             "beautiful rings made of ice and rock.",
@@ -72,7 +72,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Uranus.png",
+        "image": "images/planets/uranus.png",
         "text": [
             "Uranus is an ice giant that",
             "rotates on its side!",
@@ -82,7 +82,7 @@ space_info_list = [
         ]
     },
     {
-        "image": "images/Neptune.png",
+        "image": "images/planets/neptune.png",
         "text": [
             "Neptune is the farthest planet",
             "from the Sun.",

@@ -5,7 +5,7 @@ from parts import game_states
 from parts import controls
 from data.level_data import LEVELS
 
-heart = Actor("health")
+heart = Actor("ui/health")
 
 
 def draw(screen):

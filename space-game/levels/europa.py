@@ -43,7 +43,7 @@ def update(keyboard):
 
     timer += 1
     if timer > SPAWN_EVERY:
-        chunk = Actor("ice")
+        chunk = Actor("sprites/ice")
         chunk.pos = (random.randint(60, 740), -50)
         chunk.hits = 0  # how many times it has been shot
         chunks.append(chunk)
@@ -64,7 +64,7 @@ def update(keyboard):
                     ship.bullets.remove(bullet)
                     chunk.hits += 1
                     if chunk.hits == 1:
-                        chunk.image = "ice_cracked"
+                        chunk.image = "sprites/ice_cracked"
                     else:
                         game_states.score += 1
                         game_states.level_points += 1

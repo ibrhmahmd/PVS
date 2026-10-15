@@ -29,7 +29,7 @@ def move(keyboard):
 
 
 def fire():
-    bullet = Actor("football")
+    bullet = Actor("sprites/football")
     bullet.pos = (ship.x, ship.y - 40)
     bullets.append(bullet)
     shoot_sound = pygame.mixer.Sound("music/shoot.wav")

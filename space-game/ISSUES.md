@@ -40,9 +40,9 @@ Replace the endless shooter with a Journey: Intro → Level 1 Earth → Level 2 
 
 ## #5 — Prepare new art for use `[feature]`
 
-**Status:** in progress. Generated with Antigravity 2026-10-08 and wired in: Earth orbit, Jupiter and Title backgrounds, junk, ice + cracked ice (stray pixel and magenta tint cleaned). Belt background had rocks that looked like the real asteroids: dimmed for now, prompt #3 rewritten for a version without rocks. Pixel font Jersey 10 (OFL) with a black outline on all text. Still to make: Launch pad background, Ship (2 views), 4 Checklist items, football, heart. Prompts and a status table are in `docs/art-prompts.md`
+**Status:** in progress. Generated with Antigravity 2026-10-08 and wired in: Earth orbit, Jupiter and Title backgrounds, junk, ice + cracked ice (stray pixel and magenta tint cleaned). Belt background had rocks that looked like the real asteroids: dimmed for now, prompt #3 rewritten for a version without rocks. Pixel font Jersey 10 (OFL) with a black outline on all text. Launch pad background and planet pictures added 2026-10-15. Football added 2026-10-15; current Ship, heart and dimmed Belt background accepted as final. Still to make: 4 Checklist items. Prompts and a status table are in `docs/art-prompts.md`
 
-- [ ] `characters/hero.png` and `asteroid.png`: remove white background, shrink (hero ~150px tall, asteroid ~120px), keep originals in `images/originals/`.
+- [ ] `characters/hero.png` and `sprites/asteroid.png`: remove white background, shrink (hero ~150px tall, asteroid ~120px), keep originals in `images/originals/`.
 - [ ] `buttons/*.jpeg` → PNG with transparent corners.
 - [ ] Crop/resize `backgrounds/uropa.png` (typo for "europa", rename) to 800×600.
 - [ ] Still to design (placeholders until then): Earth, belt and Jupiter backgrounds; space-junk and ice-chunk (and cracked) sprites; football bullet; pixel heart; ship matching the Hero style.

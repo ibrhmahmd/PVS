@@ -40,6 +40,6 @@ Works from any folder; images and music are found next to `Game.py`.
 - The Hero can't jump on the Launch pad; he only walks left and right, using one picture flipped for each direction (no walking animation).
 - Europa's ice chunks only have two states: whole, then cracked. The Scan can't fail.
 - The Hero art shows real-world logos (Puma, Egypt FA badge). Replace before a public release (ISSUES.md #6).
-- `music/shoot.wav` is a generated placeholder beep, and `images/logo.png` is a shrunk copy of `logogame.png`.
+- `music/shoot.wav` is a generated placeholder beep, and `images/ui/logo.png` is a shrunk copy of `images/originals/logogame.png`.
 - Placeholders: the Launch pad background, the 4 Checklist items, both Ship pictures, the football and the heart. The belt background is a dimmed stand-in until a version without rocks is made.
 - The font is Jersey 10 (`fonts/jersey10.ttf`), free under the SIL Open Font License (`fonts/OFL.txt`, which must ship with the game).

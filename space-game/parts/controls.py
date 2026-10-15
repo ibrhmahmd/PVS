@@ -2,10 +2,10 @@
 from pgzero.actor import Actor
 from parts import game_states
 
-left_button = Actor("buttons/left", (50, 550))
-right_button = Actor("buttons/right", (140, 550))
-pause_button = Actor("buttons/pause", (750, 550))
-continue_button = Actor("buttons/continue", (400, 400))
+left_button = Actor("ui/left", (50, 550))
+right_button = Actor("ui/right", (140, 550))
+pause_button = Actor("ui/pause", (750, 550))
+continue_button = Actor("ui/continue", (400, 400))
 
 # Which move button the mouse is holding down right now: "left", "right" or None
 held = None

@@ -6,8 +6,8 @@ from parts import ship
 from parts import hud
 from data.level_data import LEVELS
 
-JUNK_SPEED = 4         # pixels per frame
-SPAWN_EVERY = 45       # frames between new pieces of junk (a bit under one a second)
+JUNK_SPEED = 4     # pixels per frame
+SPAWN_EVERY = 30     # frames between new pieces of junk (a bit under one a second)
 
 background = Actor("backgrounds/earth", (400, 300))
 junk_pieces = []
@@ -27,7 +27,7 @@ def update(keyboard):
 
     timer += 1
     if timer > SPAWN_EVERY:
-        junk = Actor("junk")
+        junk = Actor("sprites/junk")
         junk.pos = (random.randint(60, 740), -50)
         junk_pieces.append(junk)
         timer = 0

@@ -29,7 +29,7 @@ def update(keyboard):
     timer += 1
     spawn_time = max(25, SPAWN_EVERY - game_states.level_points * 2)
     if timer > spawn_time:
-        asteroid = Actor("asteroid")
+        asteroid = Actor("sprites/asteroid")
         asteroid.pos = (random.randint(60, 740), -50)
         asteroids.append(asteroid)
         timer = 0
