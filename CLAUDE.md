@@ -12,6 +12,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 | `Crab-game/` | "Crab Quest", a 6-chapter platformer | Python, Pygame Zero |
 | `space-game/` | "Space X", an educational space shooter | Python, Pygame Zero |
 
+The root `index.html` is only a redirect to `pixel-verse-studios/index.html` (so the repo root can be served as the site); don't put content there. The root `ISSUES.md` tracks cross-project work (the `docs/` deliverables).
+
 The website describes the two games, so changes to game content/controls/titles must stay consistent with the site (see the "Game content is real" rule in `pixel-verse-studios/CLAUDE.md`). Each project tracks work in a local `ISSUES.md`; the games' packaging issues (PyInstaller + itch.io) are waiting on a Windows 11 build session, and the site's "Play" buttons link to those itch.io pages.
 
 `pixel-verse-studios/` has its own detailed `CLAUDE.md` / `AGENTS.md` (styling loop, per-page rules, design-system gotchas). Read it before touching the site; it is not repeated here.
@@ -26,7 +28,7 @@ The website describes the two games, so changes to game content/controls/titles 
 - `python3 scripts/check_site.py`: the acceptance check for structural changes (there is no test suite). No build step; styles live in `assets/css/styles.css`.
 - `python3 -m http.server 8000`: preview.
 
-**Games** (no tests, no linter; `dependencies = []` in `Crab-game/pyproject.toml`, so `pgzero` is installed manually, `pip install pgzero`, or via the existing `Crab-game/.venv`):
+**Games** (no tests, no linter; `dependencies = []` in `Crab-game/pyproject.toml`, so `pgzero` is installed manually, `pip install pgzero`, or via the existing `Crab-game/.venv`; space-game pins `pgzero==1.2.1` / `pygame==2.6.1` in `space-game/requirements.txt`):
 - `cd Crab-game && python main.py` (or `uv run main.py`)
 - `cd space-game && python Game.py`
 
@@ -40,7 +42,7 @@ Crab-game loads assets with cwd-relative paths (`images/`, `music/`), so launch 
 - Each `level_N.py` is self-contained (own `Actor`s, platforms, physics constants, and a `reset()`). Adding a level means a new module plus a branch in each dispatcher in `main.py` and an entry in `level_select.py`/`start_screen.py`, which import all levels.
 - The mute button lives in `main.py` and is drawn over every screen.
 
-**space-game**: "Journey to Jupiter", a mode-dispatch state machine like Crab-game (details in `space-game/CLAUDE.md`).
+**space-game**: "Journey to Jupiter", a mode-dispatch state machine like Crab-game (details in `space-game/CLAUDE.md`; domain terms such as Hero, Ship, Mission, Level are defined in `space-game/CONTEXT.md`, use them).
 - `Game.py` holds only the Pygame Zero hooks and switches on `parts/game_states.mode`. Code lives in `screens/`, `levels/` (launch_pad, earth_orbit, belt, europa), `parts/` (ship, controls, hud, state) and `data/` (Level targets, facts).
 - Assets load from the game's own folder, so it runs from any directory.
 
