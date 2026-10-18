@@ -49,7 +49,8 @@ def build_documentation():
     cover = f"""
 <section class="cover">
   <img class="mark" src="../assets/brand/logo.png">
-  <p class="kicker">Afro-Asian Technology Competition 2026 · Games</p>
+  <p class="kicker">AFFIAT · Afro-Asian Forum for Innovation and Technology · Aswan Finals 2026 · Games</p>
+  <img class="partners" src="../assets/brand/partners.png" alt="AFFIAT and Techno Future Kafr El Sheikh" style="display: block; height: 26mm; width: auto; margin: 5mm 0; background: #fff; padding: 2.5mm 4mm; border-radius: 3mm;">
   <h1>Pixel Verse Studios</h1>
   <p class="tag">Game Technical Documentation</p>
   <p class="lead">Crab Quest and Space X: Journey to Jupiter. Two 16-bit games that teach real science.</p>

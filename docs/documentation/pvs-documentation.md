@@ -8,7 +8,7 @@
 | **Description** | Pixel Verse Studios is a small indie studio that makes 16-bit narrative games for children. In each game the player learns real science without a lecture: ocean life and ocean conservation in Crab Quest, the solar system in Space X. |
 | **Target Age Group** | 5-99 years old |
 | **Team** | Mariam Alaa, Selim Loai, Mohamed Loai, Medhat Ali, Salah Mohamed |
-| **Competition** | Afro-Asian Technology Competition 2026, Games category |
+| **Competition** | AFFIAT · Afro-Asian Forum for Innovation and Technology · Aswan Finals 2026, Games category |
 
 ### The two games
 
@@ -327,7 +327,7 @@ By playing, a student will:
 
 - **Primary**: Children and families who want a short, friendly game that teaches something real
 - **Secondary**: Teachers looking for science-integrated games for the classroom or the computer lab
-- **Tertiary**: Indie-game fans and Afro-Asian Technology Competition visitors
+- **Tertiary**: Indie-game fans and AFFIAT visitors
 
 ### Platforms
 
@@ -337,7 +337,7 @@ By playing, a student will:
 
 ### Promotion Ideas
 
-1. Present at the Afro-Asian Technology Competition with the poster and a live demo
+1. Present at the AFFIAT Aswan Finals 2026 with the poster and a live demo
 2. Publish both games on itch.io with screenshots, controls and downloads
 3. Run a classroom session where students play and then answer "what did you learn?"
 4. Share gameplay screenshots and short clips from the real games

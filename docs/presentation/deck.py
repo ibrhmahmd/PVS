@@ -23,7 +23,8 @@ PAGE, DARK, PANEL, PANEL2 = "#0f131c", "#0a0e17", "#1c1f29", "#262a34"
 TEXT, SOFT, FAINT, LINE = "#dfe2ef", "#cbc3d7", "#958ea0", "#494454"
 PURPLE, BLUE, GREEN, BLACK, WHITE = "#d0bcff", "#4cd7f6", "#4edea3", "#000000", "#ffffff"
 HEAD, BODY, PIXEL, MONO = "Space Grotesk", "Inter", "Jersey 10", "DejaVu Sans Mono"
-EVENT = "Afro-Asian Technology Competition 2026 · Games"
+EVENT = "AFFIAT · Afro-Asian Forum for Innovation and Technology · Aswan Finals 2026 · Games"
+SHORT_EVENT = "AFFIAT · Aswan Finals 2026 · Games"   # the title slide kicker has room for one short line
 
 
 # ---------- shape helpers ----------
@@ -93,7 +94,10 @@ def slides():
 
     # 1. Title
     s = dict(bg=DARK, shapes=[
-        text(64, 96, 1000, 28, EVENT.upper(), size=18, color=BLUE, font=HEAD, bold=True, spacing=4),
+        text(64, 96, 1000, 28, SHORT_EVENT.upper(), size=18, color=BLUE, font=HEAD, bold=True, spacing=4),
+        # the forum and academy logos, on a white tile
+        rect(870, 20, 310, 92, fill=WHITE),
+        image("brand/partners.png", 878, 26, 293, 80),
         text(64, 140, 760, 210, "Pixel Verse Studios", size=92, color=WHITE, font=HEAD, bold=True, lh=0.98),
         text(64, 372, 780, 60, "Real science, hidden in play.", size=44, color=PURPLE, font=PIXEL),
         text(64, 452, 640, 90, "Two 16-bit games for ages 5 to 99. Dodge ocean trash. Fly to Jupiter's icy moon. Every fact in them is real.",
@@ -233,6 +237,8 @@ def slides():
         rect(880, 130, 300, 340, fill=WHITE),
         image("brand/qr-site.png", 892, 142, 276, 276),
         text(880, 424, 300, 30, "Scan to visit the studio", size=17, color="#14213D", align="center"),
+        rect(870, 486, 310, 92, fill=WHITE),
+        image("brand/partners.png", 878, 492, 293, 80),
         text(64, 600, 1000, 30, f"Pixel Verse Studios · {EVENT}", size=20, color=SOFT),
     ] + stripe(696))
     out.append(s)
