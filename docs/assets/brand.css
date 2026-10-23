@@ -1,0 +1,41 @@
+/* Pixel Verse Studios brand: colours and fonts shared by the poster, slides, diagrams and documentation.
+   Colours come from the logo and the website's styles.css. Diagrams also use these hex values directly in SVG
+   attributes, so change the same hex strings in docs/diagrams/*.html when you change them:
+   #0F131C ink · #7E4FE0 accent · #5B34C4 accent-dark · #E8BC59 warm · #F2CC8B warm-2 · #F4F2FA paper · #0A9DB8 cyan-dark */
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --ink: #0F131C;        /* the website's page colour and the logo's dark background */
+  --ink-2: #1C1F29;
+  --ink-soft: #4A4660;
+  --accent: #7E4FE0;     /* the logo's purple ring, darkened so it reads on light paper */
+  --accent-dark: #5B34C4;
+  --warm: #E8BC59;       /* the logo's gold lettering and star */
+  --warm-2: #F2CC8B;
+  --cyan: #4CD7F6;       /* the logo's cyan ring and the website's second accent */
+  --cyan-dark: #0A9DB8;
+  --green: #4EDEA3;
+  --paper: #F4F2FA;      /* light page background */
+  --white: #FFFFFF;
+  --line: rgba(15, 19, 28, 0.14);
+  --todo-bg: #FFF1A8;    /* student placeholder highlight */
+  --todo-line: #D9A400;
+
+  --display: 'Jersey 10', 'JetBrains Mono', monospace;    /* the pixel lettering of the logo and the games */
+  --sans: 'Space Grotesk', system-ui, sans-serif;          /* the website's heading font */
+  --mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* Student placeholder: anything in this style still has to be written before printing. */
+.todo {
+  background: var(--todo-bg);
+  color: #4A3B00;
+  border: 0.18em dashed var(--todo-line);
+  border-radius: 0.35em;
+  padding: 0.12em 0.4em;
+  font-style: normal;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+.todo::before { content: "✏️ Student writes: "; font-weight: 700; }
+.todo.block { display: block; padding: 0.5em 0.7em; }

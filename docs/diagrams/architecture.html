@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pixel Verse Studios Architecture</title>
+<!-- How both games are built. The .canvas size is the PNG size. -->
+<link rel="stylesheet" href="../assets/brand.css">
+<style>
+  html, body { margin: 0; background: var(--white); }
+  .canvas { width: 1600px; height: 900px; box-sizing: border-box; padding: 40px; display: grid;
+            grid-template-columns: 520px 1fr; gap: 48px; font-family: var(--sans); color: var(--ink); }
+  .lane { font: 700 14px var(--mono); letter-spacing: 0.16em; color: var(--ink-soft); margin-bottom: 18px; }
+  .steps { display: flex; flex-direction: column; gap: 0; }
+  .step { background: #fff; border: 2.5px solid var(--ink); border-radius: 12px; padding: 18px 22px; }
+  .step.hot { border-color: var(--accent); background: #F1EAFD; }
+  .chip { display: inline-block; font: 700 13px var(--mono); letter-spacing: 0.12em; color: var(--ink-soft);
+          border: 1.5px solid var(--ink-soft); border-radius: 5px; padding: 2px 8px; margin-bottom: 10px; }
+  .step.hot .chip { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .step h3 { margin: 0 0 6px; font-size: 25px; font-weight: 600; }
+  .step p { margin: 0; font: 400 16px/1.45 var(--mono); color: var(--ink-soft); }
+  .arrow { height: 44px; display: flex; justify-content: center; }
+  .arrow svg { display: block; }
+  .note { margin-top: 26px; font: 500 16px/1.5 var(--mono); color: var(--ink-soft); border-left: 4px solid var(--accent); padding-left: 14px; }
+
+  table { width: 100%; border-collapse: separate; border-spacing: 0; background: #F7F6FC;
+          border: 2px solid rgba(15,19,28,0.10); border-radius: 18px; overflow: hidden; }
+  th, td { padding: 0 20px; height: 70px; border-bottom: 1.5px solid rgba(15,19,28,0.08); text-align: left; }
+  th { font: 700 15px var(--mono); letter-spacing: 0.1em; color: #fff; background: var(--ink); height: 70px; }
+  td { font: 500 19px var(--sans); }
+  td:first-child { font: 700 13px var(--mono); letter-spacing: 0.14em; color: var(--accent-dark); width: 190px; }
+  td code { font: 500 16px var(--mono); color: var(--ink-soft); }
+  tr:last-child td { border-bottom: 0; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div>
+    <div class="lane">HOW A FRAME IS DRAWN · BOTH GAMES</div>
+    <div class="steps">
+      <div class="step">
+        <span class="chip">60 TIMES A SECOND</span>
+        <h3>Pygame Zero calls the hooks</h3>
+        <p>draw() · update()<br>key and mouse events</p>
+      </div>
+      <div class="arrow"><svg width="20" height="44"><line x1="10" y1="0" x2="10" y2="34" stroke="#0F131C" stroke-width="2.5"/><path d="M2,32 L10,44 L18,32 z" fill="#0F131C"/></svg></div>
+      <div class="step hot">
+        <span class="chip">ONE VARIABLE</span>
+        <h3>The main file reads the mode</h3>
+        <p>if mode == "PLAYING": …<br>elif mode == "FACT_CARD": …</p>
+      </div>
+      <div class="arrow"><svg width="20" height="44"><line x1="10" y1="0" x2="10" y2="34" stroke="#0F131C" stroke-width="2.5"/><path d="M2,32 L10,44 L18,32 z" fill="#0F131C"/></svg></div>
+      <div class="step">
+        <span class="chip">MODULE</span>
+        <h3>That screen does the work</h3>
+        <p>draw it · move things<br>check hits · count points</p>
+      </div>
+      <div class="arrow"><svg width="20" height="44"><line x1="10" y1="0" x2="10" y2="34" stroke="#5B34C4" stroke-width="2.5"/><path d="M2,32 L10,44 L18,32 z" fill="#5B34C4"/></svg></div>
+      <div class="step">
+        <span class="chip">NEXT SCREEN</span>
+        <h3>The module changes the mode</h3>
+        <p>cleared → fact card<br>3 hearts lost → game over</p>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lane">WHO OWNS WHAT</div>
+    <table>
+      <tr><th></th><th>CRAB QUEST</th><th>SPACE X</th></tr>
+      <tr><td>ENTRY FILE</td><td><code>main.py</code></td><td><code>Game.py</code></td></tr>
+      <tr><td>MODE VARIABLE</td><td><code>game_states.game_mode</code></td><td><code>parts/game_states.mode</code></td></tr>
+      <tr><td>MODES</td><td>START_SCREEN, LEVEL_SELECT, LEVEL1 to LEVEL6</td><td>TITLE, PLAYING, FACT_CARD, GAME_OVER, WIN</td></tr>
+      <tr><td>LEVELS</td><td><code>level_1.py</code> to <code>level_6.py</code></td><td><code>levels/</code>: launch_pad, earth_orbit, belt, europa</td></tr>
+      <tr><td>OTHER SCREENS</td><td><code>start_screen.py</code>, <code>level_select.py</code></td><td><code>screens/</code>: title, fact_card, game_over, win</td></tr>
+      <tr><td>SHARED PARTS</td><td>Mute button in <code>main.py</code></td><td><code>parts/</code>: ship, controls, hud</td></tr>
+      <tr><td>FACTS &amp; NUMBERS</td><td>Inside each level module</td><td><code>data/</code>: level_data, game_data</td></tr>
+      <tr><td>ASSETS</td><td><code>images/</code> · <code>music/</code></td><td><code>images/</code> · <code>music/</code> · <code>fonts/</code></td></tr>
+      <tr><td>PYTHON FILES</td><td>10</td><td>19</td></tr>
+    </table>
+    <p class="note">No classes in either game. Each module can be read on its own, top to bottom.</p>
+  </div>
+</div>
+</body>
+</html>

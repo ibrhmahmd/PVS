@@ -596,41 +596,6 @@ a {
 .logo-medium { width: 8rem; height: auto; object-fit: contain; }
 .logo-small { width: 5rem; height: auto; object-fit: contain; }
 
-/* A 4:3 box with art in the middle, used when a beat has no screenshot */
-.art-box {
-  aspect-ratio: 4 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: var(--medium);
-  background: var(--page);
-}
-
-.art-box-logo {
-  width: 45%;
-  height: auto;
-  object-fit: contain;
-}
-
-.art-box-sprite {
-  height: 6rem;
-  width: auto;
-  max-width: 45%;
-  object-fit: contain;
-}
-
-@media (min-width: 640px) {
-  .art-box-sprite {
-    height: 9rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .art-box-sprite {
-    height: 12rem;
-  }
-}
-
 /* Little characters and planets in a row */
 .picture-row {
   display: grid;
@@ -851,13 +816,6 @@ body.lightbox-open {
   font-size: 14px;
   color: var(--text-soft);
   text-align: center;
-}
-
-/* Three small screenshots side by side (the game over facts) */
-.thumb-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--small);
 }
 
 /* ---------- 11. Bigger screens get bigger side gaps (last, so it wins over the rules above) ---------- */

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pixel Verse Studios Flow</title>
+<!-- The two game journeys. The .canvas size is the PNG size. -->
+<link rel="stylesheet" href="../assets/brand.css">
+<style>
+  html, body { margin: 0; background: var(--white); }
+  .canvas { width: 1600px; height: 900px; }
+  svg { display: block; }
+  .chip { font: 700 13px var(--mono); letter-spacing: 0.12em; }
+  .title { font: 600 24px var(--sans); fill: var(--ink); }
+  .sub { font: 400 15px var(--mono); fill: var(--ink-soft); }
+  .lane { font: 700 14px var(--mono); letter-spacing: 0.16em; fill: var(--ink-soft); }
+  .small { font: 500 15px var(--mono); fill: var(--ink-soft); }
+  .row { font: 500 18px var(--sans); fill: var(--ink); }
+  .row-code { font: 500 16px var(--mono); fill: var(--accent-dark); }
+  .state { font: 700 20px var(--mono); }
+</style>
+</head>
+<body>
+<div class="canvas">
+<svg width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#0F131C"/>
+    </marker>
+    <marker id="arrow-hot" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5B34C4"/>
+    </marker>
+  </defs>
+
+  <!-- lane 1: Space X -->
+  <rect x="20" y="20" width="1560" height="520" rx="18" fill="#F7F6FC" stroke="rgba(15,19,28,0.10)" stroke-width="2"/>
+  <text x="48" y="58" class="lane">SPACE X · THE JOURNEY TO JUPITER</text>
+
+  <!-- six boxes, 226 wide, 32 apart -->
+  <g>
+    <rect x="44" y="90" width="226" height="130" rx="12" fill="#fff" stroke="#0F131C" stroke-width="2.5"/>
+    <rect x="62" y="104" width="82" height="24" rx="5" fill="none" stroke="#4A4660" stroke-width="1.5"/>
+    <text x="103" y="121" class="chip" fill="#4A4660" text-anchor="middle">SCREEN</text>
+    <text x="157" y="165" class="title" text-anchor="middle">Title</text>
+    <text x="157" y="192" class="sub" text-anchor="middle">mission · Space</text>
+  </g>
+  <g>
+    <rect x="302" y="90" width="226" height="130" rx="12" fill="#fff" stroke="#0F131C" stroke-width="2.5"/>
+    <rect x="320" y="104" width="82" height="24" rx="5" fill="#0F131C"/>
+    <text x="361" y="121" class="chip" fill="#fff" text-anchor="middle">LEVEL 1</text>
+    <text x="415" y="165" class="title" text-anchor="middle">Launch pad</text>
+    <text x="415" y="192" class="sub" text-anchor="middle">4 items · T-30</text>
+  </g>
+  <g>
+    <rect x="560" y="90" width="226" height="130" rx="12" fill="#fff" stroke="#0F131C" stroke-width="2.5"/>
+    <rect x="578" y="104" width="82" height="24" rx="5" fill="#0F131C"/>
+    <text x="619" y="121" class="chip" fill="#fff" text-anchor="middle">LEVEL 2</text>
+    <text x="673" y="165" class="title" text-anchor="middle">Earth orbit</text>
+    <text x="673" y="192" class="sub" text-anchor="middle">dodge 10 junk</text>
+  </g>
+  <g>
+    <rect x="818" y="90" width="226" height="130" rx="12" fill="#fff" stroke="#0F131C" stroke-width="2.5"/>
+    <rect x="836" y="104" width="82" height="24" rx="5" fill="#0F131C"/>
+    <text x="877" y="121" class="chip" fill="#fff" text-anchor="middle">LEVEL 3</text>
+    <text x="931" y="165" class="title" text-anchor="middle">Asteroid belt</text>
+    <text x="931" y="192" class="sub" text-anchor="middle">shoot 30</text>
+  </g>
+  <g>
+    <rect x="1076" y="90" width="226" height="130" rx="12" fill="#fff" stroke="#0F131C" stroke-width="2.5"/>
+    <rect x="1094" y="104" width="82" height="24" rx="5" fill="#0F131C"/>
+    <text x="1135" y="121" class="chip" fill="#fff" text-anchor="middle">LEVEL 4</text>
+    <text x="1189" y="165" class="title" text-anchor="middle">Europa</text>
+    <text x="1189" y="192" class="sub" text-anchor="middle">12 ice · 3 s scan</text>
+  </g>
+  <g>
+    <rect x="1334" y="90" width="226" height="130" rx="12" fill="#F1EAFD" stroke="#7E4FE0" stroke-width="3"/>
+    <rect x="1352" y="104" width="82" height="24" rx="5" fill="#7E4FE0"/>
+    <text x="1393" y="121" class="chip" fill="#fff" text-anchor="middle">ENDING</text>
+    <text x="1447" y="165" class="title" text-anchor="middle">Jupiter</text>
+    <text x="1447" y="192" class="sub" text-anchor="middle">win screen</text>
+  </g>
+
+  <line x1="272" y1="155" x2="298" y2="155" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="530" y1="155" x2="556" y2="155" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="788" y1="155" x2="814" y2="155" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="1046" y1="155" x2="1072" y2="155" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="1304" y1="155" x2="1330" y2="155" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- fact card after each level -->
+  <rect x="302" y="270" width="1000" height="96" rx="12" fill="#fff" stroke="#7E4FE0" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="326" y="302" class="lane">AFTER EVERY LEVEL · FACT CARD</text>
+  <text x="326" y="340" class="row">A story line (cyan) and one real science fact (white). Space or a click goes on to the next level.</text>
+  <path d="M415,222 V266" fill="none" stroke="#5B34C4" stroke-width="2.5" marker-end="url(#arrow-hot)"/>
+  <path d="M673,222 V266" fill="none" stroke="#5B34C4" stroke-width="2.5" marker-end="url(#arrow-hot)"/>
+  <path d="M931,222 V266" fill="none" stroke="#5B34C4" stroke-width="2.5" marker-end="url(#arrow-hot)"/>
+  <path d="M1189,222 V266" fill="none" stroke="#5B34C4" stroke-width="2.5" marker-end="url(#arrow-hot)"/>
+
+  <!-- game over -->
+  <rect x="302" y="410" width="1000" height="96" rx="12" fill="#fff" stroke="rgba(15,19,28,0.35)" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="326" y="442" class="lane">ALL 3 HEARTS LOST (OR THE COUNTDOWN HITS 0) · GAME OVER</text>
+  <text x="326" y="480" class="row">A planet picture and fact from the Sun and 8 planets. R tries the same level again, keeping the old score.</text>
+
+  <!-- lane 2: Crab Quest -->
+  <rect x="20" y="570" width="1560" height="310" rx="18" fill="#F7F6FC" stroke="rgba(15,19,28,0.10)" stroke-width="2"/>
+  <text x="48" y="608" class="lane">CRAB QUEST · SIX CHAPTERS TO GET HOME</text>
+
+  <g>
+    <rect x="44" y="640" width="200" height="100" rx="12" fill="#fff" stroke="#0F131C" stroke-width="2.5"/>
+    <text x="144" y="682" class="title" text-anchor="middle">Start</text>
+    <text x="144" y="710" class="sub" text-anchor="middle">click play</text>
+  </g>
+  <g>
+    <rect x="284" y="640" width="220" height="100" rx="12" fill="#F1EAFD" stroke="#7E4FE0" stroke-width="3"/>
+    <text x="394" y="682" class="title" text-anchor="middle">Level select</text>
+    <text x="394" y="710" class="sub" text-anchor="middle">6 buttons</text>
+  </g>
+  <line x1="246" y1="690" x2="280" y2="690" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <line x1="506" y1="690" x2="560" y2="690" stroke="#0F131C" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="533" y="676" class="small" text-anchor="middle">pick</text>
+
+  <!-- six chapters, 160 wide, 12 apart -->
+  <g class="chapters">
+    <rect x="564" y="620" width="160" height="70" rx="10" fill="#fff" stroke="#0F131C" stroke-width="2.5"/><text x="644" y="650" class="row" text-anchor="middle">1 Kitchen</text><text x="644" y="676" class="small" text-anchor="middle">jump</text>
+    <rect x="736" y="620" width="160" height="70" rx="10" fill="#fff" stroke="#0F131C" stroke-width="2.5"/><text x="816" y="650" class="row" text-anchor="middle">2 Beach</text><text x="816" y="676" class="small" text-anchor="middle">dodge 30 s</text>
+    <rect x="908" y="620" width="160" height="70" rx="10" fill="#fff" stroke="#0F131C" stroke-width="2.5"/><text x="988" y="650" class="row" text-anchor="middle">3 Sea floor</text><text x="988" y="676" class="small" text-anchor="middle">dodge 10 s</text>
+    <rect x="564" y="702" width="160" height="70" rx="10" fill="#fff" stroke="#0F131C" stroke-width="2.5"/><text x="644" y="732" class="row" text-anchor="middle">4 Shrimp</text><text x="644" y="758" class="small" text-anchor="middle">17 algae</text>
+    <rect x="736" y="702" width="160" height="70" rx="10" fill="#fff" stroke="#0F131C" stroke-width="2.5"/><text x="816" y="732" class="row" text-anchor="middle">5 Predator</text><text x="816" y="758" class="small" text-anchor="middle">survive 45 s</text>
+    <rect x="908" y="702" width="160" height="70" rx="10" fill="#F1EAFD" stroke="#7E4FE0" stroke-width="3"/><text x="988" y="732" class="row" text-anchor="middle">6 Home</text><text x="988" y="758" class="small" text-anchor="middle">reach family</text>
+  </g>
+
+  <text x="1110" y="650" class="row">After a chapter:</text>
+  <text x="1110" y="682" class="small">back to Level select</text>
+  <text x="1110" y="708" class="small">(chapter 6 → Start)</text>
+  <text x="1110" y="748" class="small">Retry with R · ENTER = menu</text>
+  <text x="48" y="850" class="small">Both games run one screen at a time: a single mode variable decides which screen draws and updates.</text>
+</svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- The Pixel Verse Studios mark: the logo's dark frame, purple and cyan rings, gold star and gold d-pad. -->
+  <rect x="1" y="1" width="14" height="14" rx="3" fill="#131B26"/>
+  <rect x="1.4" y="1.4" width="13.2" height="13.2" rx="2.7" fill="none" stroke="#3B2673" stroke-width="0.35"/>
+  <circle cx="8" cy="8" r="5.6" fill="none" stroke="#9B5CF0" stroke-width="0.9"/>
+  <circle cx="8" cy="8" r="4.2" fill="none" stroke="#22C5E0" stroke-width="0.8"/>
+  <circle cx="8" cy="8" r="3.0" fill="none" stroke="#5A3D97" stroke-width="0.4"/>
+  <g fill="#E8BC59" shape-rendering="crispEdges">
+    <rect x="7.6" y="4.3" width="0.8" height="3.1"/>
+    <rect x="6.5" y="5.45" width="3" height="0.8"/>
+    <rect x="6.9" y="4.8" width="2.2" height="2.2"/>
+    <rect x="7.5" y="8" width="1" height="2.6"/>
+    <rect x="6.6" y="8.8" width="2.8" height="1"/>
+  </g>
+</svg>

@@ -121,10 +121,13 @@ Goal: code a curious 12-year-old could read top to bottom.
 
 ## #8 — Describe Space X's new Journey to Jupiter `[docs]`
 
-**Status:** open — waiting for the real art (space-game `ISSUES.md` #5)
+**Status:** done — awaiting user review and commit
 
 Space X was redesigned (space-game issues #4 and #7). It is no longer an endless asteroid shooter. It is now "Journey to Jupiter", a science Mission to find out if Europa's hidden ocean could hold life: Title screen → 1 Launch pad (walk the Hero, collect the 4-item Checklist before the 30 s Countdown, blast off) → 2 Earth orbit (dodge space junk) → 3 Asteroid belt (shoot asteroids) → 4 Europa (ice chunks need two hits, then the Ship scans for the ocean) → Jupiter win screen, with a Fact card after each Level.
 
-- [ ] Update the Space X text on `index.html`, `games.html`, `studio-lore.html` and `heros-journey.html` to describe the Journey.
-- [ ] Controls: Left/Right or the on-screen arrows to walk or fly, Space to start and shoot (auto-fire in the belt and on Europa), P or the pause button to pause, R to retry, F for fullscreen.
-- [ ] Replace screenshots once the final art lands (Launch pad, Ship and belt are still placeholders).
+- [x] Update the Space X text on `index.html`, `games.html`, `studio-lore.html` and `heros-journey.html` to describe the Journey.
+- [x] Controls: Left/Right or the on-screen arrows to walk or fly, Space to start and shoot (auto-fire in the belt and on Europa), P or the pause button to pause, R to retry, F for fullscreen.
+- [x] Screenshots: 8 real screenshots of the current game (`assets/img/space-x/screens/sx-*.jpg`, copied from `docs/screenshots/`) replace the old asteroid-shooter ones; `gameplay.jpg`, `game-over-*.jpg`, `ship.png` and `asteroid.png` deleted, and the now-unused `.art-box` / `.thumb-row` CSS removed.
+- [ ] Recapture the screenshots if the in-game art changes again (copy fresh ones from `docs/screenshots/`).
+- [x] Crab Quest controls on `games.html` now list ESC (leave a chapter, back to the chapter select).
+- [x] Fixed the broken site logo: the "new logo" commit replaced `assets/img/logo.jpg` with `logo.png` but the pages still pointed at the `.jpg`.

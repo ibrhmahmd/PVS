@@ -20,7 +20,7 @@ The website describes the two games, so changes to game content/controls/titles 
 
 ## Docs (competition deliverables)
 
-`docs/` holds the studio documentation, poster (1000×2000 mm) and presentation (PDF + PPTX) for the Afro-Asian Technology Competition 2026. Rebuild everything with `python3 docs/build.py [documentation|poster|slides|all]` (needs google-chrome, pdftoppm and `pip install markdown qrcode python-pptx pillow`). The poster QR code encodes `SITE_URL` at the top of `docs/build.py`. Space X screenshots in `docs/assets/space-x/` come from the real game, so recapture them if the look changes. Tracked in `ISSUES.md` #1.
+`docs/` is the competition showcase kit (built with the `project-showcase` skill): `pvs-documentation.md` + PDF, the 1000×2000 mm poster in `poster/`, the 13-slide deck in `presentation/` (slides 5-8 walk through every level of both games), diagrams in `diagrams/`, and real screenshots in `screenshots/`. Rebuild with `python3 docs/build.py [diagrams|poster|slides|documentation]` (needs Google Chrome and `pip install playwright markdown-it-py`; these are not game dependencies). Yellow "✏️ Student writes" boxes are story lines for the team to write, and `build.py` counts the ones left. The QR code is `docs/assets/qr-app.svg`, made with `qrencode`, and points at `https://ibrhmahmd.github.io/PVS/`. Space X screenshots come from the real game run headless, so recapture them when its look or numbers change. Tracked in `ISSUES.md` #1.
 
 ## Commands
 
@@ -32,7 +32,7 @@ The website describes the two games, so changes to game content/controls/titles 
 - `cd Crab-game && python main.py` (or `uv run main.py`)
 - `cd space-game && python Game.py`
 
-Crab-game loads assets with cwd-relative paths (`images/`, `music/`), so launch it from its own folder. space-game fixed this (`os.chdir` to its own folder).
+Both games run from any folder: Pygame Zero loads `images/` and `music/` relative to the entry script. space-game also `os.chdir`s to its own folder because it loads some files with plain pygame.
 
 ## Game architecture
 

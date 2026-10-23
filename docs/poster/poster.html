@@ -2,243 +2,211 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Pixel Verse Studios: Poster</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Pixel Verse Studios Poster</title>
+<!-- Printed size: 1000 x 2000 mm, plus 5 mm extra on each edge for trimming. Build the PDF with: python docs/build.py poster -->
+<!-- Yellow boxes (the todo class) are for the student to write. -->
+<link rel="stylesheet" href="../assets/brand.css">
 <style>
-  @font-face { font-family: "Jersey 10"; src: url("../assets/brand/jersey10.ttf"); }
   @page { size: 1010mm 2010mm; margin: 0; }
-  :root { --page:#0f131c; --page-dark:#0a0e17; --panel:#1c1f29; --panel-light:#262a34; --text:#dfe2ef; --soft:#cbc3d7; --faint:#958ea0;
-          --line:#494454; --purple:#d0bcff; --blue:#4cd7f6; --green:#4edea3; }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html, body { background: var(--page); }
-  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family: 'Inter', sans-serif; color: var(--text); }
-  .poster { position: relative; width: 1010mm; height: 2010mm; overflow: hidden; background: var(--page); }
+  html, body { background: var(--paper); }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-family: var(--sans); color: var(--ink); }
+  .poster { position: relative; width: 1010mm; height: 2010mm; overflow: hidden; background: var(--paper);
+            background-image:
+              linear-gradient(rgba(15,19,28,0.035) 0.6mm, transparent 0.6mm),
+              linear-gradient(90deg, rgba(15,19,28,0.035) 0.6mm, transparent 0.6mm);
+            background-size: 20mm 20mm; }
 
-  /* ---------- hero (seen from far away) ---------- */
-  .hero { position: absolute; left: 0; top: 0; width: 1010mm; height: 440mm; background: var(--page-dark); overflow: hidden; }
-  .hero .glow { position: absolute; right: -40mm; top: -30mm; width: 560mm; height: 560mm; border-radius: 50%;
-                background: radial-gradient(circle, rgba(208,188,255,.34) 0%, rgba(76,215,246,.10) 48%, rgba(0,0,0,0) 70%); }
-  .hero .stars { position: absolute; inset: 0; background-image:
-      radial-gradient(circle, #fff 0 .9mm, transparent 1mm), radial-gradient(circle, var(--blue) 0 .7mm, transparent .8mm);
-      background-size: 97mm 83mm, 131mm 109mm; background-position: 11mm 17mm, 47mm 61mm; opacity: .35; }
-  .hero .logo { position: absolute; left: 640mm; top: 60mm; width: 330mm; height: 330mm; border-radius: 28mm; border: 3mm solid var(--purple);
-                box-shadow: 10mm 10mm 0 0 #000; }
-  .hero .text { position: absolute; left: 65mm; top: 56mm; width: 600mm; }
-  .kicker { font-family: 'Space Grotesk'; font-weight: 700; font-size: 14mm; letter-spacing: .2em; color: var(--blue); text-transform: uppercase; }
-  .hero h1 { font-family: 'Space Grotesk'; font-weight: 700; font-size: 112mm; line-height: .92; color: #fff; margin: 14mm 0 8mm -3mm; letter-spacing: -.02em; }
-  .hero .tagline { font-family: 'Jersey 10'; font-size: 50mm; line-height: 1; color: var(--purple); white-space: nowrap; }
-  .hero .promise { font-size: 17mm; line-height: 1.3; color: var(--text); margin-top: 10mm; max-width: 560mm; }
-  .band { position: absolute; left: 0; top: 440mm; width: 1010mm; height: 18mm;
-          background: repeating-linear-gradient(90deg, var(--purple) 0 18mm, var(--blue) 18mm 36mm, var(--green) 36mm 54mm); }
+  /* ---------- hero (read from far away) ---------- */
+  .hero { position: absolute; left: 0; top: 0; width: 1010mm; height: 455mm; background: var(--ink); overflow: hidden; }
+  .hero .texture { position: absolute; inset: 0; padding: 12mm 18mm; display: flex; flex-wrap: wrap; align-content: flex-start;
+                   justify-content: space-between; column-gap: 14mm; row-gap: 4mm; color: var(--cyan); opacity: 0.09; }
+  .hero .texture span { font-family: var(--display); font-size: 34mm; line-height: 1.4; }
+  .hero .glow { position: absolute; right: 40mm; top: 35mm; width: 380mm; height: 380mm; border-radius: 50%;
+                background: radial-gradient(circle, rgba(126,79,224,0.55) 0%, rgba(76,215,246,0.14) 52%, rgba(76,215,246,0) 72%); }
+  .hero .mark { position: absolute; left: 665mm; top: 95mm; width: 290mm; height: 290mm; padding: 10mm; background: var(--ink-2); border-radius: 46mm;
+               box-shadow: 0 0 0 4mm rgba(126,79,224,0.55); }
+  .hero .text { position: absolute; left: 60mm; top: 84mm; width: 600mm; }
+  .hero .kicker { font-family: var(--mono); font-weight: 700; font-size: 14mm; letter-spacing: 0.22em; color: var(--warm); text-transform: uppercase; }
+  .hero h1 { font-family: var(--display); font-weight: 400; font-size: 92mm; line-height: 0.92; color: var(--paper);
+             margin: 12mm 0 12mm -2mm; letter-spacing: 0; }
+  .hero h1 .dot { color: var(--warm); }
+  .hero .tagline { font-family: var(--display); font-size: 40mm; line-height: 1.05; color: var(--warm); }
+  .hero .promise { font-size: 19mm; line-height: 1.32; color: var(--paper); opacity: 0.94; margin-top: 12mm; max-width: 560mm; }
+  .hero .todo { font-family: var(--sans); font-size: 15mm; line-height: 1.45; font-weight: 500; }
+  .hero .affiat { position: absolute; left: 60mm; top: 22mm; z-index: 5; display: flex; align-items: center; gap: 8mm; }
+  .hero .affiat img.e { display: block; height: 40mm; width: auto; }
+  .hero .affiat img.t { display: block; height: 19mm; width: auto; }
+  .hero .affiat i { display: block; width: 0.5mm; height: 30mm; background: var(--paper); opacity: 0.35; }
+  .hero .affiat .kicker { margin: 0; font-size: 10.5mm; letter-spacing: 0.18em; white-space: nowrap; }
+
+  /* a row of "pixels" between the dark top and the light body */
+  .band { position: absolute; left: 0; top: 455mm; width: 1010mm; height: 20mm;
+          background:
+            linear-gradient(90deg, var(--accent) 50%, var(--ink) 50%) 0 0 / 20mm 10mm repeat-x,
+            linear-gradient(90deg, var(--ink) 50%, var(--cyan) 50%) 0 10mm / 20mm 10mm repeat-x; }
 
   /* ---------- body (read up close) ---------- */
-  .body { position: absolute; left: 35mm; top: 490mm; width: 940mm; }
-  section { margin-bottom: 16mm; }
-  h2 { font-family: 'Space Grotesk'; font-weight: 700; font-size: 40mm; line-height: 1.02; color: #fff; margin-bottom: 11mm; }
-  h2 .num { font-family: 'Jersey 10'; font-weight: 400; font-size: 24mm; color: var(--blue); letter-spacing: .08em; margin-right: 8mm; vertical-align: .08em; }
+  .body { position: absolute; left: 35mm; top: 510mm; width: 940mm; }
+  h2 { font-family: var(--sans); font-weight: 700; font-size: 40mm; line-height: 1.05; color: var(--ink); margin-bottom: 10mm; letter-spacing: -0.02em; }
+  h2 .num { font-family: var(--display); font-weight: 400; font-size: 18mm; color: var(--accent-dark); letter-spacing: 0.08em; margin-right: 8mm; vertical-align: 0.3em; }
+  h2 .todo { font-size: 17mm; font-weight: 500; vertical-align: 0.35em; letter-spacing: 0; }
+  section { margin-bottom: 24mm; }
   .two { display: grid; grid-template-columns: 1fr 1fr; gap: 20mm; }
-  .card { background: var(--panel); border: .9mm solid var(--line); padding: 14mm 16mm; box-shadow: 4mm 4mm 0 0 #000; }
-  .card.accent { border-color: var(--purple); }
-  .card .label { font-family: 'Space Grotesk'; font-weight: 700; font-size: 9.5mm; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); margin-bottom: 4mm; }
-  .card h3 { font-family: 'Space Grotesk'; font-size: 18mm; line-height: 1.1; color: #fff; margin-bottom: 6mm; }
-  .card p { font-size: 12.5mm; line-height: 1.4; color: var(--soft); }
+  .card { background: var(--white); border: 0.8mm solid var(--line); border-radius: 6mm; padding: 14mm 16mm; }
+  .card.hot { border: 1.2mm solid var(--accent); background: #F4EEFD; }
+  .card h3 { font-size: 17mm; font-weight: 700; margin-bottom: 6mm; }
+  .card p { font-size: 12.5mm; line-height: 1.4; color: var(--ink-soft); }
+  .label { font-family: var(--mono); font-weight: 700; font-size: 9mm; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 4mm; }
 
-  .game { background: var(--panel); border: .9mm solid var(--line); box-shadow: 4mm 4mm 0 0 #000; padding: 12mm 14mm 14mm; }
-  .game header { display: flex; align-items: center; gap: 8mm; margin-bottom: 8mm; }
-  .game header img { width: 34mm; height: 34mm; object-fit: contain; }
-  .game h3 { font-family: 'Space Grotesk'; font-size: 22mm; line-height: 1; color: #fff; }
-  .game .sub { font-size: 10.5mm; color: var(--purple); margin-top: 2mm; }
-  .shots { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
-  .shots figure { margin: 0; }
-  .shots img { display: block; width: 100%; border: .7mm solid var(--line); background: #000; }
-  .shots.sx img { aspect-ratio: 4/3; object-fit: cover; }
-  .shots.cq img { aspect-ratio: 4/3; object-fit: cover; object-position: center; }
-  figcaption { font-size: 8.5mm; color: var(--faint); margin-top: 1.5mm; }
-  ul.features { list-style: none; display: grid; gap: 5mm; margin-top: 9mm; }
-  ul.features li { display: flex; gap: 5mm; align-items: flex-start; }
-  ul.features .dot { flex: none; width: 6mm; height: 6mm; margin-top: 3mm; background: var(--green); }
-  ul.features strong { font-size: 11.5mm; display: block; color: #fff; }
-  ul.features span { font-size: 9.8mm; color: var(--soft); line-height: 1.3; }
-  .note { font-size: 9.5mm; color: var(--faint); margin-top: 8mm; }
+  .demo { display: grid; grid-template-columns: 560mm 1fr; gap: 18mm; align-items: start; }
+  .shot { border: 0.8mm solid rgba(15,19,28,0.25); border-radius: 5mm; overflow: hidden; background: #fff; }
+  .shot img { display: block; width: 100%; object-fit: cover; object-position: top left; }
+  .demo .shot img { height: 340mm; object-position: 50% top; }
+  .caption { font-size: 10mm; color: var(--ink-soft); margin-top: 5mm; line-height: 1.35; }
+  ul.features { list-style: none; display: grid; gap: 7.5mm; }
+  ul.features li { display: flex; gap: 6mm; align-items: flex-start; }
+  ul.features .dot { flex: none; width: 7mm; height: 7mm; margin-top: 3.5mm; background: var(--accent); }
+  ul.features strong { font-size: 13mm; font-weight: 700; display: block; }
+  ul.features span.d { font-size: 10.5mm; color: var(--ink-soft); line-height: 1.3; display: block; margin-top: 1mm; }
+  .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14mm; margin-top: 14mm; }
+  .thumbs .shot img { height: 150mm; object-position: 50% top; }
+  .thumbs .caption { margin-top: 3mm; }
 
-  .figure { background: var(--panel); border: .9mm solid var(--line); box-shadow: 4mm 4mm 0 0 #000; padding: 10mm 12mm 12mm; }
-  .figure + .figure { margin-top: 12mm; }
-  .figtitle { font-family: 'Space Grotesk'; font-weight: 700; font-size: 15mm; color: #fff; margin-bottom: 8mm; }
-  .flow { display: flex; align-items: stretch; gap: 0; }
-  .node { flex: 1; background: var(--panel-light); border: .8mm solid var(--line); padding: 7mm 6mm; text-align: center; }
-  .node .tag { font-size: 7.5mm; letter-spacing: .16em; text-transform: uppercase; color: var(--blue); font-weight: 700; }
-  .node b { display: block; font-family: 'Space Grotesk'; font-size: 12.5mm; color: #fff; margin: 2mm 0 1mm; }
-  .node small { font-size: 8.5mm; color: var(--soft); line-height: 1.25; display: block; }
-  .node.hot { border-color: var(--purple); background: rgba(208,188,255,.12); }
-  .arrow { flex: none; width: 15mm; align-self: center; text-align: center; font-size: 15mm; color: var(--purple); }
+  .how { display: grid; grid-template-columns: 1fr 1fr; gap: 16mm; }
+  .how .card { padding: 11mm 12mm 12mm; }
+  .how img { display: block; width: 100%; border-radius: 3mm; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16mm; margin-top: 16mm; }
+  .stat { border-top: 1.2mm solid var(--ink); padding-top: 5mm; }
+  .stat b { font-family: var(--display); font-weight: 400; font-size: 48mm; line-height: 1; color: var(--accent); display: block; }
+  .stat span { font-size: 11mm; color: var(--ink-soft); line-height: 1.3; }
 
-  .levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7mm; }
-  .lvl { background: var(--panel-light); border: .8mm solid var(--line); overflow: hidden; }
-  .lvl img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
-  .lvl div { padding: 5mm 5mm 6mm; }
-  .lvl b { font-family: 'Space Grotesk'; font-size: 10.5mm; color: #fff; display: block; }
-  .lvl span { font-size: 8.6mm; color: var(--soft); line-height: 1.25; display: block; margin-top: 1.5mm; }
-  .lvl .n { font-family: 'Jersey 10'; font-size: 13mm; color: var(--blue); }
-  .chapters { display: grid; grid-template-columns: repeat(6, 1fr); gap: 5mm; }
-  .chap { background: var(--panel-light); border: .8mm solid var(--line); padding: 5mm; }
-  .chap .n { font-family: 'Jersey 10'; font-size: 13mm; color: var(--green); }
-  .chap b { font-family: 'Space Grotesk'; font-size: 9.6mm; color: #fff; display: block; line-height: 1.1; }
-  .chap span { font-size: 8mm; color: var(--soft); display: block; margin-top: 1.5mm; line-height: 1.25; }
-
-  .team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8mm; }
-  .team figure { margin: 0; background: var(--panel); border: .9mm solid var(--purple); box-shadow: 4mm 4mm 0 0 #000; padding: 4mm; text-align: center; }
-  .team img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; }
-  .team figcaption { font-family: 'Space Grotesk'; font-weight: 700; font-size: 13mm; color: #fff; margin-top: 3mm; }
-
-  .footer { position: absolute; left: 35mm; top: 1850mm; width: 940mm; height: 135mm; display: grid; grid-template-columns: 1fr auto 112mm; gap: 20mm;
-            border-top: 1.2mm solid var(--purple); padding-top: 10mm; }
-  .chips { display: flex; flex-wrap: wrap; gap: 4mm; margin: 4mm 0 8mm; }
-  .chips span { font-family: 'Space Grotesk'; font-size: 9.5mm; border: .7mm solid var(--blue); color: var(--blue); padding: 1.2mm 4mm; }
-  .footer .big { font-family: 'Space Grotesk'; font-weight: 700; font-size: 17mm; color: #fff; }
-  .footer .big span { font-weight: 500; color: var(--purple); }
-  .footer p { font-size: 11.5mm; color: var(--soft); margin-top: 3mm; }
-  .footer .small { font-size: 9.5mm; color: var(--faint); font-style: italic; }
-  .qr { background: #fff; padding: 5mm; text-align: center; align-self: start; }
-  .qr img { display: block; width: 100%; }
-  .qr small { display: block; font-size: 7.5mm; color: #14213D; margin-top: 2mm; }
-
-  /* Room for the logo row: the header text starts lower and the title is a little smaller. */
-  .hero .text { top: 76mm; }
-  .hero h1 { font-size: 104mm; margin-top: 8mm; }
-
-  /* AFFIAT logos. Header: an eyebrow row above the kicker, in the kicker's own font and colour.
-     Footer: a 'Presented at' block with the logos in full colour. */
-  .hero .affiat-eyebrow { position: absolute; left: 65mm; top: 24mm; z-index: 5; display: flex; align-items: center; gap: 8mm; }
-  .hero .affiat-eyebrow img.e { display: block; height: 40mm; width: auto; }
-  .hero .affiat-eyebrow img.t { display: block; height: 19mm; width: auto; }
-  .hero .affiat-eyebrow i { display: block; width: 0.5mm; height: 30mm; background: currentColor; opacity: 0.35; }
-  .hero .affiat-eyebrow .kicker { display: block; margin: 0; font-size: 10.5mm; letter-spacing: 0.18em; white-space: nowrap; }
-  .affiat-presented { display: flex; flex-direction: column; align-items: flex-start; gap: 4mm; flex: none; margin: 0 14mm; }
-  .affiat-presented img { display: block; height: 44mm; width: auto; }
-  .affiat-presented .row { display: flex; align-items: center; gap: 7mm; }
-  .affiat-presented .row img.e { height: 40mm; }
-  .affiat-presented .row img.t { height: 19mm; }
+  .foot { position: absolute; left: 35mm; top: 1775mm; width: 940mm; border-top: 0.8mm solid var(--ink);
+          padding-top: 10mm; display: grid; grid-template-columns: 1fr auto auto; gap: 18mm; align-items: start; }
+  .chips { display: flex; gap: 4mm; margin: 3mm 0 7mm; flex-wrap: wrap; }
+  .chips span { font-family: var(--mono); font-size: 10mm; border: 0.6mm solid var(--ink); padding: 1.5mm 4mm; background: #fff; }
+  .team { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7mm; margin-bottom: 8mm; max-width: 560mm; }
+  .team figure { text-align: center; }
+  .team img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border: 0.8mm solid var(--ink); border-radius: 4mm; }
+  .team figcaption { font-size: 10mm; font-weight: 700; margin-top: 3mm; line-height: 1.15; }
+  .meta { font-size: 11mm; margin-top: 3mm; color: var(--ink-soft); line-height: 1.35; }
+  .meta .todo { font-size: 10mm; }
+  .note { font-size: 10mm; color: var(--accent-dark); margin-top: 6mm; font-family: var(--mono); }
+  .presented { background: var(--ink); padding: 8mm 9mm 9mm; border-radius: 4mm; }
+  .presented .label { color: var(--warm); margin-bottom: 5mm; }
+  .presented .row { display: flex; align-items: center; gap: 7mm; }
+  .presented img.e { display: block; height: 40mm; width: auto; }
+  .presented img.t { display: block; height: 19mm; width: auto; }
+  .qr { text-align: center; }
+  .qr .code { background: #fff; padding: 4mm; border: 0.8mm solid var(--ink); display: inline-block; }
+  .qr img { display: block; width: 120mm; height: 120mm; image-rendering: pixelated; }
+  .qr p { font-family: var(--mono); font-size: 8.5mm; color: var(--ink-soft); margin-top: 4mm; line-height: 1.4; }
+  .qr p b { color: var(--ink); }
 </style>
 </head>
 <body>
 <div class="poster">
 
   <div class="hero">
-    <div class="affiat-eyebrow"><img class="e" src="../assets/brand/affiat-emblem.png" alt="AFFIAT emblem"><img class="t" src="../assets/brand/technofuture-white.png" alt="Techno Future Kafr El Sheikh"><i></i><span class="kicker">AFFIAT · Aswan Finals 2026</span></div>
-    <div class="glow"></div><div class="stars"></div>
-    <img class="logo" src="../assets/brand/logo.png" alt="Pixel Verse Studios logo">
+    <div class="texture">
+      <span>CRAB</span><span>ORBIT</span><span>REEF</span><span>EUROPA</span><span>SHRIMP</span>
+      <span>BELT</span><span>TURTLE</span><span>JUPITER</span><span>WAVE</span><span>ICE</span>
+      <span>PLAY</span><span>LEVEL</span><span>FACT</span><span>QUEST</span><span>PIXEL</span>
+      <span>CORAL</span><span>SPACE</span><span>HERO</span><span>SEA</span><span>MARS</span>
+      <span>SUN</span><span>MOON</span><span>FISH</span><span>SHIP</span>
+    </div>
+    <div class="glow"></div>
+    <div class="affiat"><img class="e" src="../assets/affiat-emblem.png" alt="AFFIAT emblem"><img class="t" src="../assets/technofuture-white.png" alt="Techno Future Kafr El Sheikh"><i></i><div class="kicker">AFFIAT · Aswan Finals 2026</div></div>
+    <img class="mark" src="../assets/mark.svg" alt="Pixel Verse Studios mark">
     <div class="text">
       <div class="kicker">Games category · 2026</div>
-      <h1>Pixel Verse Studios</h1>
+      <h1>Pixel Verse<br>Studios</h1>
       <div class="tagline">Real science, hidden in play.</div>
-      <div class="promise">Two 16-bit games for ages 5 to 99. Dodge ocean trash. Fly to Jupiter's icy moon. Every fact in them is real.</div>
+      <p class="promise">Two 16-bit games for ages 5 to 99. Dodge ocean trash. Fly to Jupiter's icy moon. Every fact in them is real.</p>
     </div>
   </div>
   <div class="band"></div>
 
   <div class="body">
-
     <section>
-      <h2><span class="num">01</span>Facts stick when you play them.</h2>
+      <h2><span class="num">01 · WHY</span>Facts stick when you play them.</h2>
       <div class="two">
         <div class="card">
           <div class="label">The problem</div>
           <h3>A fact in a lesson stays a sentence</h3>
-          <p>"Europa hides an ocean." "Plastic hurts sea turtles." A child hears it, and the next day it is gone. Facts feel far away from play.</p>
+          <p>“Europa hides an ocean.” “Plastic hurts sea turtles.” A child hears it, and the next day it is gone. Facts feel far away from play.</p>
         </div>
-        <div class="card accent">
-          <div class="label">Our answer</div>
+        <div class="card hot">
+          <div class="label">Our solution</div>
           <h3>Make the fact a game moment</h3>
-          <p>In Crab Quest you dodge the trash. In Space X you fly through Europa's ice. Each fact shows up exactly where it makes sense in the story, and nothing in it is invented.</p>
+          <p>In Crab Quest you dodge the trash. In Space X you fly through Europa’s ice. Each fact shows up where it makes sense in the story, and nothing in it is invented.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <h2><span class="num">02</span>Two games, one studio.</h2>
-      <div class="two">
-        <div class="game">
-          <header><img src="../assets/brand/space-x-logo.png" alt=""><div><h3>Space X</h3><div class="sub">Journey to Jupiter</div></div></header>
-          <div class="shots sx">
-            <figure><img src="../assets/space-x/launch_pad.png" alt=""><figcaption>1 · Launch pad: collect 4 items</figcaption></figure>
-            <figure><img src="../assets/space-x/earth_orbit.png" alt=""><figcaption>2 · Earth orbit: dodge 10 junk</figcaption></figure>
-            <figure><img src="../assets/space-x/belt.png" alt=""><figcaption>3 · Asteroid belt: shoot 30</figcaption></figure>
-            <figure><img src="../assets/space-x/europa.png" alt=""><figcaption>4 · Europa: break 12 ice chunks</figcaption></figure>
-          </div>
-          <ul class="features">
-            <li><i class="dot"></i><div><strong>Four levels, one mission</strong><span>Collect four items before liftoff, dodge space junk, shoot asteroids, break Europa's ice.</span></div></li>
-            <li><i class="dot"></i><div><strong>A fact card after every level</strong><span>A story line and one science fact.</span></div></li>
-            <li><i class="dot"></i><div><strong>A planet fact on every loss</strong><span>The Sun and all eight planets, each with a picture.</span></div></li>
-          </ul>
+      <h2><span class="num">02 · SEE IT</span>Two games, ten levels.</h2>
+      <div class="demo">
+        <div>
+          <div class="shot"><img src="../screenshots/sx-europa.jpg" alt="Space X level 4, Europa"></div>
+          <p class="caption">Space X, level 4: the Ship breaks Europa's ice with footballs. Each chunk needs two hits, and the Europa level ends with a 3-second scan.</p>
         </div>
-        <div class="game">
-          <header><img src="../assets/brand/crab-quest-logo.png" alt=""><div><h3>Crab Quest</h3><div class="sub">Six chapters to get home</div></div></header>
-          <div class="shots cq">
-            <figure><img src="../assets/crab-quest/start.jpg" alt=""><figcaption>Start screen</figcaption></figure>
-            <figure><img src="../assets/crab-quest/chapter-2.jpg" alt=""><figcaption>2 · Beach Run</figcaption></figure>
-            <figure><img src="../assets/crab-quest/chapter-4.jpg" alt=""><figcaption>4 · Shrimp Help</figcaption></figure>
-            <figure><img src="../assets/crab-quest/chapter-5.jpg" alt=""><figcaption>5 · Predator Chase</figcaption></figure>
-          </div>
-          <ul class="features">
-            <li><i class="dot"></i><div><strong>Six chapters, six ways to play</strong><span>Platforming, dodging, collecting and surviving.</span></div></li>
-            <li><i class="dot"></i><div><strong>Real ocean threats</strong><span>Birds, trash and a predator fish.</span></div></li>
-            <li><i class="dot"></i><div><strong>Ends in a coral sanctuary</strong><span>Help a shrimp, then find your family.</span></div></li>
-          </ul>
-        </div>
+        <ul class="features">
+          <li><span class="dot"></span><div><strong>Crab Quest: 6 chapters</strong><span class="d">Platforming, dodging, collecting and surviving, from a kitchen to a coral sanctuary.</span></div></li>
+          <li><span class="dot"></span><div><strong>Space X: 4 levels</strong><span class="d">Launch pad, Earth orbit, asteroid belt and Europa, then the win screen on Jupiter.</span></div></li>
+          <li><span class="dot"></span><div><strong>A fact card after every level</strong><span class="d">A story line and one science fact in Space X.</span></div></li>
+          <li><span class="dot"></span><div><strong>A planet fact on every game over</strong><span class="d">The Sun and all eight planets, each with a picture.</span></div></li>
+          <li><span class="dot"></span><div><strong>Keyboard or on-screen buttons</strong><span class="d">Arrows, Space, P and R, plus clickable left, right and pause in Space X.</span></div></li>
+          <li><span class="dot"></span><div><strong>Music, mute and fullscreen</strong><span class="d">A mute button in Crab Quest; pause and fullscreen (F) in Space X.</span></div></li>
+        </ul>
+      </div>
+      <div class="thumbs">
+        <div><div class="shot"><img src="../screenshots/cq-beach.jpg" alt="Crab Quest, Beach Run"></div><p class="caption">Crab Quest 2: Beach Run, dodge the birds.</p></div>
+        <div><div class="shot"><img src="../screenshots/cq-shrimp.jpg" alt="Crab Quest, Shrimp Help"></div><p class="caption">Crab Quest 4: Shrimp Help, collect 17 algae.</p></div>
+        <div><div class="shot"><img src="../screenshots/sx-fact-card.jpg" alt="Space X fact card"></div><p class="caption">Space X: the fact card after a level.</p></div>
       </div>
     </section>
 
     <section>
-      <h2><span class="num">03</span>One simple idea, two games.</h2>
-      <div class="figure">
-        <div class="figtitle">How both games are built: a mode switch</div>
-        <div class="flow">
-          <div class="node"><span class="tag">Input</span><b>Keyboard · mouse</b><small>arrows, Space, P, R, F, on-screen buttons</small></div>
-          <div class="arrow">›</div>
-          <div class="node"><span class="tag">Pygame Zero</span><b>draw · update</b><small>the only hooks in the main file</small></div>
-          <div class="arrow">›</div>
-          <div class="node hot"><span class="tag">One variable</span><b>game mode</b><small>says which screen shows</small></div>
-          <div class="arrow">›</div>
-          <div class="node"><span class="tag">Modules</span><b>screens · levels</b><small>each owns its own draw and rules</small></div>
-          <div class="arrow">›</div>
-          <div class="node"><span class="tag">Files</span><b>images · music · data</b><small>facts and targets in plain Python lists</small></div>
+      <h2><span class="num">03 · HOW</span>One mode switch, plain Python.</h2>
+      <div class="how">
+        <div class="card">
+          <div class="label">How a player moves through the games</div>
+          <img src="../diagrams/flow.png" alt="Journey of both games">
+        </div>
+        <div class="card">
+          <div class="label">How both games are built</div>
+          <img src="../diagrams/architecture.png" alt="Architecture of both games">
         </div>
       </div>
-      <div class="figure">
-        <div class="figtitle">Crab Quest: the six chapters</div>
-        <div class="chapters">
-          <div class="chap"><span class="n">1</span><b>Kitchen Escape</b><span>Jump the counter platforms</span></div>
-          <div class="chap"><span class="n">2</span><b>Beach Run</b><span>Dodge birds for 30 s</span></div>
-          <div class="chap"><span class="n">3</span><b>Sea Floor Dodging</b><span>Dodge trash for 10 s</span></div>
-          <div class="chap"><span class="n">4</span><b>Shrimp Help</b><span>Collect 17 algae in 60 s</span></div>
-          <div class="chap"><span class="n">5</span><b>Predator Chase</b><span>Survive 45 s</span></div>
-          <div class="chap"><span class="n">6</span><b>Home Sweet Home</b><span>Reach your family</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2><span class="num">04</span>Five people. Two games.</h2>
-      <div class="team">
-        <figure><img src="../assets/team/mariam.jpg" alt=""><figcaption>Mariam Alaa</figcaption></figure>
-        <figure><img src="../assets/team/selim.jpg" alt=""><figcaption>Sleem Loai</figcaption></figure>
-        <figure><img src="../assets/team/mohamed.jpg" alt=""><figcaption>Mohamed Loai</figcaption></figure>
-        <figure><img src="../assets/team/medhat.jpg" alt=""><figcaption>Medhat Ali</figcaption></figure>
-        <figure><img src="../assets/team/salah.jpg" alt=""><figcaption>Salah Mohamed</figcaption></figure>
+      <div class="stats">
+        <div class="stat"><b>2</b><span>games: Crab Quest and Space X</span></div>
+        <div class="stat"><b>10</b><span>levels: 6 chapters and 4 flights</span></div>
+        <div class="stat"><b>29</b><span>Python files across both games</span></div>
+        <div class="stat"><b>0</b><span>classes: plain variables, ifs and loops</span></div>
       </div>
     </section>
   </div>
 
-  <div class="footer">
+  <div class="foot">
     <div>
-      <div class="label kicker" style="font-size:9.5mm">Built with</div>
-      <div class="chips"><span>Python</span><span>Pygame Zero</span><span>Pygame</span><span>Pixel art</span><span>HTML + CSS</span><span>One Git repo</span></div>
-      <div class="big">Pixel Verse Studios <span>· 2026</span></div>
-      <p>AFFIAT · Afro-Asian Forum for Innovation and Technology · Aswan Finals 2026 · Games category</p>
-      <p class="small">Every fact in both games is real. Nothing is invented. All screenshots are from the running games.</p>
+      <div class="label">Built with</div>
+      <div class="chips"><span>Python</span><span>Pygame Zero</span><span>Pygame</span><span>Pixel art</span><span>HTML + CSS</span></div>
+      <div class="team">
+        <figure><img src="../assets/team/mariam.jpg" alt="Mariam Alaa"><figcaption>Mariam Alaa</figcaption></figure>
+        <figure><img src="../assets/team/selim.jpg" alt="Selim Loai"><figcaption>Selim Loai</figcaption></figure>
+        <figure><img src="../assets/team/mohamed.jpg" alt="Mohamed Loai"><figcaption>Mohamed Loai</figcaption></figure>
+        <figure><img src="../assets/team/medhat.jpg" alt="Medhat Ali"><figcaption>Medhat Ali</figcaption></figure>
+        <figure><img src="../assets/team/salah.jpg" alt="Salah Mohamed"><figcaption>Salah Mohamed</figcaption></figure>
+      </div>
+      <div class="meta">AFFIAT · Afro-Asian Forum for Innovation and Technology · Aswan Finals 2026 · Games category</div>
+      <div class="note">Every fact in both games is real. All screenshots are from the running games.</div>
     </div>
-    <div class="affiat-presented"><div class="label kicker" style="font-size:9.5mm">Presented at</div><div class="row"><img class="e" src="../assets/brand/affiat-emblem.png" alt="AFFIAT emblem"><img class="t" src="../assets/brand/technofuture-white.png" alt="Techno Future Kafr El Sheikh"></div></div>
-    <div class="qr"><img src="../assets/brand/qr-site.svg" alt="QR code"><small>Scan to visit the studio</small></div>
+    <div class="presented"><div class="label">Presented at</div><div class="row"><img class="e" src="../assets/affiat-emblem.png" alt="AFFIAT emblem"><img class="t" src="../assets/technofuture-white.png" alt="Techno Future Kafr El Sheikh"></div></div>
+    <div class="qr">
+      <div class="code"><img src="../assets/qr-app.svg" alt="QR code for ibrhmahmd.github.io/PVS"></div>
+      <p>Scan to visit the studio<br><b>ibrhmahmd.github.io/PVS</b></p>
+    </div>
   </div>
 
 </div>

@@ -1,93 +1,129 @@
-#!/usr/bin/env python3
-"""Builds every PDF/PNG/PPTX in docs/ from the sources next to this file.
+"""Turn the HTML and Markdown in docs/ into the PNGs and PDFs you print or share.
 
-    python3 docs/build.py [documentation|poster|slides|all]
+Run it from the repo root after you change anything in docs/:
 
-Needs: google-chrome, pdftoppm, and `pip install markdown qrcode python-pptx pillow`.
-The QR code points at SITE_URL (the only thing to change when the real address is known).
+    pip install playwright markdown-it-py
+    python -m playwright install chromium     (skip this if Google Chrome is installed)
+    python docs/build.py                      (builds everything)
+    python docs/build.py poster               (or: diagrams, slides, documentation)
+
+It also counts the "Student writes" boxes that are still empty, so you know what is left to fill in.
 """
-import re
+import pathlib
 import shutil
-import subprocess
 import sys
-from pathlib import Path
+from markdown_it import MarkdownIt
+from playwright.sync_api import sync_playwright
 
-import markdown
-import qrcode
-import qrcode.image.svg
+DOCS = pathlib.Path(__file__).parent.resolve()
 
-DOCS = Path(__file__).resolve().parent
-SITE_URL = "https://pixelversestudios.itch.io/"   # TODO: replace with the studio website address
-CHROME = shutil.which("google-chrome") or shutil.which("chromium")
+# Output names. Set these once for the project.
+DOCUMENT = "pvs-documentation"
+SLIDES_PDF = "pvs-presentation.pdf"
+POSTER_PDF = "pvs-poster-1000x2000mm.pdf"
 
+# The poster is printed at 1000 x 2000 mm, with 5 mm of extra edge on each side for trimming.
+POSTER_SIZE = ("1010mm", "2010mm")
+POSTER_PIXELS = (3818, 7597)   # the same size at 96 pixels per inch
 
-def chrome_pdf(html: Path, pdf: Path):
-    subprocess.run(
-        [CHROME, "--headless=new", "--disable-gpu", "--no-sandbox", "--hide-scrollbars",
-         "--virtual-time-budget=15000", "--no-pdf-header-footer",
-         f"--print-to-pdf={pdf}", html.as_uri()],
-        check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+# Slides are 16:9, the same shape as a projector screen.
+SLIDE_SIZE = ("1280px", "720px")
 
-
-def make_qr():
-    out = DOCS / "assets" / "brand" / "qr-site.svg"
-    img = qrcode.make(SITE_URL, image_factory=qrcode.image.svg.SvgPathImage, box_size=10, border=1)
-    img.save(str(out))
-    qrcode.make(SITE_URL, box_size=12, border=1).save(str(DOCS / "assets" / "brand" / "qr-site.png"))   # for the slides
-    return out
+TODO_MARK = "Student writes"
 
 
-def build_documentation():
-    src = DOCS / "documentation"
-    body = markdown.markdown((src / "pvs-documentation.md").read_text(encoding="utf-8"),
-                             extensions=["tables", "fenced_code", "attr_list", "sane_lists"])
-    body = re.sub(r"<h2>(.*?)</h2>", r'<h2 class="sec">\1</h2>', body)
-    team = "".join(
-        f'<figure><img src="../assets/team/{f}.jpg"><figcaption>{n}</figcaption></figure>'
-        for f, n in [("mariam", "Mariam Alaa"), ("selim", "Selim Loai"), ("mohamed", "Mohamed Loai"),
-                     ("medhat", "Medhat Ali"), ("salah", "Salah Mohamed")])
-    cover = f"""
-<section class="cover">
-  <img class="mark" src="../assets/brand/logo.png">
-  <p class="kicker">AFFIAT · Afro-Asian Forum for Innovation and Technology · Aswan Finals 2026 · Games</p>
-  <img class="partners" src="../assets/brand/partners.png" alt="AFFIAT and Techno Future Kafr El Sheikh" style="display: block; height: 26mm; width: auto; margin: 5mm 0; background: #fff; padding: 2.5mm 4mm; border-radius: 3mm;">
-  <h1>Pixel Verse Studios</h1>
-  <p class="tag">Game Technical Documentation</p>
-  <p class="lead">Crab Quest and Space X: Journey to Jupiter. Two 16-bit games that teach real science.</p>
-  <div class="team">{team}</div>
-</section>"""
-    html = f"""<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Pixel Verse Studios: Documentation</title>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="doc.css"></head><body>{cover}<main>{body}</main></body></html>"""
-    page = src / "pvs-documentation.html"
-    page.write_text(html, encoding="utf-8")
-    chrome_pdf(page, src / "pvs-documentation.pdf")
-    print("documentation ->", src / "pvs-documentation.pdf")
+def open_page(browser, path, width, height, scale=1):
+    page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=scale)
+    page.goto(path.as_uri())
+    page.wait_for_load_state("networkidle")
+    page.evaluate("document.fonts.ready")
+    return page
 
 
-def build_poster():
-    make_qr()
-    src = DOCS / "poster"
-    chrome_pdf(src / "poster.html", src / "pvs-poster-1000x2000mm.pdf")
-    # A small preview, like the reference poster has.
-    subprocess.run(["pdftoppm", "-png", "-singlefile", "-scale-to-x", "1900", "-scale-to-y", "-1",
-                    str(src / "pvs-poster-1000x2000mm.pdf"), str(src / "preview")], check=True)
-    print("poster ->", src / "pvs-poster-1000x2000mm.pdf")
+def build_diagrams(browser):
+    # Every diagram HTML file has one .canvas box. Its size is the size of the PNG.
+    for html in sorted((DOCS / "diagrams").glob("*.html")):
+        if html.name.endswith(".template.html"):
+            continue
+        page = open_page(browser, html, 2400, 1600, scale=3)
+        page.locator(".canvas").screenshot(path=str(html.with_suffix(".png")))
+        page.close()
+        print("diagram  ", html.with_suffix(".png").name)
 
 
-def build_slides():
-    src = DOCS / "presentation"
-    make_qr()
-    subprocess.run([sys.executable, str(src / "deck.py")], check=True)      # writes slides.html and the .pptx
-    chrome_pdf(src / "slides.html", src / "pvs-presentation.pdf")
-    print("slides ->", src)
+def build_poster(browser):
+    width, height = POSTER_PIXELS
+    page = open_page(browser, DOCS / "poster" / "poster.html", width, height)
+    page.pdf(path=str(DOCS / "poster" / POSTER_PDF), width=POSTER_SIZE[0], height=POSTER_SIZE[1], print_background=True)
+    page.close()
+    # A small picture of the poster, for READMEs and chat messages.
+    page = open_page(browser, DOCS / "poster" / "poster.html", width, height, scale=0.5)
+    page.screenshot(path=str(DOCS / "poster" / "preview.png"))
+    page.close()
+    print("poster   ", POSTER_PDF + ", preview.png")
 
 
-if __name__ == "__main__":
-    what = sys.argv[1] if len(sys.argv) > 1 else "all"
-    if what in ("documentation", "all"):
-        build_documentation()
-    if what in ("poster", "all"):
-        build_poster()
-    if what in ("slides", "all"):
-        build_slides()
+def build_slides(browser):
+    page = open_page(browser, DOCS / "presentation" / "slides.html", 1280, 720)
+    page.pdf(path=str(DOCS / SLIDES_PDF), width=SLIDE_SIZE[0], height=SLIDE_SIZE[1], print_background=True)
+    page.close()
+    print("slides   ", SLIDES_PDF)
+
+
+def build_documentation(browser):
+    source = DOCS / (DOCUMENT + ".md")
+    markdown = MarkdownIt("commonmark", {"html": True}).enable("table")
+    body = markdown.render(source.read_text(encoding="utf-8"))
+    style = (DOCS / "assets" / "documentation.css").read_text(encoding="utf-8")
+    html = ("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'>"
+            "<link rel='stylesheet' href='assets/brand.css'><style>" + style + "</style></head>"
+            "<body><main>" + body + "</main></body></html>")
+    # Saved next to the .md so the image links inside it still work.
+    temp = DOCS / "_documentation.html"
+    temp.write_text(html, encoding="utf-8")
+    page = open_page(browser, temp, 900, 1200)
+    page.pdf(path=str(DOCS / (DOCUMENT + ".pdf")), format="A4", print_background=True,
+             margin={"top": "18mm", "bottom": "18mm", "left": "16mm", "right": "16mm"})
+    page.close()
+    temp.unlink()
+    print("document ", DOCUMENT + ".pdf")
+
+
+def count_todos():
+    files = [DOCS / (DOCUMENT + ".md"), DOCS / "poster" / "poster.html", DOCS / "presentation" / "slides.html"]
+    for path in files:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        # In the HTML files a box is a class="todo" tag. In the .md file it is the words themselves.
+        if path.suffix == ".html":
+            left = text.count('class="todo')
+        else:
+            left = text.count(TODO_MARK)
+        if left > 0:
+            print("to fill  ", path.relative_to(DOCS), "has", left, "'Student writes' boxes left")
+
+
+with sync_playwright() as playwright:
+    # Use Google Chrome if it is installed, so you can skip "playwright install chromium".
+    if shutil.which("google-chrome"):
+        browser = playwright.chromium.launch(channel="chrome")
+    else:
+        browser = playwright.chromium.launch()
+
+    # With no word after build.py, build everything.
+    wanted = sys.argv[1:]
+    if len(wanted) == 0:
+        wanted = ["diagrams", "poster", "slides", "documentation"]
+
+    if "diagrams" in wanted:
+        build_diagrams(browser)
+    if "poster" in wanted:
+        build_poster(browser)
+    if "slides" in wanted:
+        build_slides(browser)
+    if "documentation" in wanted:
+        build_documentation(browser)
+    browser.close()
+
+count_todos()

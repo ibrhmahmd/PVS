@@ -30,15 +30,15 @@ This project was refactored to be **kid-simple**: code a curious 12-year-old cou
 
 ## Game content is real — never invent it
 
-- **Crab Quest** (Ages 5-99): 6 chapters — Kitchen Escape, Beach Run, Sea Floor Dodging, Shrimp Help, Predator Chase, Home Sweet Home. Controls: ←/→ or A/D move, SPACE jump, R restart, ENTER back to level select.
-- **Space X** (Ages 5-99): educational space shooter. 3 hearts, +1 point per asteroid, level = 1 + score/30, spawn interval 60→20 frames; a fact about one of 9 solar-system bodies at game over. Controls: ←/→ steer, SPACE start/fire, P pause, R restart, F fullscreen.
-- Titles are exactly "Crab Quest" and "Space X". No fake stats, wishlists or invented stage names.
+- **Crab Quest** (Ages 5-99): 6 chapters — Kitchen Escape, Beach Run, Sea Floor Dodging, Shrimp Help, Predator Chase, Home Sweet Home. Controls: ←/→ or A/D move, SPACE jump, R restart, ENTER back to level select, ESC leaves a chapter (back to the chapter select).
+- **Space X: Journey to Jupiter** (Ages 5-99): the Hero's Mission is to fly to Europa, Jupiter's icy moon, and find out if its hidden ocean could hold life. Title screen → Level 1 Launch pad (walk the Hero, collect the 4-item Checklist: helmet, ammo crate, lucky football, fuel can; board the Ship before the 30 s Countdown ends) → Level 2 Earth orbit (dodge 10 pieces of space junk, no shooting) → Level 3 Asteroid belt (shoot 30 asteroids; auto-fire every half second, SPACE adds shots, faster as you score) → Level 4 Europa (12 ice chunks, two hits each, then a 3 s scan: "Ocean found!") → Jupiter win screen (score + high score, R flies again). A Fact card after every Level. The 3 flying Levels give 3 hearts; losing them all (or the Countdown) shows a random fact about the Sun or one of the 8 planets, and R retries the same Level. Moon facts: Jupiter has more than 100 moons, Saturn more than 280. Controls: ←/→ or the on-screen LEFT/RIGHT buttons walk or fly, SPACE start/continue/shoot, P or the pause button pause, R retry / fly again, F fullscreen.
+- Titles are exactly "Crab Quest" and "Space X" ("Journey to Jupiter" is Space X's subtitle, used in text, not headings). No fake stats, wishlists or invented stage names.
 
 ## Rules for every page
 
 - Head: one Google Fonts `<link>`, then `assets/css/styles.css`. End of body: `<script defer src="assets/js/site.js">`. No inline `<script>` or `<style>`.
 - Nav links use `data-path` slugs (`home`, `games`, `heros-journey`, `studio-lore`, `play-demo` → `games.html`).
-- `heros-journey.html` is the **Story Spine** page: sections `id="crab-quest"` (7 beats) and `id="space-x"` (5 beats), each beat a picture next to its story, alternating sides (`.beat` / `.beat-flip`).
+- `heros-journey.html` is the **Story Spine** page: sections `id="crab-quest"` (7 beats) and `id="space-x"` (6 beats), each beat a picture next to its story, alternating sides (`.beat` / `.beat-flip`).
 - Screenshots are `<img data-lightbox="caption">` inside `<button class="shot-button">`. Never crop real screenshots (`object-contain`, not `object-cover`, except the small card thumbnails on the home page). Small sprites get `.pixelated`.
 - Keep images local under `assets/img/`. Every file there must be used by a page (the check enforces it).
 - No decorative monospace "terminal" labels, no fake status readouts, no ` // ` separators in visible text.
