@@ -58,7 +58,7 @@ space_info_list = [
             "in our solar system.",
             "It's a gas giant with a famous",
             "Great Red Spot, a giant storm.",
-            "Jupiter has at least 79 moons!"
+            "Jupiter has more than 100 moons!"
         ]
     },
     {
@@ -68,7 +68,7 @@ space_info_list = [
             "beautiful rings made of ice and rock.",
             "It's the second largest planet",
             "and could float in water!",
-            "Saturn has 82 known moons."
+            "Saturn has more than 280 moons!"
         ]
     },
     {
@@ -78,7 +78,7 @@ space_info_list = [
             "rotates on its side!",
             "It appears blue-green because of",
             "methane in its atmosphere.",
-            "Uranus has 27 known moons."
+            "Uranus has 28 known moons."
         ]
     },
     {
@@ -88,7 +88,7 @@ space_info_list = [
             "from the Sun.",
             "It has the strongest winds in",
             "the solar system, up to 1,200 mph!",
-            "Neptune has 14 known moons."
+            "Neptune has 16 known moons."
         ]
     }
 ]

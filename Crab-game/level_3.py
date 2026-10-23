@@ -5,7 +5,7 @@ import random
 WIDTH = 1200
 HEIGHT = 600
 
-MOVE_SPEED = 3
+MOVE_SPEED = 5
 POLLUTION_SPEED = 2
 SURVIVAL_SECONDS = 10
 
@@ -116,7 +116,7 @@ def update(keyboard):
     if spawn_timer > 10:
         spawn_timer = 0
         junk = Actor(random.choice(["trash_1", "trash_2", "trash_3", "trash_4"]))
-        junk.pos = (random.randint(100, WIDTH - 100), -50)
+        junk.pos = (random.randint(0, WIDTH), -50)
         pollution_items.append(junk)
 
     for item in pollution_items:
@@ -138,3 +138,4 @@ def on_key_down(key, keys):
     if key == keys.RETURN and game_states.has_won:
         game_states.game_mode = "LEVEL_SELECT"
         game_states.has_won = False
+        game_states.is_game_over = False

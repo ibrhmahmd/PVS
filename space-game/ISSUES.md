@@ -65,3 +65,16 @@ Design agreed 2026-10-08. Terms are in `CONTEXT.md`.
 - [ ] **Europa Scan**: after the points target, ice stops, a 3 s automatic Scan, then "Ocean found!" and the Fact card.
 - [ ] Each Level decides when it is cleared (`game_states.level_cleared`), instead of `Game.py` checking the points target.
 - [ ] Placeholder art: Launch pad background, 4 item icons, small Hero (and mirrored), Ship on the pad. Real art prompts in `docs/art-prompts.md`.
+
+## #8 — Gameplay fixes before packaging `[bug]`
+
+**Status:** fixed (verified by a headless play-through)
+
+Found by a headless play-through audit (2026-10-15).
+
+- [x] Launch pad Countdown is 5 s (`COUNTDOWN_SECONDS = 5`, a leftover test value); #7 says 30 s.
+- [x] Long game-over facts (Sun, Mercury, Venus) run under the "GAME OVER" title. Make every fact fit above it.
+- [x] A click or Space right after dying or clearing a Level skips the game-over fact or Fact card at once. Ignore input for the first second on those screens.
+- [x] Moon counts are out of date (Jupiter 79, Saturn 82, Uranus 27, Neptune 14). Mid-2026 counts: Jupiter about 101, Saturn 285, Uranus 28-29, Neptune 16.
+
+Left as is: F (fullscreen) raises an error under a dummy video driver but works on real displays (kid-simple rules forbid try/except); unpausing restarts the music; the Ship overlaps the move buttons by 10 px.

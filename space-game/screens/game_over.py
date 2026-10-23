@@ -30,7 +30,7 @@ def draw(screen, background):
     image_rect.center = (400, 150)
     screen.surface.blit(planet_image, image_rect)
     screen.draw.filled_rect(Rect(40, 270, 720, 320), (10, 10, 40))  # dark panel so the words are easy to read
-    screen.draw.text(" ".join(planet_info["text"]), midtop=(400, 280), width=700, fontsize=40,
+    screen.draw.text(" ".join(planet_info["text"]), midtop=(400, 280), width=700, fontsize=32,
                      color="white", align="center", owidth=1.5, ocolor="black")
     screen.draw.text("GAME OVER", center=(400, 480), fontsize=120, color="red", owidth=1.5, ocolor="black")
     screen.draw.text("Press R to try this Level again", center=(400, 550), fontsize=50, color="white", owidth=1.5, ocolor="black")

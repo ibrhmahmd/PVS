@@ -7,7 +7,7 @@ from parts import game_states
 from parts import controls
 from parts import hud
 
-COUNTDOWN_SECONDS = 5   # time to grab everything and climb in
+COUNTDOWN_SECONDS = 30  # time to grab everything and climb in
 WALK_SPEED = 5           # pixels per frame
 GROUND_Y = 465           # the hero stands just below the yellow-and-black stripe of the concrete
 BLAST_OFF_SPEED = 7      # pixels per frame while the Ship flies up

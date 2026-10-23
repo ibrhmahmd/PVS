@@ -20,3 +20,6 @@ level_start_score = 0
 
 health = 3
 paused = False
+
+# How many frames the current screen (not a Level) has been showing.
+screen_frames = 0

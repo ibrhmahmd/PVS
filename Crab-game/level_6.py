@@ -84,6 +84,11 @@ def update(keyboard):
     if keyboard.right or keyboard.d:
         player.x += MOVE_SPEED
 
+    if player.left < 0:
+        player.left = 0
+    if player.right > WIDTH:
+        player.right = WIDTH
+
     # Jumping Physics
     player.on_ground = False
     player_y_speed += GRAVITY
@@ -109,3 +114,4 @@ def on_key_down(key, keys):
     if key == keys.RETURN and game_states.has_won:
         game_states.game_mode = "START_SCREEN"
         game_states.has_won = False
+        game_states.is_game_over = False

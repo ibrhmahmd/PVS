@@ -36,6 +36,10 @@ ptext.DEFAULT_FONT_NAME = "jersey10"
 # Level 1, 2, 3 and 4 in the same order as LEVELS in data/level_data.py
 LEVEL_FILES = [launch_pad, earth_orbit, belt, europa]
 
+# Kids are often still clicking or pressing Space when a Level ends,
+# so a new screen waits 1 second (60 frames) before it listens.
+SCREEN_WAIT_FRAMES = 60
+
 
 def start_level():
     # Called when a Level begins (the first time, after a Fact card, or on a retry).
@@ -68,6 +72,11 @@ def draw():
 def update():
     mode = game_states.mode
 
+    if mode == "PLAYING":
+        game_states.screen_frames = 0
+    else:
+        game_states.screen_frames = game_states.screen_frames + 1
+
     # Music plays only while we are really playing.
     if mode == "PLAYING" and not game_states.paused:
         if not music.is_playing("music.mp3"):
@@ -95,6 +104,8 @@ def update():
 
 def go_to_next_screen():
     # What Space (or a click) does on every screen that is not a Level.
+    if game_states.screen_frames < SCREEN_WAIT_FRAMES:
+        return
     mode = game_states.mode
     if mode == "TITLE":
         title.go()

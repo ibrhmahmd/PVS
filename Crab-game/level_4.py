@@ -194,6 +194,7 @@ def on_key_down(key, keys):
     if key == keys.RETURN and game_states.has_won:
         game_states.game_mode = "LEVEL_SELECT"
         game_states.has_won = False
+        game_states.is_game_over = False
 
 
 def reset():

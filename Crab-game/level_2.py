@@ -104,7 +104,7 @@ def update(keyboard):
     if bird_spawn_timer > 20:
         bird_spawn_timer = 0
         new_bird = Actor("bird")
-        new_bird.pos = (random.randint(100, WIDTH - 100), -50)
+        new_bird.pos = (random.randint(0, WIDTH), -50)
         birds.append(new_bird)
 
     for bird in birds:
@@ -131,6 +131,7 @@ def on_key_down(key, keys):
     if key == keys.RETURN and game_states.has_won:
         game_states.game_mode = "LEVEL_SELECT"
         game_states.has_won = False
+        game_states.is_game_over = False
 
 
 def reset():

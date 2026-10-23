@@ -42,12 +42,12 @@ level6_btn = Actor("start_btn", (COL3, ROW2))
 
 buttons = [level1_btn, level2_btn, level3_btn, level4_btn, level5_btn, level6_btn]
 labels = [
-    "1. KITCHEN ESCAPE 🪟",
-    "2. BEACH RUN 🦅",
-    "3. SEA FLOOR DODGING 🐢",
-    "4. SHRIMP HELP 🦐",
-    "5. PREDATOR CHASE 🦈",
-    "6. HOME SWEET HOME 🪸",
+    "1. KITCHEN ESCAPE",
+    "2. BEACH RUN",
+    "3. SEA FLOOR DODGING",
+    "4. SHRIMP HELP",
+    "5. PREDATOR CHASE",
+    "6. HOME SWEET HOME",
 ]
 
 
