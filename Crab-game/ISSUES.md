@@ -2,11 +2,11 @@
 
 ## #1 — Package Crab Quest for players `[feature]`
 
-**Status:** open — waiting for the Windows 11 build session
+**Status:** in progress — the Windows build runs on GitHub Actions (`.github/workflows/build-games.yml`); a Linux test build of the same command starts fine
 
 Ship two downloads and publish them on an itch.io page; the Pixel Verse Studios website (`stitch_pixel_verse_visual_identity`, issue #5) links its "Play" buttons there.
 
-- [ ] Windows build with PyInstaller (built on the Windows 11 laptop; bundle `images/` and `music/`)
+- [ ] Windows build with PyInstaller on GitHub Actions (bundles `images/`, `music/` and Pygame Zero's own data); download the `Crab-Quest-windows` artifact
 - [ ] Source zip (`git archive`) with run instructions: install Python + `pip install pgzero`, then `python main.py`
 - [ ] itch.io page with screenshots, description, controls, both downloads
 - [ ] Smoke-test the .exe on a clean Windows machine (all 6 chapters, music toggle)

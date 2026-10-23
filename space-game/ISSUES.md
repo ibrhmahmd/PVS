@@ -8,9 +8,9 @@
 
 ## #2 — Package Space X for players `[feature]`
 
-**Status:** open — blocked by #1; waiting for the Windows 11 build session
+**Status:** in progress — the Windows build runs on GitHub Actions (`.github/workflows/build-games.yml`); a Linux test build of the same command starts fine, which also confirms #1
 
-- [ ] Windows build with PyInstaller (bundle `images/`, `music/` and `fonts/`, including `fonts/OFL.txt`)
+- [ ] Windows build with PyInstaller on GitHub Actions (bundles `images/`, `music/`, `fonts/` with `fonts/OFL.txt`, and Pygame Zero's own data); download the `Space-X-windows` artifact
 - [ ] Source zip with run instructions: install Python + `pip install pgzero`, then `python Game.py`
 - [ ] itch.io page with screenshots, description, controls, both downloads
 - [ ] Smoke-test the .exe on Windows (start, shoot, game over + planet fact, restart, pause, fullscreen toggle)

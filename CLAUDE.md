@@ -14,7 +14,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 The root `index.html` is only a redirect to `pixel-verse-studios/index.html` (so the repo root can be served as the site); don't put content there. The root `ISSUES.md` tracks cross-project work (the `docs/` deliverables).
 
-The website describes the two games, so changes to game content/controls/titles must stay consistent with the site (see the "Game content is real" rule in `pixel-verse-studios/CLAUDE.md`). Each project tracks work in a local `ISSUES.md`; the games' packaging issues (PyInstaller + itch.io) are waiting on a Windows 11 build session, and the site's "Play" buttons link to those itch.io pages.
+The website describes the two games, so changes to game content/controls/titles must stay consistent with the site (see the "Game content is real" rule in `pixel-verse-studios/CLAUDE.md`). Each project tracks work in a local `ISSUES.md`; the games' Windows builds (PyInstaller) come from `.github/workflows/build-games.yml` (run it from the Actions tab or push a `v*` tag; the zips are the run's artifacts), and the site's "Play" buttons link to those itch.io pages.
 
 `pixel-verse-studios/` has its own detailed `CLAUDE.md` / `AGENTS.md` (styling loop, per-page rules, design-system gotchas). Read it before touching the site; it is not repeated here.
 

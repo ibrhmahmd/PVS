@@ -5,3 +5,8 @@ __pycache__/
 .claude/worktrees/
 .claude/settings.local.json
 docs/presentation/_img/
+
+# PyInstaller output when building the games by hand.
+build/
+dist/
+*.spec

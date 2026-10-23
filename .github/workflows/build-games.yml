@@ -1,0 +1,41 @@
+# Builds the Windows downloads of both games: one zipped folder per game, with the .exe inside.
+# Run it from the Actions tab ("Run workflow"), or push a tag like v1.0.
+# The zips appear under "Artifacts" at the bottom of the run's page.
+name: Build Windows games
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install the game engine and PyInstaller
+        run: pip install pgzero==1.2.1 pygame==2.6.1 pyinstaller==6.22.3
+
+      # --collect-data pgzero: Pygame Zero's own files (its window icon); without them the game crashes on start.
+      - name: Build Crab Quest
+        working-directory: Crab-game
+        run: pyinstaller --noconfirm --windowed --name "Crab Quest" --collect-data pgzero --add-data "images:images" --add-data "music:music" main.py
+
+      - name: Build Space X
+        working-directory: space-game
+        run: pyinstaller --noconfirm --windowed --name "Space X" --collect-data pgzero --add-data "images:images" --add-data "music:music" --add-data "fonts:fonts" Game.py
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Crab-Quest-windows
+          path: Crab-game/dist/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Space-X-windows
+          path: space-game/dist/
